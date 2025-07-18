@@ -7,10 +7,14 @@ nlp.add_pipe("sentencizer")
 #benefit of creating own model is so it only does task or get filtered from one pipe,
 #instead of using shelf models that have many more pipes
 
-#time difference is proof
+#as my txt file is small, they take similar time, but with bigger files, shelf models take longer.
+#below is just a sample demo
 with open(r"C:\Flexon_Resume_Parser\Parser_Build-Arnav\MLK.txt", "r") as f:
     text = f.read()
 
 doc = nlp(text)
-print(len(list(doc.sents)))
+#print(len(list(doc.sents)))
 
+nlp2 = spacy.load("en_core_web_sm")
+doc2 = nlp2(text)
+#print(len(list(doc2.sents)))
