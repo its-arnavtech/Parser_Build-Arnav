@@ -18,3 +18,8 @@ doc = nlp(text)
 nlp2 = spacy.load("en_core_web_sm")
 doc2 = nlp2(text)
 #print(len(list(doc2.sents)))
+
+#implement above for other pipes such as tokenizing, POS tagging and NER
+
+#analyzing pipelines: shows what pipes we've got and the order they're in
+print(nlp.analyze_pipes())
