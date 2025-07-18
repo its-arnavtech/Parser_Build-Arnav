@@ -1,0 +1,16 @@
+import spacy
+#load your own model as you're creating your own pipes
+nlp = spacy.blank("en")
+#adding custom pipes
+nlp.add_pipe("sentencizer")
+
+#benefit of creating own model is so it only does task or get filtered from one pipe,
+#instead of using shelf models that have many more pipes
+
+#time difference is proof
+with open(r"C:\Flexon_Resume_Parser\Parser_Build-Arnav\MLK.txt", "r") as f:
+    text = f.read()
+
+doc = nlp(text)
+print(len(list(doc.sents)))
+
