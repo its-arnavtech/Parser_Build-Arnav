@@ -72,7 +72,8 @@ def extract_phone_number(text):
             phone_number.append(ent.text)
     return phone_number
 
-
+def extract_urls(text):
+    ...
 
 sample_resume_text = extract_text_from_pdf(r'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Resume_ArnavK.pdf')
 
