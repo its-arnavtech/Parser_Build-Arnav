@@ -72,13 +72,24 @@ def extract_phone_number(text):
             phone_number.append(ent.text)
     return phone_number
 
-def extract_urls(text):
-    ...
+def extract_urls_spacy(text):
+    matcher = Matcher(nlp.vocab)
+    pattern = [{"LIKE_URL": True}]
+    matcher.add("URLS", [pattern])
+    doc = nlp(text)
+    matches = matcher(doc)
+
+    urls = []
+    for match_id, start, end in matches:
+        span = doc[start:end]
+        urls.append(span.text)
+
+    return urls
 
 sample_resume_text = extract_text_from_pdf(r'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Resume_ArnavK.pdf')
 
 if sample_resume_text:
-    print(f"Extracting data from: {sample_resume_text[:100]}...")
+    print(f"Extracting data from: {sample_resume_text[:90]}...")
     print("Extracting Email ID...")
 
     email = extract_email(sample_resume_text)
@@ -99,6 +110,11 @@ if sample_resume_text:
         phone_number = extract_phone_number(sample_resume_text)
         print(f"Phone Number(s) found: {phone_number}")
 
+    urls = extract_urls_spacy(sample_resume_text)
+    if urls:
+        print(f"URL(s) found: {urls}")
+    else:
+        print("No URL(s) found.")
 
 else:
     print("Failed to extract text from the PDF.")
