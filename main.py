@@ -25,7 +25,23 @@ def extract_text_from_pdf(pdf_path):
     except Exception as e:
         print(f"Error extracting text: {e}")
         return None
+'''   
+sample_text = extract_text_from_pdf(r'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Resume_ArnavK.pdf')
 
+if sample_text:
+    # Clean and normalize text (optional)
+    cleaned_text = re.sub(r"\s+", " ", sample_text.replace("\n", " ")).strip()
+
+    # Process with spaCy
+    doc = nlp(cleaned_text)
+
+    print("\n Named Entity Recognition Results:\n")
+    for token in doc:
+        ent_type = token.ent_type_ if token.ent_type_ else "O"  # "O" for outside any entity
+        print(f"Token: {token.text:20} | Entity: {ent_type}")
+else:
+    print("Failed to extract text from the PDF.")
+'''
 def preprocessing_text(text):
     if not isinstance(text, str):
         text = str(text)
@@ -39,7 +55,24 @@ def preprocessing_text(text):
     return filtered_tokens
 
 def extract_name(text):
-    ...
+    lines = text.strip().split('\n')
+
+    top_lines = ' '.join(lines[:5])
+    doc = nlp(top_lines)
+    names = []
+    for ent in doc.ents:
+        if ent.label_ == "PERSON":
+            names.append(ent)
+
+    return names
+
+def extract_name_regex(text):
+    lines = text.strip().split('\n')
+    top = ' '.join(lines[:5])
+    pattern = r'\b[A-Z][a-z]+(?:\s[A-Z][a-z]+)+\b'
+    match = re.findall(pattern, top)
+    if match:
+        return match[0]
 
 def extract_email(text):
     if not text:
@@ -90,6 +123,18 @@ sample_resume_text = extract_text_from_pdf(r'C:\Flexon_Resume_Parser\Parser_Buil
 
 if sample_resume_text:
     print(f"Extracting data from: {sample_resume_text[:90]}...")
+    print("Extracting Name...")
+
+    names = extract_name(sample_resume_text)
+    if names:
+        print(f"Name found: {names}")
+    else:
+        names = extract_name_regex(sample_resume_text)
+        if names:
+            print(f"Name found: {names}")
+        else:
+            print("No names found")
+
     print("Extracting Email ID...")
 
     email = extract_email(sample_resume_text)
