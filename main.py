@@ -150,10 +150,3 @@ if sample_resume_text:
 
 else:
     print("Failed to extract text from the PDF.")
-'''
-
-sample = "This is my ph nmber: (727)394-8323"
-phNum = extract_phone_number(sample)
-phNum2 = extract_phone_number_regex(sample)
-print(phNum2)
-'''
