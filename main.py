@@ -13,9 +13,10 @@ nlp = spacy.load("en_core_web_md")
 global doc
 ruler = nlp.add_pipe("entity_ruler", before="ner")
 patterns = [
-                {"label": "PHONE_NUMBER", "pattern": [{"ORTH": "("}, {"SHAPE": "ddd"}, {"ORTH": ")"}, {"SHAPE": "ddd"},
-                {"ORTH": "-", "OP": "?"}, {"SHAPE": "dddd"}]}
-            ]
+    {"label": "PHONE_NUMBER", "pattern": [{"ORTH": "("}, {"SHAPE": "ddd"}, {"ORTH": ")"}, {"SHAPE": "ddd"},
+                                         {"ORTH": "-", "OP": "?"}, {"SHAPE": "dddd"}]},
+    {"label": "PHONE_NUMBER", "pattern": [{"SHAPE": "ddd"}, {"SHAPE": "ddd"}, {"SHAPE": "dddd"}]},  # e.g., 7273948323
+]
 ruler.add_patterns(patterns)
 
 def extract_text_from_pdf(pdf_path):
@@ -25,23 +26,7 @@ def extract_text_from_pdf(pdf_path):
     except Exception as e:
         print(f"Error extracting text: {e}")
         return None
-'''   
-sample_text = extract_text_from_pdf(r'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Resume_ArnavK.pdf')
 
-if sample_text:
-    # Clean and normalize text (optional)
-    cleaned_text = re.sub(r"\s+", " ", sample_text.replace("\n", " ")).strip()
-
-    # Process with spaCy
-    doc = nlp(cleaned_text)
-
-    print("\n Named Entity Recognition Results:\n")
-    for token in doc:
-        ent_type = token.ent_type_ if token.ent_type_ else "O"  # "O" for outside any entity
-        print(f"Token: {token.text:20} | Entity: {ent_type}")
-else:
-    print("Failed to extract text from the PDF.")
-'''
 def preprocessing_text(text):
     if not isinstance(text, str):
         text = str(text)
@@ -87,16 +72,6 @@ def extract_email_regex(text):
     email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
     return re.findall(email_pattern, text)
 
-def extract_phone_number_regex(text):
-    phone_number_pattern = re.compile(r"(\+?\d{1,2}\s?)?(\(?\d{3}\)?[\s\-]?)?[\d{3}][\s\-]?\d{4}")
-    phone_numbers = []
-    matches = phone_number_pattern.findall(text)
-    for match in matches:
-        phone_number = "".join(match).strip()
-        if phone_number:
-            phone_numbers.append(phone_number)
-    return phone_number
-    
 def extract_phone_number(text):
     doc = nlp(text)
     phone_number = []
@@ -104,6 +79,17 @@ def extract_phone_number(text):
         if ent.label_ == "PHONE_NUMBER":
             phone_number.append(ent.text)
     return phone_number
+
+def extract_phone_number_regex(text):
+    phone_number_pattern = re.compile(r"(\+?\d{1,2}\s?)?(\(?\d{3}\)?[\s\-]?)?(\d{3})[\s\-]?(\d{4})")
+    phone_numbers = []
+    matches = phone_number_pattern.findall(text)
+    for match in matches:
+        phone_number = "".join(match).strip()
+        if phone_number:
+            phone_numbers.append(phone_number)
+    return phone_numbers
+
 
 def extract_urls_spacy(text):
     matcher = Matcher(nlp.vocab)
@@ -119,7 +105,7 @@ def extract_urls_spacy(text):
 
     return urls
 
-sample_resume_text = extract_text_from_pdf(r'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Resume_ArnavK.pdf')
+sample_resume_text = extract_text_from_pdf('C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf')
 
 if sample_resume_text:
     print(f"Extracting data from: {sample_resume_text[:90]}...")
@@ -155,6 +141,7 @@ if sample_resume_text:
         phone_number = extract_phone_number(sample_resume_text)
         print(f"Phone Number(s) found: {phone_number}")
 
+    print("Extracting URL(s)...")
     urls = extract_urls_spacy(sample_resume_text)
     if urls:
         print(f"URL(s) found: {urls}")
@@ -163,3 +150,10 @@ if sample_resume_text:
 
 else:
     print("Failed to extract text from the PDF.")
+'''
+
+sample = "This is my ph nmber: (727)394-8323"
+phNum = extract_phone_number(sample)
+phNum2 = extract_phone_number_regex(sample)
+print(phNum2)
+'''
