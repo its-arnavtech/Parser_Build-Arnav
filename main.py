@@ -1,3 +1,4 @@
+import os
 import spacy
 import re
 import nltk
@@ -116,11 +117,54 @@ def dump_to_json(data, filename="extracted_data.json"):
         json.dump(data, json_file, indent=3)
     print(f"Data dumped into {filename}")
 
+def extract_data(file_path):
+    # Check the file extension to determine the type of document
+    file_extension = os.path.splitext(file_path)[1].lower()
+
+    if file_extension == '.pdf':
+        return extract_text_from_pdf(file_path)
+    elif file_extension == '.docx':
+        return extract_text_from_docx(file_path)
+    else:
+        print(f"Unsupported file type: {file_extension}")
+        return None
+'''
 pdf_resume_text = extract_text_from_pdf('C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf')
 doc_resume_text = extract_text_from_docx('C:/Flexon_Resume_Parser/Parser_Build-Arnav/ATS classic HR resume.docx')
-
+'''
+file_path = 'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf'
+resume_text = extract_data(file_path)
 result_data = {"pdf":{}, "docx":{}}
 
+if resume_text:
+    print(f"Extracting data from: {resume_text[:90]}...")
+    names = extract_name(resume_text)
+    if not names:
+        names = extract_name_regex(resume_text)
+
+    email = extract_email(resume_text)
+    if not email:
+        email = extract_email_regex(resume_text)
+
+    phone_number = extract_phone_number_regex(resume_text)
+    if not phone_number:
+        phone_number = extract_phone_number(resume_text)
+    
+    urls = extract_urls_spacy(resume_text)
+    if not urls:
+        urls = []
+
+    # Assuming the file path corresponds to a PDF file
+    result_data["pdf"]["names"] = names
+    result_data["pdf"]["emails"] = email
+    result_data["pdf"]["phone_numbers"] = phone_number
+    result_data["pdf"]["urls"] = urls
+
+else:
+    print("Failed to extract text from the Document.")
+
+
+'''
 if pdf_resume_text:
     print(f"Extracting data from: {pdf_resume_text[:90]}...")
     names = extract_name(pdf_resume_text)
@@ -173,5 +217,5 @@ if doc_resume_text:
 
 else:
     print("Failed to extract text from the Doc File.")
-
+'''
 dump_to_json(result_data)
