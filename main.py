@@ -2,7 +2,7 @@ import os
 import spacy
 import re
 import nltk
-from nltk.tokenize import word_tokenize
+from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.corpus import stopwords
 from pdfminer.high_level import extract_text
 from docx import Document
@@ -18,7 +18,7 @@ ruler = nlp.add_pipe("entity_ruler", before="ner")
 patterns = [
     {"label": "PHONE_NUMBER", "pattern": [{"ORTH": "("}, {"SHAPE": "ddd"}, {"ORTH": ")"}, {"SHAPE": "ddd"},
                                          {"ORTH": "-", "OP": "?"}, {"SHAPE": "dddd"}]},
-    {"label": "PHONE_NUMBER", "pattern": [{"SHAPE": "ddd"}, {"SHAPE": "ddd"}, {"SHAPE": "dddd"}]},  # e.g., 7273948323
+    {"label": "PHONE_NUMBER", "pattern": [{"SHAPE": "ddd"}, {"SHAPE": "ddd"}, {"SHAPE": "dddd"}]}, 
 ]
 ruler.add_patterns(patterns)
 
@@ -30,12 +30,16 @@ def extract_text_from_pdf(pdf_path):
         print(f"Error extracting text: {e}")
         return None
     
-def extract_text_from_docx(text):
-    doc = Document(text)
-    text = ""
-    for paragraph in doc.paragraphs:
-        text += paragraph.text + "\n"
-    return text
+def extract_text_from_docx(docx_path):
+    try:
+        doc = Document(docx_path)
+        text = ""
+        for paragraph in doc.paragraphs:
+            text += paragraph.text + "\n"
+        return text
+    except Exception as e:
+        print(f"Error extracting text: {e}")
+        return None
 
 def preprocessing_text(text):
     if not isinstance(text, str):
@@ -112,6 +116,19 @@ def extract_urls_spacy(text):
 
     return urls
 
+def extract_education(text): #to fix
+    keywords = ['education', 'degree', 'university', 'school', 'college']
+    sents = sent_tokenize(text)
+    education = []
+    for sent in sents:
+        sent_lower = sent.lower()
+        found_keywords = []
+        for keyword in keywords:
+            if keyword in sent_lower:
+                found_keywords.append(sent)
+
+    return education
+
 def dump_to_json(data, filename="extracted_data.json"):
     with open(filename, "w") as json_file:
         json.dump(data, json_file, indent=3)
@@ -132,12 +149,12 @@ def extract_data(file_path):
 pdf_resume_text = extract_text_from_pdf('C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf')
 doc_resume_text = extract_text_from_docx('C:/Flexon_Resume_Parser/Parser_Build-Arnav/ATS classic HR resume.docx')
 '''
-file_path = 'C:/Flexon_Resume_Parser/Parser_Build-Arnav/ATS classic HR resume.docx'
+file_path = 'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf'
 resume_text = extract_data(file_path)
 result_data = {"pdf":{}, "docx":{}}
 
 if resume_text:
-    print(f"Extracting data from: {resume_text[:90]}...")
+    #print(f"Extracting data from: {resume_text[:90]}...")
     names = extract_name(resume_text)
     if not names:
         names = extract_name_regex(resume_text)
@@ -154,19 +171,23 @@ if resume_text:
     if not urls:
         urls = []
 
+    education = extract_education(resume_text)
+    if not education:
+        education = []
+
     # Assuming the file path corresponds to a PDF file
     result_data["pdf"]["names"] = names
     result_data["pdf"]["emails"] = email
     result_data["pdf"]["phone_numbers"] = phone_number
     result_data["pdf"]["urls"] = urls
+    result_data["pdf"]["education"] = education
 
 else:
     print("Failed to extract text from the Document.")
 
-
 '''
 if pdf_resume_text:
-    print(f"Extracting data from: {pdf_resume_text[:90]}...")
+    #print(f"Extracting data from: {pdf_resume_text[:90]}...")
     names = extract_name(pdf_resume_text)
     if not names:
         names = extract_name_regex(pdf_resume_text)
