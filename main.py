@@ -4,6 +4,7 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from pdfminer.high_level import extract_text
+from docx import Document
 from spacy.matcher import Matcher
 
 #nltk.download('punkt')
@@ -26,6 +27,13 @@ def extract_text_from_pdf(pdf_path):
     except Exception as e:
         print(f"Error extracting text: {e}")
         return None
+    
+def extract_text_from_docx(text):
+    doc = Document(text)
+    text = ""
+    for paragraph in doc.paragraphs:
+        text += paragraph.text + "\n"
+    return text
 
 def preprocessing_text(text):
     if not isinstance(text, str):
@@ -90,7 +98,6 @@ def extract_phone_number_regex(text):
             phone_numbers.append(phone_number)
     return phone_numbers
 
-
 def extract_urls_spacy(text):
     matcher = Matcher(nlp.vocab)
     pattern = [{"LIKE_URL": True}]
@@ -105,17 +112,18 @@ def extract_urls_spacy(text):
 
     return urls
 
-sample_resume_text = extract_text_from_pdf('C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf')
+pdf_resume_text = extract_text_from_pdf('C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf')
+doc_resume_text = extract_text_from_docx('C:\Flexon_Resume_Parser\Parser_Build-Arnav\ATS classic HR resume.docx')
 
-if sample_resume_text:
-    print(f"Extracting data from: {sample_resume_text[:90]}...")
+if pdf_resume_text:
+    print(f"Extracting data from: {pdf_resume_text[:90]}...")
     print("Extracting Name...")
 
-    names = extract_name(sample_resume_text)
+    names = extract_name(pdf_resume_text)
     if names:
         print(f"Name found: {names}")
     else:
-        names = extract_name_regex(sample_resume_text)
+        names = extract_name_regex(pdf_resume_text)
         if names:
             print(f"Name found: {names}")
         else:
@@ -123,26 +131,26 @@ if sample_resume_text:
 
     print("Extracting Email ID...")
 
-    email = extract_email(sample_resume_text)
+    email = extract_email(pdf_resume_text)
 
     if email:
         print(f"Email(s) found using SpaCy: {email}")
     else:
 
-        email = extract_email_regex(sample_resume_text)
+        email = extract_email_regex(pdf_resume_text)
         print(f"Email(s) found using regex: {email}")
 
     print("Extracting Phone Number...")
 
-    phone_number = extract_phone_number_regex(sample_resume_text)
+    phone_number = extract_phone_number_regex(pdf_resume_text)
     if phone_number:
         print(f"Phone Number(s) found: {phone_number}")
     else:
-        phone_number = extract_phone_number(sample_resume_text)
+        phone_number = extract_phone_number(pdf_resume_text)
         print(f"Phone Number(s) found: {phone_number}")
 
     print("Extracting URL(s)...")
-    urls = extract_urls_spacy(sample_resume_text)
+    urls = extract_urls_spacy(pdf_resume_text)
     if urls:
         print(f"URL(s) found: {urls}")
     else:
@@ -150,3 +158,48 @@ if sample_resume_text:
 
 else:
     print("Failed to extract text from the PDF.")
+
+
+if doc_resume_text:
+    print(f"Extracting data from: {doc_resume_text[:90]}...")
+    print("Extracting Name...")
+
+    names = extract_name(doc_resume_text)
+    if names:
+        print(f"Name found: {names}")
+    else:
+        names = extract_name_regex(doc_resume_text)
+        if names:
+            print(f"Name found: {names}")
+        else:
+            print("No names found")
+
+    print("Extracting Email ID...")
+
+    email = extract_email(doc_resume_text)
+
+    if email:
+        print(f"Email(s) found using SpaCy: {email}")
+    else:
+
+        email = extract_email_regex(doc_resume_text)
+        print(f"Email(s) found using regex: {email}")
+
+    print("Extracting Phone Number...")
+
+    phone_number = extract_phone_number_regex(doc_resume_text)
+    if phone_number:
+        print(f"Phone Number(s) found: {phone_number}")
+    else:
+        phone_number = extract_phone_number(doc_resume_text)
+        print(f"Phone Number(s) found: {phone_number}")
+
+    print("Extracting URL(s)...")
+    urls = extract_urls_spacy(doc_resume_text)
+    if urls:
+        print(f"URL(s) found: {urls}")
+    else:
+        print("No URL(s) found.")
+
+else:
+    print("Failed to extract text from the Doc File.")
