@@ -6,6 +6,7 @@ from nltk.corpus import stopwords
 from pdfminer.high_level import extract_text
 from docx import Document
 from spacy.matcher import Matcher
+import json
 
 #nltk.download('punkt')
 #nltk.download('stopwords')
@@ -49,14 +50,12 @@ def preprocessing_text(text):
 
 def extract_name(text):
     lines = text.strip().split('\n')
-
     top_lines = ' '.join(lines[:5])
     doc = nlp(top_lines)
     names = []
     for ent in doc.ents:
         if ent.label_ == "PERSON":
-            names.append(ent)
-
+            names.append(ent.text)
     return names
 
 def extract_name_regex(text):
@@ -112,49 +111,38 @@ def extract_urls_spacy(text):
 
     return urls
 
+def dump_to_json(data, filename="extracted_data.json"):
+    with open(filename, "w") as json_file:
+        json.dump(data, json_file, indent=3)
+    print(f"Data dumped into {filename}")
+
 pdf_resume_text = extract_text_from_pdf('C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf')
-doc_resume_text = extract_text_from_docx('C:\Flexon_Resume_Parser\Parser_Build-Arnav\ATS classic HR resume.docx')
+doc_resume_text = extract_text_from_docx('C:/Flexon_Resume_Parser/Parser_Build-Arnav/ATS classic HR resume.docx')
+
+result_data = {"pdf":{}, "docx":{}}
 
 if pdf_resume_text:
     print(f"Extracting data from: {pdf_resume_text[:90]}...")
-    print("Extracting Name...")
-
     names = extract_name(pdf_resume_text)
-    if names:
-        print(f"Name found: {names}")
-    else:
+    if not names:
         names = extract_name_regex(pdf_resume_text)
-        if names:
-            print(f"Name found: {names}")
-        else:
-            print("No names found")
-
-    print("Extracting Email ID...")
 
     email = extract_email(pdf_resume_text)
-
-    if email:
-        print(f"Email(s) found using SpaCy: {email}")
-    else:
-
+    if not email:
         email = extract_email_regex(pdf_resume_text)
-        print(f"Email(s) found using regex: {email}")
-
-    print("Extracting Phone Number...")
 
     phone_number = extract_phone_number_regex(pdf_resume_text)
-    if phone_number:
-        print(f"Phone Number(s) found: {phone_number}")
-    else:
+    if not phone_number:
         phone_number = extract_phone_number(pdf_resume_text)
-        print(f"Phone Number(s) found: {phone_number}")
-
-    print("Extracting URL(s)...")
+    
     urls = extract_urls_spacy(pdf_resume_text)
-    if urls:
-        print(f"URL(s) found: {urls}")
-    else:
-        print("No URL(s) found.")
+    if not urls:
+        urls = []
+
+    result_data["pdf"]["names"] = names
+    result_data["pdf"]["emails"] = email
+    result_data["pdf"]["phone_numbers"] = phone_number
+    result_data["pdf"]["urls"] = urls
 
 else:
     print("Failed to extract text from the PDF.")
@@ -162,44 +150,28 @@ else:
 
 if doc_resume_text:
     print(f"Extracting data from: {doc_resume_text[:90]}...")
-    print("Extracting Name...")
-
     names = extract_name(doc_resume_text)
-    if names:
-        print(f"Name found: {names}")
-    else:
+    if not names:
         names = extract_name_regex(doc_resume_text)
-        if names:
-            print(f"Name found: {names}")
-        else:
-            print("No names found")
-
-    print("Extracting Email ID...")
 
     email = extract_email(doc_resume_text)
-
-    if email:
-        print(f"Email(s) found using SpaCy: {email}")
-    else:
-
+    if not email:
         email = extract_email_regex(doc_resume_text)
-        print(f"Email(s) found using regex: {email}")
-
-    print("Extracting Phone Number...")
 
     phone_number = extract_phone_number_regex(doc_resume_text)
-    if phone_number:
-        print(f"Phone Number(s) found: {phone_number}")
-    else:
+    if not phone_number:
         phone_number = extract_phone_number(doc_resume_text)
-        print(f"Phone Number(s) found: {phone_number}")
-
-    print("Extracting URL(s)...")
+    
     urls = extract_urls_spacy(doc_resume_text)
-    if urls:
-        print(f"URL(s) found: {urls}")
-    else:
-        print("No URL(s) found.")
+    if not urls:
+        urls = []
+
+    result_data["docx"]["names"] = names
+    result_data["docx"]["emails"] = email
+    result_data["docx"]["phone_numbers"] = phone_number
+    result_data["docx"]["urls"] = urls
 
 else:
     print("Failed to extract text from the Doc File.")
+
+dump_to_json(result_data)

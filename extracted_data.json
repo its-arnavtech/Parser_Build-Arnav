@@ -1,0 +1,26 @@
+{
+   "pdf": {
+      "names": "Arnav Kumar",
+      "emails": [
+         "its.arnavk.here@gmail.com"
+      ],
+      "phone_numbers": [
+         "(737)-6006267"
+      ],
+      "urls": [
+         "www.linkedin.com/in/arnav-kumar0511"
+      ]
+   },
+   "docx": {
+      "names": [
+         "Janna Gardner"
+      ],
+      "emails": [
+         "janna@example.com"
+      ],
+      "phone_numbers": [
+         "(716) 5550100"
+      ],
+      "urls": []
+   }
+}
