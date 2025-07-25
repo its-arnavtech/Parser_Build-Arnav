@@ -132,7 +132,7 @@ def extract_data(file_path):
 pdf_resume_text = extract_text_from_pdf('C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf')
 doc_resume_text = extract_text_from_docx('C:/Flexon_Resume_Parser/Parser_Build-Arnav/ATS classic HR resume.docx')
 '''
-file_path = 'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf'
+file_path = 'C:/Flexon_Resume_Parser/Parser_Build-Arnav/ATS classic HR resume.docx'
 resume_text = extract_data(file_path)
 result_data = {"pdf":{}, "docx":{}}
 
