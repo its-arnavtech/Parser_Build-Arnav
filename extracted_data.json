@@ -10,7 +10,15 @@
       "urls": [
          "www.linkedin.com/in/arnav-kumar0511"
       ],
-      "education": []
+      "education": [
+         "University of Texas at Dallas",
+         "\u25cf Collaborated with a team of developers to create and maintain a database for University wide software",
+         "\u25cf Created scripts embedded within the webpage using DOMS in Javascript to connect to HTML files",
+         "\u25cf Collaborated with peers in designing and coding the website using HTML/CSS div objects and classes",
+         "\u25cf Utilized R\u00b2 and MSE to analyze predicted data from both models to visualize and analyze prediction performance using",
+         "CLUBS",
+         "American Institute of Aeronautics and Astronautic at UTD"
+      ]
    },
    "docx": {}
 }

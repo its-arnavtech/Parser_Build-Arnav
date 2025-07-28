@@ -117,16 +117,19 @@ def extract_urls_spacy(text):
     return urls
 
 def extract_education(text): #to fix
-    keywords = ['education', 'degree', 'university', 'school', 'college']
-    sents = sent_tokenize(text)
+    education_keywords = [
+        "bachelor", "master", "phd", "b.sc", "m.sc", "btech", "mtech",
+        "mba", "b.e", "m.e", "bs", "ms", "university", "college", "institute",
+        "degree", "school of", "graduated", "diploma", "high school"
+    ]
+    sents = text.split('\n')
     education = []
+
     for sent in sents:
         sent_lower = sent.lower()
-        found_keywords = []
-        for keyword in keywords:
-            if keyword in sent_lower:
-                found_keywords.append(sent)
-
+        if any(keyword in sent_lower for keyword in education_keywords):
+            sent_clean = re.sub(r'\s+', ' ', sent.strip())
+            education.append(sent_clean)
     return education
 
 def dump_to_json(data, filename="extracted_data.json"):
@@ -145,10 +148,10 @@ def extract_data(file_path):
     else:
         print(f"Unsupported file type: {file_extension}")
         return None
-'''
+
 pdf_resume_text = extract_text_from_pdf('C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf')
 doc_resume_text = extract_text_from_docx('C:/Flexon_Resume_Parser/Parser_Build-Arnav/ATS classic HR resume.docx')
-'''
+
 file_path = 'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf'
 resume_text = extract_data(file_path)
 result_data = {"pdf":{}, "docx":{}}
