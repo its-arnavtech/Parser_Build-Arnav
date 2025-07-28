@@ -1,6 +1,6 @@
 import argparse
 import json
-from main import extract_data, extract_name, extract_email, extract_phone_number, extract_urls_spacy, extract_education
+from Parser import extract_data, extract_name, extract_email, extract_phone_number, extract_urls_spacy, extract_education
 
 def main():
     parser = argparse.ArgumentParser(description="Resume Data Extractor")
