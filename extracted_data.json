@@ -21,5 +21,22 @@
       ],
       "work_experiences": []
    },
-   "docx": {}
+   "docx": {
+      "names": [
+         "Janna Gardner"
+      ],
+      "emails": [
+         "janna@example.com"
+      ],
+      "phone_numbers": [
+         "(716) 5550100"
+      ],
+      "urls": [],
+      "education": [
+         "Review, update, and revise company hiring practices, vacation, and other human resources policies to ensure compliance with OSHA and all local, state, and federal labor regulations. By creating and maintaining a positive and responsive work environment, we raised employee retention rates by over 10% to achieve a greater than 90% employee retention over a 2-year period. Developed recruitment programs to successfully increase minority recruitment and meet affirmative action requirements. Led development team to build and deploy a dedicated recruitment website which reduced year-over-year recruitment costs by 14%.",
+         "Bachelor of Arts Human Resources Management | Jasper University | Ft. Lauderdale, FL",
+         "3.8 GPA \u2022 Member of university\u2019s Honor Society"
+      ],
+      "work_experiences": []
+   }
 }

@@ -143,11 +143,12 @@ def calculate_work_duration(start_date, end_date):
         if end_date != "Present":
             end = datetime.strptime(end_date, '%b %Y')
         else:
-            datetime.today()
-        duration = end-start
-        return duration
+            end = datetime.today()
+        duration = end - start
+        return duration.days // 30
     except Exception as e:
-        print("Error getting duration")
+        print(f"Error getting duration: {e}")
+        return None
         
 
 def extract_work_experience(text):
@@ -161,10 +162,10 @@ def extract_work_experience(text):
         end_date = end_date.strip()
 
         duration = calculate_work_duration(start_date, end_date)
-        if duration != None:
+        if duration is not None:
             work_experiences.append({
                 "company": company,
-                "duration": duration,
+                "duration_months": duration,
                 "start_date": start_date,
                 "end_date": end_date
             })
@@ -176,7 +177,6 @@ def dump_to_json(data, filename="extracted_data.json"):
     print(f"Data dumped into {filename}")
 
 def extract_data(file_path):
-    # Check the file extension to determine the type of document
     file_extension = os.path.splitext(file_path)[1].lower()
 
     if file_extension == '.pdf':
@@ -187,101 +187,45 @@ def extract_data(file_path):
         print(f"Unsupported file type: {file_extension}")
         return None
 
-pdf_resume_text = extract_text_from_pdf('C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf')
-doc_resume_text = extract_text_from_docx('C:/Flexon_Resume_Parser/Parser_Build-Arnav/ATS classic HR resume.docx')
+file_paths = [
+    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf',
+    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/ATS classic HR resume.docx'
+]
 
-file_path = 'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf'
-resume_text = extract_data(file_path)
 result_data = {"pdf":{}, "docx":{}}
 
-if resume_text:
-    #print(f"Extracting data from: {resume_text[:90]}...")
-    names = extract_name(resume_text)
-    if not names:
-        names = extract_name_regex(resume_text)
+for file_path in file_paths:
+    resume_text = extract_data(file_path)
 
-    email = extract_email(resume_text)
-    if not email:
-        email = extract_email_regex(resume_text)
+    if resume_text:
+        file_extension = os.path.splitext(file_path)[1].lower()
 
-    phone_number = extract_phone_number_regex(resume_text)
-    if not phone_number:
-        phone_number = extract_phone_number(resume_text)
-    
-    urls = extract_urls_spacy(resume_text)
-    if not urls:
-        urls = []
+        if file_extension == ".pdf":
+            result_section = result_data["pdf"]
+        elif file_extension in ['.docx', '.doc']:
+            result_section = result_data["docx"]
+        else:
+            print(f"Unsupported file format: {file_extension}")
+            result_section = None
 
-    education = extract_education(resume_text)
-    if not education:
-        education = []
+        if result_section is not None:
+            names = extract_name(resume_text) or extract_name_regex(resume_text)
+            email = extract_email(resume_text) or extract_email_regex(resume_text)
+            phone_number = extract_phone_number_regex(resume_text) or extract_phone_number(resume_text)
+            urls = extract_urls_spacy(resume_text) or []
+            education = extract_education(resume_text) or []
+            work_experiences = extract_work_experience(resume_text) or []
 
-    work_experiences = extract_work_experience(resume_text)
-    if not work_experiences:
-        work_experiences = []
-        
-    result_data["pdf"]["names"] = names
-    result_data["pdf"]["emails"] = email
-    result_data["pdf"]["phone_numbers"] = phone_number
-    result_data["pdf"]["urls"] = urls
-    result_data["pdf"]["education"] = education
-    result_data["pdf"]["work_experiences"] = work_experiences
+            result_section["names"] = names
+            result_section["emails"] = email
+            result_section["phone_numbers"] = phone_number
+            result_section["urls"] = urls
+            result_section["education"] = education
+            result_section["work_experiences"] = work_experiences
 
-else:
-    print("Failed to extract text from the Document.")
+        else:
+            print(f"Error: Unsupported file type or failed to extract text from {file_path}.")
+    else:
+        print(f"Failed to extract text from {file_path}.")
 
-'''
-if pdf_resume_text:
-    #print(f"Extracting data from: {pdf_resume_text[:90]}...")
-    names = extract_name(pdf_resume_text)
-    if not names:
-        names = extract_name_regex(pdf_resume_text)
-
-    email = extract_email(pdf_resume_text)
-    if not email:
-        email = extract_email_regex(pdf_resume_text)
-
-    phone_number = extract_phone_number_regex(pdf_resume_text)
-    if not phone_number:
-        phone_number = extract_phone_number(pdf_resume_text)
-    
-    urls = extract_urls_spacy(pdf_resume_text)
-    if not urls:
-        urls = []
-
-    result_data["pdf"]["names"] = names
-    result_data["pdf"]["emails"] = email
-    result_data["pdf"]["phone_numbers"] = phone_number
-    result_data["pdf"]["urls"] = urls
-
-else:
-    print("Failed to extract text from the PDF.")
-
-
-if doc_resume_text:
-    print(f"Extracting data from: {doc_resume_text[:90]}...")
-    names = extract_name(doc_resume_text)
-    if not names:
-        names = extract_name_regex(doc_resume_text)
-
-    email = extract_email(doc_resume_text)
-    if not email:
-        email = extract_email_regex(doc_resume_text)
-
-    phone_number = extract_phone_number_regex(doc_resume_text)
-    if not phone_number:
-        phone_number = extract_phone_number(doc_resume_text)
-    
-    urls = extract_urls_spacy(doc_resume_text)
-    if not urls:
-        urls = []
-
-    result_data["docx"]["names"] = names
-    result_data["docx"]["emails"] = email
-    result_data["docx"]["phone_numbers"] = phone_number
-    result_data["docx"]["urls"] = urls
-
-else:
-    print("Failed to extract text from the Doc File.")
-'''
 dump_to_json(result_data)
