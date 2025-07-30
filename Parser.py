@@ -1,3 +1,7 @@
+'''
+Created on Monday, 21st August 2025
+'''
+
 import os
 import spacy
 import re
@@ -7,6 +11,7 @@ from nltk.corpus import stopwords
 from pdfminer.high_level import extract_text
 from docx import Document
 from spacy.matcher import Matcher
+from datetime import datetime
 import json
 
 #nltk.download('punkt')
@@ -132,6 +137,39 @@ def extract_education(text): #to fix
             education.append(sent_clean)
     return education
 
+def calculate_work_duration(start_date, end_date):
+    try:
+        start = datetime.strptime(start_date, '%b %Y')
+        if end_date != "Present":
+            end = datetime.strptime(end_date, '%b %Y')
+        else:
+            datetime.today()
+        duration = end-start
+        return duration
+    except Exception as e:
+        print("Error getting duration")
+        
+
+def extract_work_experience(text):
+    work_experiences = []
+    pattern = r'(.+?)\s+at\s+(.+?),\s+([A-Za-z]+\s+\d{4})\s*-\s*([A-Za-z]+\s+\d{4}|Present)'
+    matches = re.findall(pattern, text)
+    for match in matches:
+        job_title, company, start_date, end_date = match
+        company = company.strip()
+        start_date = start_date.strip()
+        end_date = end_date.strip()
+
+        duration = calculate_work_duration(start_date, end_date)
+        if duration != None:
+            work_experiences.append({
+                "company": company,
+                "duration": duration,
+                "start_date": start_date,
+                "end_date": end_date
+            })
+    return work_experiences
+
 def dump_to_json(data, filename="extracted_data.json"):
     with open(filename, "w") as json_file:
         json.dump(data, json_file, indent=3)
@@ -178,12 +216,16 @@ if resume_text:
     if not education:
         education = []
 
-    # Assuming the file path corresponds to a PDF file
+    work_experiences = extract_work_experience(resume_text)
+    if not work_experiences:
+        work_experiences = []
+        
     result_data["pdf"]["names"] = names
     result_data["pdf"]["emails"] = email
     result_data["pdf"]["phone_numbers"] = phone_number
     result_data["pdf"]["urls"] = urls
     result_data["pdf"]["education"] = education
+    result_data["pdf"]["work_experiences"] = work_experiences
 
 else:
     print("Failed to extract text from the Document.")

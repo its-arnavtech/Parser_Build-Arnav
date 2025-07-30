@@ -1,3 +1,5 @@
+'''This file is only to see what data the pdf miner extracts from the pdf file'''
+
 import os
 import nltk
 from pdfminer.high_level import extract_text
