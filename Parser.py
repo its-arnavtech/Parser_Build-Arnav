@@ -17,6 +17,8 @@ import json
 #nltk.download('punkt')
 #nltk.download('stopwords')
 
+#introduce headers. collect everything from header. after collecting info, process it by...another lib to sort info.
+
 nlp = spacy.load("en_core_web_md")
 global doc
 ruler = nlp.add_pipe("entity_ruler", before="ner")
@@ -148,8 +150,7 @@ def calculate_work_duration(start_date, end_date):
         return duration.days // 30
     except Exception as e:
         print(f"Error getting duration: {e}")
-        return None
-        
+        return None       
 
 def extract_work_experience(text):
     work_experiences = []
