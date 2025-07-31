@@ -62,21 +62,20 @@ def preprocessing_text(text):
 
 def extract_name(text):
     lines = text.strip().split('\n')
-    top_lines = ' '.join(lines[:5])
+    top_lines = ' '.join(lines[:10])
     doc = nlp(top_lines)
     names = []
     for ent in doc.ents:
-        if ent.label_ == "PERSON":
+        if ent.label_ == "PERSON" and len(ent.text.split())<=3:
             names.append(ent.text)
-    return names
-
-def extract_name_regex(text):
-    lines = text.strip().split('\n')
-    top = ' '.join(lines[:5])
-    pattern = r'\b[A-Z][a-z]+(?:\s[A-Z][a-z]+)+\b'
-    match = re.findall(pattern, top)
-    if match:
-        return match[0]
+    if names:
+        return names[0]
+    else:
+        pattern = r'\b[A-Z][a-z]+(?:\s[A-Z][a-z]+)+\b'
+        matches = re.findall(pattern, top_lines)
+        if matches:
+            return matches[0]
+    return None
 
 def extract_email(text):
     if not text:
@@ -150,7 +149,7 @@ def calculate_work_duration(start_date, end_date):
         return duration.days // 30
     except Exception as e:
         print(f"Error getting duration: {e}")
-        return None       
+        return None    
 
 def extract_work_experience(text):
     work_experiences = []
@@ -210,7 +209,7 @@ for file_path in file_paths:
             result_section = None
 
         if result_section is not None:
-            names = extract_name(resume_text) or extract_name_regex(resume_text)
+            names = extract_name(resume_text)
             email = extract_email(resume_text) or extract_email_regex(resume_text)
             phone_number = extract_phone_number_regex(resume_text) or extract_phone_number(resume_text)
             urls = extract_urls_spacy(resume_text) or []
