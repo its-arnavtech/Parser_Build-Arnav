@@ -12,6 +12,7 @@ from pdfminer.high_level import extract_text
 from docx import Document
 from spacy.matcher import Matcher
 from datetime import datetime
+import dateparser
 import json
 
 #nltk.download('punkt')
@@ -138,6 +139,12 @@ def extract_education(text): #to fix
             education.append(sent_clean)
     return education
 
+def normalize_date(date_str):
+    parsed = dateparser.parse(date_str)
+    if parsed:
+        return parsed.strftime('%b %Y')
+    return None
+
 def calculate_work_duration(start_date, end_date):
     try:
         start = datetime.strptime(start_date, '%b %Y')
@@ -158,18 +165,51 @@ def extract_work_experience(text):
     for match in matches:
         job_title, company, start_date, end_date = match
         company = company.strip()
-        start_date = start_date.strip()
-        end_date = end_date.strip()
+        start_date = normalize_date(start_date.strip())
+        end_date = normalize_date(end_date.strip()) if end_date.lower() != "present" else "Present"
 
         duration = calculate_work_duration(start_date, end_date)
         if duration is not None:
             work_experiences.append({
+                "job_title": job_title.strip(),
                 "company": company,
-                "duration_months": duration,
                 "start_date": start_date,
-                "end_date": end_date
+                "end_date": end_date,
+                "duration_months": duration
             })
     return work_experiences
+
+def split_into_sections(text):
+    section_titles = {
+        "education": ["education", "academic background", "qualifications"],
+        "experience": ["experience", "work experience", "professional experience"],
+        "skills": ["skills", "technical skills", "core competencies"],
+        "projects": ["projects", "personal projects"],
+        "certifications": ["certifications", "licenses", "certificates"],
+        "summary": ["summary", "profile", "objective"],
+    }
+
+    sections = {}
+    current_section = None
+    buffer = []
+    lines = text.splitlines()
+    for line in lines:
+        stripped = line.strip().lower()
+        found_section = False
+        for key, keywords in section_titles.items():
+            if any(stripped.startswith(k) for k in keywords):
+                if current_section and buffer:
+                    sections[current_section] = '\n'.join(buffer).strip()
+                current_section = key
+                buffer = []
+                found_section = True
+                break
+        if not found_section and current_section:
+            buffer.append(line)
+    if current_section and buffer:
+        sections[current_section] = '\n'.join(buffer).strip()
+
+    return sections
 
 def dump_to_json(data, filename="extracted_data.json"):
     with open(filename, "w") as json_file:
@@ -196,6 +236,7 @@ result_data = {"pdf":{}, "docx":{}}
 
 for file_path in file_paths:
     resume_text = extract_data(file_path)
+    sections = split_into_sections(resume_text)
 
     if resume_text:
         file_extension = os.path.splitext(file_path)[1].lower()
@@ -213,8 +254,8 @@ for file_path in file_paths:
             email = extract_email(resume_text) or extract_email_regex(resume_text)
             phone_number = extract_phone_number_regex(resume_text) or extract_phone_number(resume_text)
             urls = extract_urls_spacy(resume_text) or []
-            education = extract_education(resume_text) or []
-            work_experiences = extract_work_experience(resume_text) or []
+            education = extract_education(sections.get("education", "")) or []
+            work_experiences = extract_work_experience(sections.get("experience","")) or []
 
             result_section["names"] = names
             result_section["emails"] = email
