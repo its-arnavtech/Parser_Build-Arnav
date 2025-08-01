@@ -63,7 +63,7 @@ def preprocessing_text(text):
 
 def extract_name(text):
     lines = text.strip().split('\n')
-    top_lines = ' '.join(lines[:10])
+    top_lines = ' '.join(lines[:30])
     doc = nlp(top_lines)
     names = []
     for ent in doc.ents:
@@ -84,30 +84,34 @@ def extract_email(text):
         return []
 
     doc = nlp(text)
-    emails = [ent.text for ent in doc.ents if ent.label_ == "EMAIL"]
-    return emails
-
-def extract_email_regex(text):
+    emails_spacy = [ent.text for ent in doc.ents if ent.label_ == "EMAIL"]
     email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
-    return re.findall(email_pattern, text)
+    emails_regex = re.findall(email_pattern, text)
+
+    all_emails = list(set(emails_spacy + emails_regex))
+    return all_emails
 
 def extract_phone_number(text):
+    if not text:
+        print("No data extracted")
+        return []
+    
     doc = nlp(text)
-    phone_number = []
+    phone_number_spacy = []
     for ent in doc.ents:
         if ent.label_ == "PHONE_NUMBER":
-            phone_number.append(ent.text)
-    return phone_number
-
-def extract_phone_number_regex(text):
+            phone_number_spacy.append(ent.text)
+    
     phone_number_pattern = re.compile(r"(\+?\d{1,2}\s?)?(\(?\d{3}\)?[\s\-]?)?(\d{3})[\s\-]?(\d{4})")
-    phone_numbers = []
+    phone_numbers_regex = []
     matches = phone_number_pattern.findall(text)
     for match in matches:
         phone_number = "".join(match).strip()
         if phone_number:
-            phone_numbers.append(phone_number)
-    return phone_numbers
+            phone_numbers_regex.append(phone_number)
+    
+    all_numbers = list(set(phone_numbers_regex + phone_number_spacy))
+    return all_numbers
 
 def extract_urls_spacy(text):
     matcher = Matcher(nlp.vocab)
@@ -251,8 +255,8 @@ for file_path in file_paths:
 
         if result_section is not None:
             names = extract_name(resume_text)
-            email = extract_email(resume_text) or extract_email_regex(resume_text)
-            phone_number = extract_phone_number_regex(resume_text) or extract_phone_number(resume_text)
+            email = extract_email(resume_text)
+            phone_number = extract_phone_number(resume_text)
             urls = extract_urls_spacy(resume_text) or []
             education = extract_education(sections.get("education", "")) or []
             work_experiences = extract_work_experience(sections.get("experience","")) or []
