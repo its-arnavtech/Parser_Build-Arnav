@@ -1,17 +1,18 @@
 {
    "pdf": {
-      "names": "Arnav Kumar",
+      "names": "John W. Smith",
       "emails": [
-         "its.arnavk.here@gmail.com"
+         "jwsmith@colostate.edu"
       ],
       "phone_numbers": [
-         "(737)-6006267"
+         "19971999",
+         "19992002",
+         "19961997"
       ],
-      "urls": [
-         "www.linkedin.com/in/arnav-kumar0511"
-      ],
+      "urls": [],
       "education": [
-         "University of Texas at Dallas"
+         "University of Arkansas at Little Rock, Little Rock, AR",
+         "\u2022 BS in Early Childhood Development (1999)"
       ],
       "work_experiences": []
    },
