@@ -65,8 +65,6 @@ def extract_name(text):
     return matches[0] if matches else None
 
 def extract_email(text):
-
-
     email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
     emails = re.findall(email_pattern, text)
 
@@ -74,7 +72,6 @@ def extract_email(text):
 
 def extract_phone_number(text):
     phone_patterns = [
-
         # International format
         r'\+\d{1,3}[\s\-\.]?\(?\d{3}\)?[\s\-\.]?\d{3}[\s\-\.]?\d{4}',
         # US format with parentheses: (123) 456-7890
@@ -89,27 +86,19 @@ def extract_phone_number(text):
         matches = re.findall(pattern, text)
         for match in matches:
             cleaned = re.sub(r'[^\d+]', '', match)
-
             digits_only = cleaned.lstrip('+1').lstrip('+')
-            
             if len(digits_only) != 10:
                 continue
-            
             if digits_only.startswith(('19', '20')) and len(digits_only) == 4:
                 continue
-            
             year_pattern = r'\b(19|20)\d{2}[\s\-](19|20)\d{2}\b'
             if re.search(year_pattern, match):
                 continue
-            
             if len(set(digits_only)) == 1:
                 continue
-            
             if digits_only[0] in ['0', '1']:
                 continue
-            
             phone_numbers.append(match.strip())
-    
     return list(set(phone_numbers))
 
 def extract_urls_spacy(text):
