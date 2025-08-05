@@ -109,19 +109,53 @@ def extract_urls_spacy(text):
     return [doc[start:end].text for _, start, end in matches]
 
 def extract_education(text):
-    education_keywords = [
-        "bachelor", "master", "phd", "b.sc", "m.sc", "btech", "mtech", "mba", "b.e", "m.e", "bs", "ms",
-        "university", "college", "institute", "degree", "school", "graduated", "diploma", "high"
-    ]
+    education_lines = set()
+    doc = nlp(text)
+    for ent in doc.ents:
+        if ent.label_ in {"ORG", "FAC", "GPE"} and any(word in ent.text.lower() for word in ["university", "college", "institute", "school"]):
+            education_lines.add(ent.text.strip())
+        if ent.label_ == "EDUCATION" or re.search(r"\b(bachelor|master|phd|mba|b\.sc|m\.sc|btech|mtech|diploma)\b", ent.text.lower()):
+            education_lines.add(ent.text.strip())
+
+    education_keywords = {
+        "bachelor", "master", "phd", "mba", "b.sc", "m.sc", "btech", "mtech", "bs", "ms",
+        "university", "college", "institute", "school", "graduated", "diploma", "high"
+    }
     lines = text.split('\n')
-    education_lines = []
-    
+    stop_words = set(stopwords.words("english"))
     for line in lines:
-        preprocessed_line = preprocessing_text(line)
-        if any(keyword in preprocessed_line for keyword in education_keywords):
-            education_lines.append(re.sub(r'\s+', ' ', line.strip()))
-    
-    return education_lines
+        tokens = word_tokenize(line.lower())
+        if any(token in education_keywords for token in tokens if token not in stop_words):
+            education_lines.add(line.strip())
+    #regex fallback
+    if not education_lines:
+        regex_matches = re.findall(
+            r'(?i)(?:bachelor|master|phd|mba|b\.sc|m\.sc|bs|ms|diploma)[^,\n]*(?:19|20)\d{2}.*',
+            text
+        )
+        for match in regex_matches:
+            education_lines.add(match.strip())
+    return sorted(education_lines)
+
+def extract_skills(text):
+    doc = nlp(text)
+    skills = []
+    for chunk in doc.noun_chunks:
+        cleaned = chunk.text.strip().lower()
+
+        if 2<=len(cleaned.split()) <= 4 and not cleaned.startswith(('a ', 'an ', 'the ')):
+            skills.append(cleaned)
+    for token in doc:
+        if token.pos == 'NOUN' and not token.is_stop and len(token.text) > 2:
+            skills.append(token.text.lower())
+
+    #regex fallback
+    regex_skills = re.findall(r'(?:•|\*|-)?\s*([A-Za-z][A-Za-z\s&+/]+)(?:,|$|\n)', text)
+    regex_skills = [skill.strip().lower() for skill in regex_skills if 2 <= len(skill.strip()) <= 40]
+
+    all_skills = set(skills + regex_skills)
+    final_skills = [skill for skill in all_skills if len(skill) > 2 and not skill in {'experience', 'skills', 'knowledge'}]
+    return sorted(set(final_skills))
 
 def total_experience(jobs):
     total_months = sum(job["duration_months"] for job in jobs)
@@ -263,7 +297,7 @@ for file_path in file_paths:
     phone_numbers = extract_phone_number(resume_text)
     urls = extract_urls_spacy(resume_text)
     education = extract_education(sections.get("education", ""))
-
+    skills = extract_skills(sections.get("skills",""))
     experience_section_text = extract_work_experience(sections.get("experience", ""))
     work_experiences = calculate_work_duration(experience_section_text) if experience_section_text else []
     total_exp_years = total_experience(work_experiences)
@@ -274,6 +308,7 @@ for file_path in file_paths:
         "phone_numbers": phone_numbers,
         "urls": urls,
         "education": education,
+        "skills": skills,
         "work_experiences": work_experiences,
         "total_experience_years": total_exp_years
     }

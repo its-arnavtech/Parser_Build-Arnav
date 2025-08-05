@@ -12,7 +12,17 @@
             "www.linkedin.com/in/arnav-kumar0511"
          ],
          "education": [
+            "University of Texas",
             "University of Texas at Dallas"
+         ],
+         "skills": [
+            "bigquerysql",
+            "c# \ntools",
+            "c/c++",
+            "google bigquery",
+            "html/css",
+            "javascript",
+            "python"
          ],
          "work_experiences": [],
          "total_experience_years": 0.0
@@ -25,6 +35,7 @@
          "phone_numbers": [],
          "urls": [],
          "education": [],
+         "skills": [],
          "work_experiences": [],
          "total_experience_years": 0.0
       }
@@ -40,9 +51,11 @@
          ],
          "urls": [],
          "education": [
+            "3.8 GPA • Member of university’s Honor Society",
             "Bachelor of Arts Human Resources Management | Jasper University | Ft. Lauderdale, FL",
-            "3.8 GPA • Member of university’s Honor Society"
+            "Jasper University"
          ],
+         "skills": [],
          "work_experiences": [],
          "total_experience_years": 0.0
       }
