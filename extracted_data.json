@@ -17,16 +17,33 @@
             "American Institute of Aeronautics and Astronautic at UTD"
          ],
          "skills": [
-            "Git/Github.",
-            "HTML/CSS",
-            "Python",
             "C/C++",
             "BigQuerySQL",
-            "Tools:  Google BigQuery",
-            "Programming:  JavaScript"
+            "Programming:  JavaScript",
+            "HTML/CSS",
+            "Git/Github.",
+            "Python",
+            "Tools:  Google BigQuery"
          ],
-         "work_experiences": [],
-         "total_experience_years": 0.0
+         "work_experiences": [
+            {
+               "job_title": "Unknown Title",
+               "company": "Texas Expected Graduation",
+               "duration_months": 2,
+               "from": "Jan 2025",
+               "to": "Mar 2025",
+               "is_current": false
+            },
+            {
+               "job_title": "Project Management Club",
+               "company": "Project Management Club Front-End Web Developer Richardson",
+               "duration_months": 6.2,
+               "from": "Feb 2025",
+               "to": "Present",
+               "is_current": true
+            }
+         ],
+         "total_experience_years": 0.68
       },
       "C:/Flexon_Resume_Parser/Parser_Build-Arnav/functionalsample.pdf": {
          "name": "John W. Smith",
@@ -43,20 +60,45 @@
             "•  Dean’s List, Chancellor’s List"
          ],
          "skills": [
-            "Elementary Education – 3.5",
-            "Cowell Elementary",
-            "Conway",
-            "Counseling Supervisor",
             "Arkansas.",
-            "The Wesley Center",
-            "Rainbow Special Care Center",
             "Little Rock",
+            "Conway",
+            "Cowell Elementary",
+            "The Wesley Center",
+            "Elementary Education – 3.5",
+            "Counseling Supervisor",
+            "Arkansas",
             "Client Specialist",
             "Teacher’s Assistant",
-            "Arkansas"
+            "Rainbow Special Care Center"
          ],
-         "work_experiences": [],
-         "total_experience_years": 0.0
+         "work_experiences": [
+            {
+               "job_title": "Employment History",
+               "company": "The Wesley Center",
+               "duration_months": 36,
+               "from": "Aug 1999",
+               "to": "Aug 2002",
+               "is_current": false
+            },
+            {
+               "job_title": "Employment History",
+               "company": "The Wesley Center",
+               "duration_months": 24,
+               "from": "Aug 1997",
+               "to": "Aug 1999",
+               "is_current": false
+            },
+            {
+               "job_title": "Employment History",
+               "company": "The Wesley Center",
+               "duration_months": 12,
+               "from": "Aug 1996",
+               "to": "Aug 1997",
+               "is_current": false
+            }
+         ],
+         "total_experience_years": 6.0
       }
    },
    "docx": {
@@ -75,16 +117,16 @@
             "3.8 GPA • Member of university’s Honor Society"
          ],
          "skills": [
+            "Type 96 words per minute",
+            "Team player",
             "Conflict management",
             "Public speaking",
             "Data analytics",
-            "Type 96 words per minute",
             "Proficient with project management software",
-            "Team player",
             "Excellent time management skills"
          ],
          "work_experiences": [],
-         "total_experience_years": 0.0
+         "total_experience_years": 0
       }
    }
 }
