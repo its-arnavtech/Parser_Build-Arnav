@@ -63,9 +63,16 @@ def extract_name(text):
     return matches[0] if matches else None
 
 def extract_email(text):
+    doc = nlp(text)
+    emails_spacy = [ent.text for ent in doc.ents if ent.label_ == "EMAIL"]
+    if emails_spacy:
+        return list(set(emails_spacy))
+    
+    #regex
     email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
-    emails = re.findall(email_pattern, text)
-    return list(set(emails))
+    emails_regex = re.findall(email_pattern, text)
+    return list(set(emails_regex))
+
 
 def extract_phone_number(text):
     phone_patterns = [
