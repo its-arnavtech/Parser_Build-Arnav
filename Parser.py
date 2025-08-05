@@ -6,189 +6,207 @@ import os
 import spacy
 import re
 import nltk
-from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from pdfminer.high_level import extract_text
 from docx import Document
 from spacy.matcher import Matcher
 from datetime import datetime
+from dateutil.relativedelta import relativedelta
 import dateparser
 import json
 
-#nltk.download('punkt')
-#nltk.download('stopwords')
-
-#introduce headers. collect everything from header. after collecting info, process it by...another lib to sort info.
-
 nlp = spacy.load("en_core_web_md")
-global doc
+
 ruler = nlp.add_pipe("entity_ruler", before="ner")
 patterns = [
     {"label": "PHONE_NUMBER", "pattern": [{"ORTH": "("}, {"SHAPE": "ddd"}, {"ORTH": ")"}, {"SHAPE": "ddd"},
                                          {"ORTH": "-", "OP": "?"}, {"SHAPE": "dddd"}]},
-    {"label": "PHONE_NUMBER", "pattern": [{"SHAPE": "ddd"}, {"SHAPE": "ddd"}, {"SHAPE": "dddd"}]}, 
+    {"label": "PHONE_NUMBER", "pattern": [{"SHAPE": "ddd"}, {"SHAPE": "ddd"}, {"SHAPE": "dddd"}]},
 ]
 ruler.add_patterns(patterns)
 
+# nltk.download('punkt')
+# nltk.download('stopwords')
+
 def extract_text_from_pdf(pdf_path):
     try:
-        text = extract_text(pdf_path)
-        return text
+        return extract_text(pdf_path)
     except Exception as e:
         print(f"Error extracting text: {e}")
         return None
-    
+
 def extract_text_from_docx(docx_path):
     try:
         doc = Document(docx_path)
-        text = ""
-        for paragraph in doc.paragraphs:
-            text += paragraph.text + "\n"
-        return text
+        return "\n".join([p.text for p in doc.paragraphs])
     except Exception as e:
         print(f"Error extracting text: {e}")
         return None
 
 def preprocessing_text(text):
-    if not isinstance(text, str):
-        text = str(text)
-    tokens = word_tokenize(text)
-    text = text.lower()
+    tokens = word_tokenize(text.lower())
     stop_words = set(stopwords.words("english"))
-    text = text.replace("\n", " ")
-    text = re.sub(r"\s+", " ", text)  # Replace multiple spaces with single space
-
-    filtered_tokens = [word for word in tokens if word.isalpha() and word not in stop_words]
-    return filtered_tokens
+    return [word for word in tokens if word.isalpha() and word not in stop_words]
 
 def extract_name(text):
     lines = text.strip().split('\n')
     top_lines = ' '.join(lines[:30])
+    
+    preprocessed_top = preprocessing_text(top_lines)
+    
     doc = nlp(top_lines)
-    names = []
     for ent in doc.ents:
-        if ent.label_ == "PERSON" and len(ent.text.split())<=3:
-            names.append(ent.text)
-    if names:
-        return names[0]
-    else:
-        pattern = r'\b[A-Z][a-z]+(?:\s[A-Z][a-z]+)+\b'
-        matches = re.findall(pattern, top_lines)
-        if matches:
-            return matches[0]
-    return None
+        if ent.label_ == "PERSON" and len(ent.text.split()) <= 3:
+            return ent.text
+    
+    pattern = r'\b[A-Z][a-z]+(?:\s[A-Z][a-z]+)+\b'
+    matches = re.findall(pattern, top_lines)
+    return matches[0] if matches else None
 
 def extract_email(text):
-    if not text:
-        print("No data extracted")
-        return []
 
-    doc = nlp(text)
-    emails_spacy = [ent.text for ent in doc.ents if ent.label_ == "EMAIL"]
+
     email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
-    emails_regex = re.findall(email_pattern, text)
+    emails = re.findall(email_pattern, text)
 
-    all_emails = list(set(emails_spacy + emails_regex))
-    return all_emails
+    return list(set(emails))
 
 def extract_phone_number(text):
-    if not text:
-        print("No data extracted")
-        return []
+    phone_patterns = [
+
+        # International format
+        r'\+\d{1,3}[\s\-\.]?\(?\d{3}\)?[\s\-\.]?\d{3}[\s\-\.]?\d{4}',
+        # US format with parentheses: (123) 456-7890
+        r'\(\d{3}\)[\s\-\.]?\d{3}[\s\-\.]?\d{4}',
+        # Standard formats: 123-456-7890, 123.456.7890, 123 456 7890
+        r'\b\d{3}[\s\-\.]\d{3}[\s\-\.]\d{4}\b',
+        # 10 digits together: 1234567890 (but only if it looks like a phone number)
+        r'\b\d{10}\b'
+    ]
+    phone_numbers = []
+    for pattern in phone_patterns:
+        matches = re.findall(pattern, text)
+        for match in matches:
+            cleaned = re.sub(r'[^\d+]', '', match)
+
+            digits_only = cleaned.lstrip('+1').lstrip('+')
+            
+            if len(digits_only) != 10:
+                continue
+            
+            if digits_only.startswith(('19', '20')) and len(digits_only) == 4:
+                continue
+            
+            year_pattern = r'\b(19|20)\d{2}[\s\-](19|20)\d{2}\b'
+            if re.search(year_pattern, match):
+                continue
+            
+            if len(set(digits_only)) == 1:
+                continue
+            
+            if digits_only[0] in ['0', '1']:
+                continue
+            
+            phone_numbers.append(match.strip())
     
-    doc = nlp(text)
-    phone_number_spacy = []
-    for ent in doc.ents:
-        if ent.label_ == "PHONE_NUMBER":
-            phone_number_spacy.append(ent.text)
-    
-    phone_number_pattern = re.compile(r"(\+?\d{1,2}\s?)?(\(?\d{3}\)?[\s\-]?)?(\d{3})[\s\-]?(\d{4})")
-    phone_numbers_regex = []
-    matches = phone_number_pattern.findall(text)
-    for match in matches:
-        phone_number = "".join(match).strip()
-        if phone_number:
-            phone_numbers_regex.append(phone_number)
-    
-    all_numbers = list(set(phone_numbers_regex + phone_number_spacy))
-    return all_numbers
+    return list(set(phone_numbers))
 
 def extract_urls_spacy(text):
     matcher = Matcher(nlp.vocab)
-    pattern = [{"LIKE_URL": True}]
-    matcher.add("URLS", [pattern])
+    matcher.add("URLS", [[{"LIKE_URL": True}]])
     doc = nlp(text)
     matches = matcher(doc)
+    return [doc[start:end].text for _, start, end in matches]
 
-    urls = []
-    for match_id, start, end in matches:
-        span = doc[start:end]
-        urls.append(span.text)
-
-    return urls
-
-def extract_education(text): #to fix
+def extract_education(text):
     education_keywords = [
-        "bachelor", "master", "phd", "b.sc", "m.sc", "btech", "mtech",
-        "mba", "b.e", "m.e", "bs", "ms", "university", "college", "institute",
-        "degree", "school of", "graduated", "diploma", "high school"
+        "bachelor", "master", "phd", "b.sc", "m.sc", "btech", "mtech", "mba", "b.e", "m.e", "bs", "ms",
+        "university", "college", "institute", "degree", "school", "graduated", "diploma", "high"
     ]
-    sents = text.split('\n')
-    education = []
+    lines = text.split('\n')
+    education_lines = []
+    
+    for line in lines:
+        preprocessed_line = preprocessing_text(line)
+        if any(keyword in preprocessed_line for keyword in education_keywords):
+            education_lines.append(re.sub(r'\s+', ' ', line.strip()))
+    
+    return education_lines
 
-    for sent in sents:
-        sent_lower = sent.lower()
-        if any(keyword in sent_lower for keyword in education_keywords):
-            sent_clean = re.sub(r'\s+', ' ', sent.strip())
-            education.append(sent_clean)
-    return education
+def total_experience(jobs):
+    total_months = sum(job["duration_months"] for job in jobs)
+    return round(total_months / 12, 2)
 
-def normalize_date(date_str):
-    parsed = dateparser.parse(date_str)
-    if parsed:
-        return parsed.strftime('%b %Y')
-    return None
+def calculate_work_duration(text):
+    date_pattern = r'(?P<from>\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|' \
+                   r'Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4})' \
+                   r'\s*(?:to|–|-)\s*' \
+                   r'(?P<to>(?:Present|\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|' \
+                   r'Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4}))'
 
-def calculate_work_duration(start_date, end_date):
-    try:
-        start = datetime.strptime(start_date, '%b %Y')
-        if end_date != "Present":
-            end = datetime.strptime(end_date, '%b %Y')
-        else:
-            end = datetime.today()
-        duration = end - start
-        return duration.days // 30
-    except Exception as e:
-        print(f"Error getting duration: {e}")
-        return None    
+    jobs = []
+    lines = text.split('\n')
+
+    for i, line in enumerate(lines):
+        match = re.search(date_pattern, line, re.IGNORECASE)
+        if match:
+            from_str = match.group('from')
+            to_str = match.group('to')
+
+            start = dateparser.parse(from_str)
+            end = dateparser.parse(to_str) if 'present' not in to_str.lower() else datetime.now()
+            if not start or not end:
+                continue
+
+            months = relativedelta(end, start).years * 12 + relativedelta(end, start).months
+
+            context = ' '.join(lines[max(0, i - 2): i + 2]).strip()
+            doc = nlp(context)
+            orgs = [ent.text for ent in doc.ents if ent.label_ == 'ORG']
+            titles = [ent.text for ent in doc.ents if ent.label_ in ['TITLE', 'WORK_OF_ART']]
+
+            jobs.append({
+                "job_title": titles[0] if titles else "Unknown Title",
+                "company": orgs[0] if orgs else "Unknown Company",
+                "duration_months": months,
+                "from": start.strftime('%b %Y'),
+                "to": end.strftime('%b %Y') if 'present' not in to_str.lower() else "Present"
+            })
+    return jobs
 
 def extract_work_experience(text):
-    work_experiences = []
-    pattern = r'(.+?)\s+at\s+(.+?),\s+([A-Za-z]+\s+\d{4})\s*-\s*([A-Za-z]+\s+\d{4}|Present)'
-    matches = re.findall(pattern, text)
-    for match in matches:
-        job_title, company, start_date, end_date = match
-        company = company.strip()
-        start_date = normalize_date(start_date.strip())
-        end_date = normalize_date(end_date.strip()) if end_date.lower() != "present" else "Present"
+    section_headers = [
+        "experience", "work", "professional", "employment", "history", "career", "summary"
+    ]
+    next_section_keywords = [
+        "education", "skills", "projects", "certifications", "summary", "objective"
+    ]
+    
+    lines = text.splitlines()
+    experience_text = []
+    recording = False
 
-        duration = calculate_work_duration(start_date, end_date)
-        if duration is not None:
-            work_experiences.append({
-                "job_title": job_title.strip(),
-                "company": company,
-                "start_date": start_date,
-                "end_date": end_date,
-                "duration_months": duration
-            })
-    return work_experiences
+    for line in lines:
+        preprocessed_line = preprocessing_text(line)
+        
+        if any(header in preprocessed_line for header in section_headers):
+            recording = True
+            continue
+        if recording and any(keyword in preprocessed_line for keyword in next_section_keywords):
+            break
+            
+        if recording:
+            experience_text.append(line)
+
+    return "\n".join(experience_text)
 
 def split_into_sections(text):
     section_titles = {
-        "education": ["education", "academic background", "qualifications"],
-        "experience": ["experience", "work experience", "professional experience"],
-        "skills": ["skills", "technical skills", "core competencies"],
-        "projects": ["projects", "personal projects"],
+        "education": ["education", "academic", "background", "qualifications"],
+        "experience": ["experience", "work", "professional", "employment"],
+        "skills": ["skills", "technical", "core", "competencies"],
+        "projects": ["projects", "personal"],
         "certifications": ["certifications", "licenses", "certificates"],
         "summary": ["summary", "profile", "objective"],
     }
@@ -196,39 +214,41 @@ def split_into_sections(text):
     sections = {}
     current_section = None
     buffer = []
-    lines = text.splitlines()
-    for line in lines:
-        stripped = line.strip().lower()
-        found_section = False
+    
+    for line in text.splitlines():
+        preprocessed_line = preprocessing_text(line)
+        found = False
+        
         for key, keywords in section_titles.items():
-            if any(stripped.startswith(k) for k in keywords):
+            if any(keyword in preprocessed_line for keyword in keywords):
                 if current_section and buffer:
                     sections[current_section] = '\n'.join(buffer).strip()
                 current_section = key
                 buffer = []
-                found_section = True
+                found = True
                 break
-        if not found_section and current_section:
+                
+        if not found and current_section:
             buffer.append(line)
+            
     if current_section and buffer:
         sections[current_section] = '\n'.join(buffer).strip()
-
+        
     return sections
 
 def dump_to_json(data, filename="extracted_data.json"):
-    with open(filename, "w") as json_file:
-        json.dump(data, json_file, indent=3)
-    print(f"Data dumped into {filename}")
+    with open(filename, "w", encoding="utf-8") as json_file:
+        json.dump(data, json_file, indent=3, ensure_ascii=False)
+    print(f"Data saved to {filename}")
 
 def extract_data(file_path):
-    file_extension = os.path.splitext(file_path)[1].lower()
-
-    if file_extension == '.pdf':
+    ext = os.path.splitext(file_path)[1].lower()
+    if ext == '.pdf':
         return extract_text_from_pdf(file_path)
-    elif file_extension == '.docx':
+    elif ext == '.docx':
         return extract_text_from_docx(file_path)
     else:
-        print(f"Unsupported file type: {file_extension}")
+        print(f"❌ Unsupported file: {ext}")
         return None
 
 file_paths = [
@@ -237,41 +257,35 @@ file_paths = [
     'C:/Flexon_Resume_Parser/Parser_Build-Arnav/ATS classic HR resume.docx'
 ]
 
-result_data = {"pdf":{}, "docx":{}}
+result_data = {"pdf": {}, "docx": {}}
 
 for file_path in file_paths:
     resume_text = extract_data(file_path)
+    if not resume_text:
+        print(f"❌ Could not extract text from: {file_path}")
+        continue
+
     sections = split_into_sections(resume_text)
+    file_extension = os.path.splitext(file_path)[1].lower()
+    result_section = result_data["pdf"] if file_extension == ".pdf" else result_data["docx"]
 
-    if resume_text:
-        file_extension = os.path.splitext(file_path)[1].lower()
+    name = extract_name(resume_text)
+    emails = extract_email(resume_text)
+    phone_numbers = extract_phone_number(resume_text)
+    urls = extract_urls_spacy(resume_text)
+    education = extract_education(sections.get("education", ""))
 
-        if file_extension == ".pdf":
-            result_section = result_data["pdf"]
-        elif file_extension in ['.docx', '.doc']:
-            result_section = result_data["docx"]
-        else:
-            print(f"Unsupported file format: {file_extension}")
-            result_section = None
+    experience_section_text = extract_work_experience(sections.get("experience", ""))
+    work_experiences = calculate_work_duration(experience_section_text) if experience_section_text else []
+    total_exp_years = total_experience(work_experiences)
 
-        if result_section is not None:
-            names = extract_name(resume_text)
-            email = extract_email(resume_text)
-            phone_number = extract_phone_number(resume_text)
-            urls = extract_urls_spacy(resume_text) or []
-            education = extract_education(sections.get("education", "")) or []
-            work_experiences = extract_work_experience(sections.get("experience","")) or []
-
-            result_section["names"] = names
-            result_section["emails"] = email
-            result_section["phone_numbers"] = phone_number
-            result_section["urls"] = urls
-            result_section["education"] = education
-            result_section["work_experiences"] = work_experiences
-
-        else:
-            print(f"Error: Unsupported file type or failed to extract text from {file_path}.")
-    else:
-        print(f"Failed to extract text from {file_path}.")
-
+    result_section[file_path] = {
+        "name": name,
+        "emails": emails,
+        "phone_numbers": phone_numbers,
+        "urls": urls,
+        "education": education,
+        "work_experiences": work_experiences,
+        "total_experience_years": total_exp_years
+    }
 dump_to_json(result_data)

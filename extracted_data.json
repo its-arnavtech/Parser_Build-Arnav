@@ -1,35 +1,50 @@
 {
    "pdf": {
-      "names": "John W. Smith",
-      "emails": [
-         "jwsmith@colostate.edu"
-      ],
-      "phone_numbers": [
-         "19971999",
-         "19992002",
-         "19961997"
-      ],
-      "urls": [],
-      "education": [
-         "University of Arkansas at Little Rock, Little Rock, AR",
-         "\u2022 BS in Early Childhood Development (1999)"
-      ],
-      "work_experiences": []
+      "C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf": {
+         "name": "Arnav Kumar",
+         "emails": [
+            "its.arnavk.here@gmail.com"
+         ],
+         "phone_numbers": [
+            "(737)-600-6267"
+         ],
+         "urls": [
+            "www.linkedin.com/in/arnav-kumar0511"
+         ],
+         "education": [
+            "University of Texas at Dallas"
+         ],
+         "work_experiences": [],
+         "total_experience_years": 0.0
+      },
+      "C:/Flexon_Resume_Parser/Parser_Build-Arnav/functionalsample.pdf": {
+         "name": "John W. Smith",
+         "emails": [
+            "jwsmith@colostate.edu"
+         ],
+         "phone_numbers": [],
+         "urls": [],
+         "education": [],
+         "work_experiences": [],
+         "total_experience_years": 0.0
+      }
    },
    "docx": {
-      "names": "Janna Gardner",
-      "emails": [
-         "janna@example.com"
-      ],
-      "phone_numbers": [
-         "(716) 555-0100",
-         "(716) 5550100"
-      ],
-      "urls": [],
-      "education": [
-         "Bachelor of Arts Human Resources Management | Jasper University | Ft. Lauderdale, FL",
-         "3.8 GPA \u2022 Member of university\u2019s Honor Society"
-      ],
-      "work_experiences": []
+      "C:/Flexon_Resume_Parser/Parser_Build-Arnav/ATS classic HR resume.docx": {
+         "name": "Janna Gardner",
+         "emails": [
+            "janna@example.com"
+         ],
+         "phone_numbers": [
+            "(716) 555-0100"
+         ],
+         "urls": [],
+         "education": [
+            "Bachelor of Arts Human Resources Management | Jasper University | Ft. Lauderdale, FL",
+            "3.8 GPA • Member of university’s Honor Society"
+         ],
+         "work_experiences": [],
+         "total_experience_years": 0.0
+      }
    }
 }
