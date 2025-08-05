@@ -357,7 +357,7 @@ def extract_data(file_path):
 
 file_paths = [
     'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf',
-    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/functionalsample.pdf',
+    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/EPS-Computer-Science_sample.pdf',
     'C:/Flexon_Resume_Parser/Parser_Build-Arnav/ATS classic HR resume.docx'
 ]
 

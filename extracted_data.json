@@ -17,13 +17,13 @@
             "American Institute of Aeronautics and Astronautic at UTD"
          ],
          "skills": [
+            "Python",
+            "Tools:  Google BigQuery",
+            "HTML/CSS",
             "C/C++",
             "BigQuerySQL",
             "Programming:  JavaScript",
-            "HTML/CSS",
-            "Git/Github.",
-            "Python",
-            "Tools:  Google BigQuery"
+            "Git/Github."
          ],
          "work_experiences": [
             {
@@ -45,60 +45,66 @@
          ],
          "total_experience_years": 0.68
       },
-      "C:/Flexon_Resume_Parser/Parser_Build-Arnav/functionalsample.pdf": {
-         "name": "John W. Smith",
+      "C:/Flexon_Resume_Parser/Parser_Build-Arnav/EPS-Computer-Science_sample.pdf": {
+         "name": "Jiaming Chen",
          "emails": [
-            "jwsmith@colostate.edu"
+            "jiachen@ucdavis.edu"
          ],
-         "phone_numbers": [],
-         "urls": [],
+         "phone_numbers": [
+            "(345) 678-9101"
+         ],
+         "urls": [
+            "linkedin.com/jiamingchen",
+            "Chart.js"
+         ],
          "education": [
-            "University of Arkansas at Little Rock, Little Rock, AR",
-            "•  BS in Early Childhood Development (1999)",
-            "•  BA in Elementary Education (1998)",
-            "•  GPA (4.0 Scale):  Early Childhood Development – 3.8, Elementary Education – 3.5,",
-            "•  Dean’s List, Chancellor’s List"
+            "University of California, Davis",
+            "Bachelor of Science in Computer Science | GPA: 3.2/4.0",
+            "Student Ambassador, University of California, Davis, CA"
          ],
          "skills": [
-            "Arkansas.",
-            "Little Rock",
-            "Conway",
-            "Cowell Elementary",
-            "The Wesley Center",
-            "Elementary Education – 3.5",
-            "Counseling Supervisor",
-            "Arkansas",
-            "Client Specialist",
-            "Teacher’s Assistant",
-            "Rainbow Special Care Center"
+            "and Mandarin",
+            "CSS",
+            "Languages: Fluent in English",
+            "Windows",
+            "Python",
+            "WORK EXPERIENCE",
+            "EADevOps team.",
+            "Chart.js",
+            "MacOS",
+            "Advanced Proficiency in Java",
+            "Computer: Proficient in R",
+            "Oracle Cloud Infrastructure",
+            "C++",
+            "Software: LINUX",
+            "HTML",
+            "MATLAB",
+            "Software Engineering Intern",
+            "NodeJS",
+            "Spanish",
+            "Role Based Access Control.",
+            "ReactJS",
+            "Jenkins job creation process."
          ],
          "work_experiences": [
             {
-               "job_title": "Employment History",
-               "company": "The Wesley Center",
-               "duration_months": 36,
-               "from": "Aug 1999",
-               "to": "Aug 2002",
+               "job_title": "WORK EXPERIENCE",
+               "company": "Oracle Cloud Infrastructure",
+               "duration_months": 3,
+               "from": "Jun 2022",
+               "to": "Sep 2022",
                "is_current": false
             },
             {
-               "job_title": "Employment History",
-               "company": "The Wesley Center",
-               "duration_months": 24,
-               "from": "Aug 1997",
-               "to": "Aug 1999",
-               "is_current": false
-            },
-            {
-               "job_title": "Employment History",
-               "company": "The Wesley Center",
-               "duration_months": 12,
-               "from": "Aug 1996",
-               "to": "Aug 1997",
+               "job_title": "Role Based Access Control.",
+               "company": "API Client",
+               "duration_months": 3,
+               "from": "Jun 2021",
+               "to": "Sep 2021",
                "is_current": false
             }
          ],
-         "total_experience_years": 6.0
+         "total_experience_years": 0.5
       }
    },
    "docx": {
@@ -117,13 +123,13 @@
             "3.8 GPA • Member of university’s Honor Society"
          ],
          "skills": [
-            "Type 96 words per minute",
             "Team player",
-            "Conflict management",
-            "Public speaking",
-            "Data analytics",
             "Proficient with project management software",
-            "Excellent time management skills"
+            "Data analytics",
+            "Conflict management",
+            "Excellent time management skills",
+            "Type 96 words per minute",
+            "Public speaking"
          ],
          "work_experiences": [],
          "total_experience_years": 0
