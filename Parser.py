@@ -67,7 +67,6 @@ def extract_name(text):
 def extract_email(text):
     email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
     emails = re.findall(email_pattern, text)
-
     return list(set(emails))
 
 def extract_phone_number(text):
@@ -109,53 +108,68 @@ def extract_urls_spacy(text):
     return [doc[start:end].text for _, start, end in matches]
 
 def extract_education(text):
-    education_lines = set()
-    doc = nlp(text)
-    for ent in doc.ents:
-        if ent.label_ in {"ORG", "FAC", "GPE"} and any(word in ent.text.lower() for word in ["university", "college", "institute", "school"]):
-            education_lines.add(ent.text.strip())
-        if ent.label_ == "EDUCATION" or re.search(r"\b(bachelor|master|phd|mba|b\.sc|m\.sc|btech|mtech|diploma)\b", ent.text.lower()):
-            education_lines.add(ent.text.strip())
-
-    education_keywords = {
-        "bachelor", "master", "phd", "mba", "b.sc", "m.sc", "btech", "mtech", "bs", "ms",
-        "university", "college", "institute", "school", "graduated", "diploma", "high"
-    }
+    """Extract education information - simple and effective approach"""
+    education_info = []
     lines = text.split('\n')
-    stop_words = set(stopwords.words("english"))
+    
     for line in lines:
-        tokens = word_tokenize(line.lower())
-        if any(token in education_keywords for token in tokens if token not in stop_words):
-            education_lines.add(line.strip())
-    #regex fallback
-    if not education_lines:
-        regex_matches = re.findall(
-            r'(?i)(?:bachelor|master|phd|mba|b\.sc|m\.sc|bs|ms|diploma)[^,\n]*(?:19|20)\d{2}.*',
-            text
-        )
-        for match in regex_matches:
-            education_lines.add(match.strip())
-    return sorted(education_lines)
+        line = line.strip()
+        if not line:
+            continue
+            
+        #universities/colleges
+        if re.search(r'(?i)\buniversity\b|\bcollege\b|\binstitute\b', line) and 'of' in line.lower():
+            education_info.append(line)
+            
+        #degrees with years
+        if re.search(r'(?i)\b(bs|ba|ms|ma|bachelor|master|phd|mba)\b.*\(?\b(19|20)\d{2}\)?\b', line):
+            education_info.append(line)
+            
+        #GPA
+        if re.search(r'(?i)\bgpa\b', line):
+            education_info.append(line)
+            
+        #Dean's list etc
+        if re.search(r'(?i)\bdean.*list\b|\bchancellor.*list\b', line):
+            education_info.append(line)
+    
+    return education_info
 
 def extract_skills(text):
-    doc = nlp(text)
+    """Extract skills information"""
     skills = []
-    for chunk in doc.noun_chunks:
-        cleaned = chunk.text.strip().lower()
-
-        if 2<=len(cleaned.split()) <= 4 and not cleaned.startswith(('a ', 'an ', 'the ')):
-            skills.append(cleaned)
-    for token in doc:
-        if token.pos == 'NOUN' and not token.is_stop and len(token.text) > 2:
-            skills.append(token.text.lower())
-
-    #regex fallback
-    regex_skills = re.findall(r'(?:•|\*|-)?\s*([A-Za-z][A-Za-z\s&+/]+)(?:,|$|\n)', text)
-    regex_skills = [skill.strip().lower() for skill in regex_skills if 2 <= len(skill.strip()) <= 40]
-
-    all_skills = set(skills + regex_skills)
-    final_skills = [skill for skill in all_skills if len(skill) > 2 and not skill in {'experience', 'skills', 'knowledge'}]
-    return sorted(set(final_skills))
+    lines = text.split('\n')
+    in_skills_section = False
+    
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+        if re.search(r'(?i)^skills?$|^technical skills?$|^core competencies$', line):
+            in_skills_section = True
+            continue
+        if in_skills_section and re.search(r'(?i)^(experience|education|projects|certifications|summary|objective)', line):
+            break
+        if in_skills_section:
+            clean_line = re.sub(r'^[•\*\-]\s*', '', line).strip()
+            if clean_line and len(clean_line) > 2:
+                skill_items = re.split(r'[,;|•]', clean_line)
+                for skill in skill_items:
+                    skill = skill.strip()
+                    if skill and len(skill) > 2 and len(skill) < 50:
+                        skills.append(skill)
+    
+    if not skills:
+        for line in lines:
+            if line.count(',') >= 2 and len(line) < 200:
+                skill_items = line.split(',')
+                if len(skill_items) >= 3:
+                    for skill in skill_items:
+                        skill = re.sub(r'^[•\*\-]\s*', '', skill).strip()
+                        if skill and len(skill) > 2 and len(skill) < 30:
+                            skills.append(skill)
+    
+    return list(set(skills))
 
 def total_experience(jobs):
     total_months = sum(job["duration_months"] for job in jobs)
@@ -296,8 +310,9 @@ for file_path in file_paths:
     emails = extract_email(resume_text)
     phone_numbers = extract_phone_number(resume_text)
     urls = extract_urls_spacy(resume_text)
-    education = extract_education(sections.get("education", ""))
-    skills = extract_skills(sections.get("skills",""))
+    education = extract_education(resume_text)
+    skills = extract_skills(resume_text)
+    
     experience_section_text = extract_work_experience(sections.get("experience", ""))
     work_experiences = calculate_work_duration(experience_section_text) if experience_section_text else []
     total_exp_years = total_experience(work_experiences)
@@ -312,4 +327,5 @@ for file_path in file_paths:
         "work_experiences": work_experiences,
         "total_experience_years": total_exp_years
     }
+
 dump_to_json(result_data)

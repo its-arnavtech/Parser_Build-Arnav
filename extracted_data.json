@@ -12,17 +12,18 @@
             "www.linkedin.com/in/arnav-kumar0511"
          ],
          "education": [
-            "University of Texas",
-            "University of Texas at Dallas"
+            "University of Texas at Dallas",
+            "●  Collaborated with a team of developers to create and maintain a database for University wide software",
+            "American Institute of Aeronautics and Astronautic at UTD"
          ],
          "skills": [
-            "bigquerysql",
-            "c# \ntools",
-            "c/c++",
-            "google bigquery",
-            "html/css",
-            "javascript",
-            "python"
+            "Git/Github.",
+            "HTML/CSS",
+            "Python",
+            "C/C++",
+            "BigQuerySQL",
+            "Tools:  Google BigQuery",
+            "Programming:  JavaScript"
          ],
          "work_experiences": [],
          "total_experience_years": 0.0
@@ -34,8 +35,26 @@
          ],
          "phone_numbers": [],
          "urls": [],
-         "education": [],
-         "skills": [],
+         "education": [
+            "University of Arkansas at Little Rock, Little Rock, AR",
+            "•  BS in Early Childhood Development (1999)",
+            "•  BA in Elementary Education (1998)",
+            "•  GPA (4.0 Scale):  Early Childhood Development – 3.8, Elementary Education – 3.5,",
+            "•  Dean’s List, Chancellor’s List"
+         ],
+         "skills": [
+            "Elementary Education – 3.5",
+            "Cowell Elementary",
+            "Conway",
+            "Counseling Supervisor",
+            "Arkansas.",
+            "The Wesley Center",
+            "Rainbow Special Care Center",
+            "Little Rock",
+            "Client Specialist",
+            "Teacher’s Assistant",
+            "Arkansas"
+         ],
          "work_experiences": [],
          "total_experience_years": 0.0
       }
@@ -51,11 +70,19 @@
          ],
          "urls": [],
          "education": [
-            "3.8 GPA • Member of university’s Honor Society",
             "Bachelor of Arts Human Resources Management | Jasper University | Ft. Lauderdale, FL",
-            "Jasper University"
+            "3.8 GPA • Member of university’s Honor Society",
+            "3.8 GPA • Member of university’s Honor Society"
          ],
-         "skills": [],
+         "skills": [
+            "Conflict management",
+            "Public speaking",
+            "Data analytics",
+            "Type 96 words per minute",
+            "Proficient with project management software",
+            "Team player",
+            "Excellent time management skills"
+         ],
          "work_experiences": [],
          "total_experience_years": 0.0
       }
