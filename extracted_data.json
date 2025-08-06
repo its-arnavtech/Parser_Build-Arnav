@@ -17,13 +17,13 @@
             "American Institute of Aeronautics and Astronautic at UTD"
          ],
          "skills": [
-            "BigQuerySQL",
-            "Tools:  Google BigQuery",
-            "Programming:  JavaScript",
-            "HTML/CSS",
-            "Git/Github.",
             "C/C++",
-            "Python"
+            "Git/Github.",
+            "Programming:  JavaScript",
+            "Tools:  Google BigQuery",
+            "BigQuerySQL",
+            "Python",
+            "HTML/CSS"
          ],
          "work_experiences": [
             {
@@ -63,28 +63,28 @@
             "Student Ambassador, University of California, Davis, CA"
          ],
          "skills": [
-            "MATLAB",
-            "Advanced Proficiency in Java",
-            "Software Engineering Intern",
-            "MacOS",
-            "Oracle Cloud Infrastructure",
-            "Python",
-            "NodeJS",
-            "HTML",
             "and Mandarin",
-            "Languages: Fluent in English",
-            "Chart.js",
+            "Software Engineering Intern",
             "C++",
-            "CSS",
             "Computer: Proficient in R",
-            "Windows",
-            "Spanish",
             "WORK EXPERIENCE",
+            "NodeJS",
+            "Jenkins job creation process.",
+            "Windows",
             "EADevOps team.",
-            "Software: LINUX",
+            "Chart.js",
+            "MATLAB",
             "Role Based Access Control.",
+            "CSS",
+            "MacOS",
+            "HTML",
+            "Advanced Proficiency in Java",
+            "Oracle Cloud Infrastructure",
+            "Spanish",
+            "Languages: Fluent in English",
             "ReactJS",
-            "Jenkins job creation process."
+            "Software: LINUX",
+            "Python"
          ],
          "work_experiences": [
             {
@@ -123,13 +123,13 @@
             "3.8 GPA • Member of university’s Honor Society"
          ],
          "skills": [
-            "Conflict management",
-            "Public speaking",
-            "Proficient with project management software",
-            "Data analytics",
-            "Type 96 words per minute",
             "Excellent time management skills",
-            "Team player"
+            "Proficient with project management software",
+            "Team player",
+            "Data analytics",
+            "Conflict management",
+            "Type 96 words per minute",
+            "Public speaking"
          ],
          "work_experiences": [],
          "total_experience_years": 0

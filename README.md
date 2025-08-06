@@ -6,4 +6,4 @@ ranging from the basics, such as name, email id and phone number, all the way to
 Section Handler Added for education and work experience, work experience doesn't work
 Program currently extracts Name, URLs, Education, Phone Number and Emails. 
 
-Currently working on fixing work experience
+Work experience and Education functions are in progress, they currently work with regex methods, working on implementing spacy/nltk as primary methods

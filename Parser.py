@@ -75,25 +75,49 @@ def extract_email(text):
 
 
 def extract_phone_number(text):
-    phone_patterns = [
-        r'\+\d{1,3}[\s\-\.]?\(?\d{3}\)?[\s\-\.]?\d{3}[\s\-\.]?\d{4}',
-        r'\(\d{3}\)[\s\-\.]?\d{3}[\s\-\.]?\d{4}',
-        r'\b\d{3}[\s\-\.]\d{3}[\s\-\.]\d{4}\b',
-        r'\b\d{10}\b'
+    doc = nlp(text)
+    matcher = Matcher(nlp.vocab)
+    phone_pattern = [
+        {"TEXT": {"REGEX": r"[\(\[]?"}},                    # Optional open paren
+        {"TEXT": {"REGEX": r"\d{3}"}},                      # Area code
+        {"TEXT": {"REGEX": r"[\)\]]?"}},                    # Optional close paren
+        {"TEXT": {"REGEX": r"[-.\s]?"}},                    # Optional separator
+        {"TEXT": {"REGEX": r"\d{3}"}},                      # First 3 digits
+        {"TEXT": {"REGEX": r"[-.\s]?"}},                    # Optional separator
+        {"TEXT": {"REGEX": r"\d{4}"}}
     ]
+    matcher.add("PHONE_PATTERN", [phone_pattern])
+    matches = matcher(doc)
+    matched_spans = [doc[start:end] for _, start, end in matches]
+    with doc.retokenize() as retokenizer:
+        for span in matched_spans:
+            retokenizer.merge(span)
+    chunked_doc = nlp(doc.text)
     phone_numbers = []
-    for pattern in phone_patterns:
-        matches = re.findall(pattern, text)
-        for match in matches:
-            cleaned = re.sub(r'[^\d+]', '', match)
-            digits_only = cleaned.lstrip('+1').lstrip('+')
-            # Validate phone number
-            if (len(digits_only) == 10 and 
-                not digits_only.startswith(('19', '20')) and
-                not re.search(r'\b(19|20)\d{2}[\s\-](19|20)\d{2}\b', match) and
-                len(set(digits_only)) > 1 and
-                digits_only[0] not in ['0', '1']):
-                phone_numbers.append(match.strip())
+    for ent in chunked_doc.ents:
+        if ent.label_.lower() == "phone_number":
+            phone_numbers.append(ent.text.strip())
+
+    #regex
+    if not phone_numbers:
+        regex_patterns = [
+            r'\+\d{1,3}[\s\-\.]?\(?\d{3}\)?[\s\-\.]?\d{3}[\s\-\.]?\d{4}',
+            r'\(\d{3}\)[\s\-\.]?\d{3}[\s\-\.]?\d{4}',
+            r'\b\d{3}[\s\-\.]\d{3}[\s\-\.]\d{4}\b',
+            r'\b\d{10}\b'
+        ]
+        for pattern in regex_patterns:
+            matches = re.findall(pattern, text)
+            for match in matches:
+                cleaned = re.sub(r'[^\d+]', '', match)
+                digits_only = cleaned.lstrip('+1').lstrip('+')
+                if (len(digits_only) == 10 and 
+                    not digits_only.startswith(('19', '20')) and
+                    not re.search(r'\b(19|20)\d{2}[\s\-](19|20)\d{2}\b', match) and
+                    len(set(digits_only)) > 1 and
+                    digits_only[0] not in ['0', '1']):
+                    phone_numbers.append(match.strip())
+
     return list(set(phone_numbers))
 
 def extract_urls_spacy(text):
