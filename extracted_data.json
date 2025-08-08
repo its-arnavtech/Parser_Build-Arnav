@@ -9,26 +9,30 @@
             "(737)-600-6267"
          ],
          "urls": [
-            "www.linkedin.com/in/arnav-kumar0511"
+            "www.linkedin.com/in/arnav-kumar0511",
+            "gmail.com",
+            "linkedin.com/in/arnav-kumar0511"
          ],
          "education": [
+            "American Institute of Aeronautics and Astronautic at UTD",
             "University of Texas at Dallas",
             "●  Collaborated with a team of developers to create and maintain a database for University wide software",
-            "American Institute of Aeronautics and Astronautic at UTD"
+            "B.S. in Computer Science"
          ],
          "skills": [
-            "C/C++",
-            "Git/Github.",
-            "Programming:  JavaScript",
             "Tools:  Google BigQuery",
+            "HTML/CSS",
+            "SKILLS",
+            "Programming:  JavaScript",
+            "C/C++",
             "BigQuerySQL",
-            "Python",
-            "HTML/CSS"
+            "Git/Github.",
+            "Python"
          ],
          "work_experiences": [
             {
                "job_title": "Unknown Title",
-               "company": "Texas Expected Graduation",
+               "company": "CometMate",
                "duration_months": 2,
                "from": "Jan 2025",
                "to": "Mar 2025",
@@ -37,13 +41,13 @@
             {
                "job_title": "Project Management Club",
                "company": "Project Management Club Front-End Web Developer Richardson",
-               "duration_months": 6.2,
+               "duration_months": 5.2,
                "from": "Feb 2025",
                "to": "Present",
                "is_current": true
             }
          ],
-         "total_experience_years": 0.68
+         "total_experience_years": 0.6
       },
       "C:/Flexon_Resume_Parser/Parser_Build-Arnav/EPS-Computer-Science_sample.pdf": {
          "name": "Jiaming Chen",
@@ -55,36 +59,31 @@
          ],
          "urls": [
             "linkedin.com/jiamingchen",
-            "Chart.js"
+            "ucdavis.edu"
          ],
          "education": [
+            "Student Ambassador, University of California, Davis, CA",
             "University of California, Davis",
-            "Bachelor of Science in Computer Science | GPA: 3.2/4.0",
-            "Student Ambassador, University of California, Davis, CA"
+            "Bachelor of Science in Computer Science | GPA: 3.2/4.0"
          ],
          "skills": [
-            "and Mandarin",
-            "Software Engineering Intern",
-            "C++",
-            "Computer: Proficient in R",
-            "WORK EXPERIENCE",
-            "NodeJS",
-            "Jenkins job creation process.",
             "Windows",
-            "EADevOps team.",
-            "Chart.js",
-            "MATLAB",
-            "Role Based Access Control.",
+            "Advanced Proficiency in Java",
+            "NodeJS",
             "CSS",
             "MacOS",
-            "HTML",
-            "Advanced Proficiency in Java",
-            "Oracle Cloud Infrastructure",
-            "Spanish",
             "Languages: Fluent in English",
+            "Spanish",
+            "SKILLS",
+            "C++",
+            "Chart.js",
+            "and Mandarin",
+            "HTML",
             "ReactJS",
             "Software: LINUX",
-            "Python"
+            "Python",
+            "Computer: Proficient in R",
+            "MATLAB"
          ],
          "work_experiences": [
             {
@@ -97,7 +96,7 @@
             },
             {
                "job_title": "Role Based Access Control.",
-               "company": "API Client",
+               "company": "Oracle Cloud Infrastructure",
                "duration_months": 3,
                "from": "Jun 2021",
                "to": "Sep 2021",
@@ -116,20 +115,20 @@
          "phone_numbers": [
             "(716) 555-0100"
          ],
-         "urls": [],
+         "urls": [
+            "example.com"
+         ],
          "education": [
             "Bachelor of Arts Human Resources Management | Jasper University | Ft. Lauderdale, FL",
-            "3.8 GPA • Member of university’s Honor Society",
             "3.8 GPA • Member of university’s Honor Society"
          ],
          "skills": [
-            "Excellent time management skills",
-            "Proficient with project management software",
-            "Team player",
             "Data analytics",
-            "Conflict management",
+            "Team player",
             "Type 96 words per minute",
-            "Public speaking"
+            "Skills",
+            "Public speaking",
+            "Conflict management"
          ],
          "work_experiences": [],
          "total_experience_years": 0

@@ -1,6 +1,6 @@
 '''
 Created on Monday, 21st August 2025
-Resume Parser - Production Version
+Resume Parser - Optimized Production Version
 '''
 
 import os
@@ -19,16 +19,13 @@ import json
 
 nlp = spacy.load("en_core_web_md")
 
+# Enhanced patterns for phone number detection
 ruler = nlp.add_pipe("entity_ruler", before="ner")
 patterns = [
-    {"label": "PHONE_NUMBER", "pattern": [{"ORTH": "("}, {"SHAPE": "ddd"}, {"ORTH": ")"}, {"SHAPE": "ddd"},
-                                         {"ORTH": "-", "OP": "?"}, {"SHAPE": "dddd"}]},
+    {"label": "PHONE_NUMBER", "pattern": [{"ORTH": "("}, {"SHAPE": "ddd"}, {"ORTH": ")"}, {"SHAPE": "ddd"}, {"ORTH": "-", "OP": "?"}, {"SHAPE": "dddd"}]},
     {"label": "PHONE_NUMBER", "pattern": [{"SHAPE": "ddd"}, {"SHAPE": "ddd"}, {"SHAPE": "dddd"}]},
 ]
 ruler.add_patterns(patterns)
-
-# nltk.download('punkt')
-# nltk.download('stopwords')
 
 def extract_text_from_pdf(pdf_path):
     try:
@@ -52,15 +49,37 @@ def preprocessing_text(text):
 
 def extract_name(text):
     lines = text.strip().split('\n')
-    top_lines = ' '.join(lines[:30])
+    top_lines = ' '.join(lines[:20])
     
+    # First try to find person names using spaCy
     doc = nlp(top_lines)
+    potential_names = []
+    
     for ent in doc.ents:
         if ent.label_ == "PERSON" and len(ent.text.split()) <= 3:
-            return ent.text
-    pattern = r'\b[A-Z][a-z]+(?:\s[A-Z][a-z]+)+\b'
-    matches = re.findall(pattern, top_lines)
-    return matches[0] if matches else None
+            # Filter out common non-names
+            if not re.search(r'(?i)(university|college|institute|company|corporation|llc|inc)', ent.text):
+                potential_names.append(ent.text)
+    
+    if potential_names:
+        return potential_names[0]
+    
+    # Fallback: Look for capitalized names in first few lines
+    for line in lines[:5]:
+        line = line.strip()
+        if not line or len(line) > 50:
+            continue
+        
+        # Pattern for names (2-3 capitalized words)
+        pattern = r'\b[A-Z][a-z]+(?:\s[A-Z][a-z]+){1,2}\b'
+        matches = re.findall(pattern, line)
+        
+        for match in matches:
+            # Filter out common non-names
+            if not re.search(r'(?i)(university|college|institute|company|corporation|street|avenue|drive|resume|curriculum)', match):
+                return match
+    
+    return None
 
 def extract_email(text):
     doc = nlp(text)
@@ -68,125 +87,184 @@ def extract_email(text):
     if emails_spacy:
         return list(set(emails_spacy))
     
-    #regex
-    email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+    # Enhanced regex for emails
+    email_pattern = r'\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b'
     emails_regex = re.findall(email_pattern, text)
     return list(set(emails_regex))
 
-
 def extract_phone_number(text):
     doc = nlp(text)
-    matcher = Matcher(nlp.vocab)
-    phone_pattern = [
-        {"TEXT": {"REGEX": r"[\(\[]?"}},                    # Optional open paren
-        {"TEXT": {"REGEX": r"\d{3}"}},                      # Area code
-        {"TEXT": {"REGEX": r"[\)\]]?"}},                    # Optional close paren
-        {"TEXT": {"REGEX": r"[-.\s]?"}},                    # Optional separator
-        {"TEXT": {"REGEX": r"\d{3}"}},                      # First 3 digits
-        {"TEXT": {"REGEX": r"[-.\s]?"}},                    # Optional separator
-        {"TEXT": {"REGEX": r"\d{4}"}}
-    ]
-    matcher.add("PHONE_PATTERN", [phone_pattern])
-    matches = matcher(doc)
-    matched_spans = [doc[start:end] for _, start, end in matches]
-    with doc.retokenize() as retokenizer:
-        for span in matched_spans:
-            retokenizer.merge(span)
-    chunked_doc = nlp(doc.text)
     phone_numbers = []
-    for ent in chunked_doc.ents:
-        if ent.label_.lower() == "phone_number":
-            phone_numbers.append(ent.text.strip())
-
-    #regex
-    if not phone_numbers:
-        regex_patterns = [
-            r'\+\d{1,3}[\s\-\.]?\(?\d{3}\)?[\s\-\.]?\d{3}[\s\-\.]?\d{4}',
-            r'\(\d{3}\)[\s\-\.]?\d{3}[\s\-\.]?\d{4}',
-            r'\b\d{3}[\s\-\.]\d{3}[\s\-\.]\d{4}\b',
-            r'\b\d{10}\b'
-        ]
-        for pattern in regex_patterns:
-            matches = re.findall(pattern, text)
-            for match in matches:
-                cleaned = re.sub(r'[^\d+]', '', match)
-                digits_only = cleaned.lstrip('+1').lstrip('+')
-                if (len(digits_only) == 10 and 
-                    not digits_only.startswith(('19', '20')) and
-                    not re.search(r'\b(19|20)\d{2}[\s\-](19|20)\d{2}\b', match) and
-                    len(set(digits_only)) > 1 and
-                    digits_only[0] not in ['0', '1']):
-                    phone_numbers.append(match.strip())
-
+    
+    # Enhanced regex patterns for phone numbers
+    regex_patterns = [
+        r'\+1[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}',
+        r'\+\d{1,3}[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}',
+        r'\(\d{3}\)[-.\s]?\d{3}[-.\s]?\d{4}',
+        r'\b\d{3}[-.\s]\d{3}[-.\s]\d{4}\b',
+        r'\b\d{10}\b'
+    ]
+    
+    for pattern in regex_patterns:
+        matches = re.findall(pattern, text)
+        for match in matches:
+            # Clean and validate
+            cleaned = re.sub(r'[^\d+]', '', match)
+            digits_only = cleaned.lstrip('+1').lstrip('+')
+            
+            # Validation checks
+            if (len(digits_only) == 10 and 
+                not digits_only.startswith(('0', '1')) and
+                len(set(digits_only)) > 3 and
+                not re.match(r'\b(19|20)\d{8}\b', digits_only)):
+                phone_numbers.append(match.strip())
+    
     return list(set(phone_numbers))
 
 def extract_urls_spacy(text):
-    matcher = Matcher(nlp.vocab)
-    matcher.add("URLS", [[{"LIKE_URL": True}]])
-    doc = nlp(text)
-    matches = matcher(doc)
-    return [doc[start:end].text for _, start, end in matches]
+    """Enhanced URL extraction with better filtering"""
+    url_patterns = [
+        r'https?://[^\s<>"\']+',
+        r'www\.[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.[a-zA-Z]{2,}(?:/[^\s]*)?',
+        r'\b[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.(?:com|org|net|edu|gov|mil)(?:/[^\s]*)?',
+        r'linkedin\.com/in/[^\s]+',
+        r'github\.com/[^\s]+'
+    ]
+    
+    urls = []
+    for pattern in url_patterns:
+        matches = re.findall(pattern, text, re.IGNORECASE)
+        for match in matches:
+            # Ensure match is a string (handle tuple cases)
+            if isinstance(match, tuple):
+                match = match[0] if match else ''
+            
+            match = match.strip()
+            if not match:
+                continue
+                
+            # Filter out false positives - file extensions
+            if re.search(r'(?i)\.(js|css|json|xml|pdf|doc|docx|txt|jpg|png|gif|py|java|cpp|c|h)(?:\s|$)', match):
+                continue
+                
+            # Filter out programming/config file patterns
+            if re.match(r'^[a-zA-Z0-9_-]+\.(js|css|json|py|java|cpp|c|h|xml)$', match):
+                continue
+                
+            # Filter out patterns that are likely not URLs
+            if len(match) < 5 or match.count('.') > 5:
+                continue
+                
+            # Must contain valid URL characters
+            if re.search(r'[a-zA-Z0-9]', match):
+                urls.append(match)
+    
+    return list(set(urls))
 
 def extract_education(text):
     education_info = []
     lines = text.split('\n')
     
+    # Common degree patterns
+    degree_patterns = [
+        r'(?i)\b(bachelor|master|phd|doctorate|associate|diploma|certificate).*(?:degree|of|in)\b',
+        r'(?i)\b(bs|ba|ms|ma|mba|phd|bsc|msc|beng|meng)\b',
+        r'(?i)\b(b\.?\s*[sae]\.?|m\.?\s*[sae]\.?|ph\.?d\.?|m\.?b\.?a\.?)\b'
+    ]
+    
+    # Institution patterns
+    institution_patterns = [
+        r'(?i)\b.+(?:university|college|institute|school)\b',
+        r'(?i)\b(?:university|college|institute|school)\s+of\s+.+\b'
+    ]
+    
     for line in lines:
         line = line.strip()
-        if not line:
+        if not line or len(line) > 200:
             continue
-            
-        # Universities/colleges
-        if re.search(r'(?i)\buniversity\b|\bcollege\b|\binstitute\b', line) and 'of' in line.lower():
+        
+        # Check for degrees
+        for pattern in degree_patterns:
+            if re.search(pattern, line):
+                education_info.append(line)
+                break
+        
+        # Check for institutions
+        for pattern in institution_patterns:
+            if re.search(pattern, line) and 'of' in line.lower():
+                education_info.append(line)
+                break
+        
+        # Check for GPA
+        if re.search(r'(?i)\bgpa\b.*\d+\.\d+', line):
             education_info.append(line)
-            
-        # Degrees with years
-        if re.search(r'(?i)\b(bs|ba|ms|ma|bachelor|master|phd|mba)\b.*\(?\b(19|20)\d{2}\)?\b', line):
-            education_info.append(line)
-            
-        # GPA
-        if re.search(r'(?i)\bgpa\b', line):
-            education_info.append(line)
-            
-        # Dean's list etc
-        if re.search(r'(?i)\bdean.*list\b|\bchancellor.*list\b', line):
+        
+        # Check for academic honors
+        if re.search(r'(?i)\b(dean.*list|honor|magna cum laude|summa cum laude|cum laude)\b', line):
             education_info.append(line)
     
-    return education_info
+    return list(set(education_info))
 
 def extract_skills(text):
     skills = []
     lines = text.split('\n')
     in_skills_section = False
     
+    # Skills section headers
+    skills_headers = [
+        r'(?i)^\s*(?:technical\s+)?skills?\s*$',
+        r'(?i)^\s*core\s+competencies\s*$',
+        r'(?i)^\s*programming\s+skills?\s*$',
+        r'(?i)^\s*technologies\s*$'
+    ]
+    
+    # Next section headers to stop at
+    next_section_patterns = [
+        r'(?i)^\s*(work\s+)?experience\s*$',
+        r'(?i)^\s*education\s*$',
+        r'(?i)^\s*projects?\s*$',
+        r'(?i)^\s*certifications?\s*$',
+        r'(?i)^\s*(professional\s+)?summary\s*$'
+    ]
+    
     for line in lines:
         line = line.strip()
         if not line:
             continue
-            
-        if re.search(r'(?i)^skills?$|^technical skills?$|^core competencies$', line):
-            in_skills_section = True
-            continue
-            
-        if in_skills_section and re.search(r'(?i)^(experience|education|projects|certifications|summary|objective)', line):
-            break
-            
+        
+        # Check if we're entering skills section
+        for header_pattern in skills_headers:
+            if re.match(header_pattern, line):
+                in_skills_section = True
+                continue
+        
+        # Check if we've left skills section
         if in_skills_section:
-            clean_line = re.sub(r'^[•\*\-\u25cf]\s*', '', line).strip()
+            for next_pattern in next_section_patterns:
+                if re.match(next_pattern, line):
+                    in_skills_section = False
+                    break
+        
+        if in_skills_section:
+            # Clean line of bullets and extract skills
+            clean_line = re.sub(r'^[•\*\-\u25cf\u2022]\s*', '', line).strip()
             if clean_line and len(clean_line) > 2:
-                skill_items = re.split(r'[,;|•]', clean_line)
+                # Split on common separators
+                skill_items = re.split(r'[,;|•\u2022]', clean_line)
                 for skill in skill_items:
                     skill = skill.strip()
-                    if skill and len(skill) > 2 and len(skill) < 50:
+                    if skill and 2 < len(skill) < 30:
                         skills.append(skill)
+    
+    # If no skills section found, look for comma-separated skill lists
     if not skills:
         for line in lines:
-            if line.count(',') >= 2 and len(line) < 200:
+            if line.count(',') >= 3 and len(line) < 300:
                 skill_items = line.split(',')
-                if len(skill_items) >= 3:
+                if len(skill_items) >= 4:
                     for skill in skill_items:
-                        skill = re.sub(r'^[•\*\-\u25cf]\s*', '', skill).strip()
-                        if skill and len(skill) > 2 and len(skill) < 30:
+                        skill = re.sub(r'^[•\*\-\u25cf\u2022]\s*', '', skill).strip()
+                        if skill and 2 < len(skill) < 40:
                             skills.append(skill)
     
     return list(set(skills))
@@ -198,12 +276,61 @@ def total_experience(jobs):
     total_months = sum(job["duration_months"] for job in jobs)
     return round(total_months / 12, 2)
 
+def extract_job_title_and_company(context_lines, date_line_index):
+    """Enhanced job title and company extraction"""
+    job_title = "Unknown Title"
+    company = "Unknown Company"
+    
+    # Process context with spaCy for better entity recognition
+    context_text = ' '.join(context_lines)
+    doc = nlp(context_text)
+    
+    # Extract organizations
+    organizations = [ent.text for ent in doc.ents if ent.label_ == 'ORG']
+    
+    # Filter out common false positives for organizations
+    filtered_orgs = []
+    for org in organizations:
+        if not re.search(r'(?i)(university|college|degree|bachelor|master|expected|graduation)', org):
+            filtered_orgs.append(org)
+    
+    if filtered_orgs:
+        company = filtered_orgs[0]
+    
+    # Look for job title in lines before the date
+    for i in range(max(0, date_line_index - 3), date_line_index):
+        if i < len(context_lines):
+            line = context_lines[i].strip()
+            
+            # Skip lines that are likely not job titles
+            if (not line or 
+                len(line) > 100 or
+                re.search(r'\d{4}', line) or
+                re.search(r'(?i)(university|college|degree|bachelor|master|expected|graduation|texas|california|new york)', line) or
+                line in organizations):
+                continue
+            
+            # Clean the line
+            clean_line = re.sub(r'^[•\*\-\u25cf\u2022]\s*', '', line).strip()
+            
+            # Check if it looks like a job title
+            if (3 < len(clean_line) < 80 and 
+                re.search(r'[A-Za-z]', clean_line) and
+                not re.search(r'(?i)^(phone|email|address)', clean_line)):
+                
+                # Additional filtering for job titles
+                if not re.search(r'(?i)(\.com|@|http|www)', clean_line):
+                    job_title = clean_line
+                    break
+    
+    return job_title, company
+
 def calculate_work_duration(text):
-    """Extract work experiences and calculate their durations"""
+    """Enhanced work experience extraction with better parsing"""
     date_patterns = [
-        r'(?P<from>\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4})\s*(?:[-–—to]|to)\s*(?P<to>(?:Present|Current|Now|Ongoing|\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4}))',
-        r'(?P<from>\b\d{4})\s*(?:[-–—to]|to)\s*(?P<to>(?:Present|Current|Now|Ongoing|\b\d{4}))',
-        r'(?P<from>\b\d{1,2}/\d{4})\s*(?:[-–—to]|to)\s*(?P<to>(?:Present|Current|Now|Ongoing|\b\d{1,2}/\d{4}))',
+        r'(?P<from>\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4})\s*(?:[-–—]|to)\s*(?P<to>(?:Present|Current|Now|Ongoing|\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4}))',
+        r'(?P<from>\b\d{4})\s*(?:[-–—]|to)\s*(?P<to>(?:Present|Current|Now|Ongoing|\b\d{4}))',
+        r'(?P<from>\b\d{1,2}/\d{4})\s*(?:[-–—]|to)\s*(?P<to>(?:Present|Current|Now|Ongoing|\b\d{1,2}/\d{4}))',
     ]
 
     jobs = []
@@ -213,7 +340,7 @@ def calculate_work_duration(text):
         line = line.strip()
         if not line:
             continue
-            
+        
         for pattern in date_patterns:
             match = re.search(pattern, line, re.IGNORECASE)
             if match:
@@ -223,148 +350,115 @@ def calculate_work_duration(text):
                 try:
                     start = dateparser.parse(from_str)
                     present_keywords = ['present', 'current', 'now', 'ongoing']
-                    if any(keyword in to_str.lower() for keyword in present_keywords):
-                        today = datetime.now()
-                        if today.month == 12:
-                            end = datetime(today.year + 1, 1, 1) - relativedelta(days=1)
-                        else:
-                            end = datetime(today.year, today.month + 1, 1) - relativedelta(days=1)
+                    is_present = any(keyword in to_str.lower() for keyword in present_keywords)
+                    
+                    if is_present:
+                        end = datetime.now()
                     else:
                         end = dateparser.parse(to_str)
                     
                     if not start or not end:
                         continue
+                    
+                    # Calculate duration
                     duration = relativedelta(end, start)
                     months = duration.years * 12 + duration.months
                     
-                    if any(keyword in to_str.lower() for keyword in present_keywords):
-                        if start.day > 1:
-                            days_in_current_month = (end.replace(day=1) + relativedelta(months=1) - relativedelta(days=1)).day
-                            current_day = datetime.now().day
-                            month_fraction = current_day / days_in_current_month
-                            months += month_fraction
+                    # Add partial month for current jobs
+                    if is_present:
+                        days_in_month = end.day
+                        month_fraction = days_in_month / 30
+                        months += month_fraction
+                    
                     if months <= 0:
                         continue
 
+                    # Get context for job title and company extraction
+                    context_start = max(0, i - 5)
+                    context_end = min(len(lines), i + 3)
                     context_lines = []
-                    for j in range(max(0, i-3), min(len(lines), i+4)):
-                        if lines[j].strip():
-                            context_lines.append(lines[j].strip())                    
-                    context = ' '.join(context_lines)
-                    doc = nlp(context)
-                    orgs = [ent.text for ent in doc.ents if ent.label_ == 'ORG']
-                    job_title = "Unknown Title"
-                    company = "Unknown Company"                   
-                    if orgs:
-                        company = orgs[0]
-                    for j in range(max(0, i-3), i):
-                        if j < len(lines):
-                            line_text = lines[j].strip()
-                            if (not line_text or 
-                                re.search(r'\d{4}', line_text) or 
-                                re.search(r'(?i)(texas|california|new york|florida|illinois|ohio)', line_text) or
-                                line_text in orgs):
-                                continue                            
-                            clean_line = re.sub(r'^[•\*\-\u25cf]\s*', '', line_text).strip()                            
-                            if (len(clean_line) > 3 and len(clean_line) < 80 and 
-                                re.search(r'[A-Z]', clean_line) and
-                                not re.search(r'(?i)^(expected|graduation|university|college)', clean_line)):
-                                job_title = clean_line
-                                break
                     
-                    #fallback
-                    if job_title == "Unknown Title" and i > 0:
-                        prev_line = lines[i-1].strip()
-                        clean_prev = re.sub(r'^[•\*\-\u25cf]\s*', '', prev_line).strip()
-                        if (clean_prev and len(clean_prev) > 3 and len(clean_prev) < 80 and
-                            not re.search(r'(?i)(texas|california|new york|florida|illinois|ohio)', clean_prev)):
-                            job_title = clean_prev
+                    for j in range(context_start, context_end):
+                        if lines[j].strip():
+                            context_lines.append(lines[j].strip())
+                    
+                    # Extract job title and company
+                    job_title, company = extract_job_title_and_company(context_lines, i - context_start)
+                    
                     job_entry = {
                         "job_title": job_title,
                         "company": company,
                         "duration_months": round(months, 1),
                         "from": start.strftime('%b %Y'),
-                        "to": end.strftime('%b %Y') if not any(keyword in to_str.lower() for keyword in present_keywords) else "Present",
-                        "is_current": any(keyword in to_str.lower() for keyword in present_keywords)
-                    }                   
+                        "to": end.strftime('%b %Y') if not is_present else "Present",
+                        "is_current": is_present
+                    }
+                    
                     jobs.append(job_entry)
-                    break                    
-                except Exception:
+                    break
+                    
+                except Exception as e:
+                    print(f"Error processing dates: {e}")
                     continue
+    
     return jobs
 
 def extract_work_experience(text):
+    """Extract work experience section with better section detection"""
     section_headers = [
         r"(?i)^\s*(work\s+)?experience\s*$",
         r"(?i)^\s*professional\s+experience\s*$", 
-        r"(?i)^\s*employment\s+history\s*$",
-        r"(?i)^\s*career\s+history\s*$",
+        r"(?i)^\s*employment\s+(history|experience)\s*$",
+        r"(?i)^\s*career\s+(history|experience)\s*$",
         r"(?i)^\s*work\s+history\s*$",
         r"(?i)^\s*professional\s+background\s*$"
     ]
+    
     next_section_keywords = [
         r"(?i)^\s*education\s*$",
         r"(?i)^\s*(technical\s+)?skills\s*$",
-        r"(?i)^\s*projects\s*$",
+        r"(?i)^\s*projects?\s*$",
         r"(?i)^\s*certifications?\s*$",
         r"(?i)^\s*(professional\s+)?summary\s*$",
         r"(?i)^\s*objective\s*$",
         r"(?i)^\s*achievements?\s*$",
-        r"(?i)^\s*awards?\s*$"
+        r"(?i)^\s*awards?\s*$",
+        r"(?i)^\s*references?\s*$"
     ]
+    
     lines = text.splitlines()
     experience_text = []
     recording = False
     section_found = False
 
-    for i, line in enumerate(lines):
+    for line in lines:
         line_stripped = line.strip()
+        
+        # Check for experience section start
         for header_pattern in section_headers:
             if re.match(header_pattern, line_stripped):
                 recording = True
                 section_found = True
-                break      
+                break
+        
+        # Check for next section (stop recording)
         if recording:
             for next_pattern in next_section_keywords:
                 if re.match(next_pattern, line_stripped):
                     recording = False
                     break
-            if recording and line_stripped:
-                experience_text.append(line)
+        
+        # Collect experience text
+        if recording and line_stripped:
+            experience_text.append(line)
+    
     result_text = "\n".join(experience_text)
+    
+    # If no explicit experience section found, return full text
     if not section_found:
         return text
-    return result_text
-
-def split_into_sections(text):
-    section_titles = {
-        "education": ["education", "academic", "background", "qualifications"],
-        "experience": ["experience", "work", "professional", "employment", "career"],
-        "skills": ["skills", "technical", "core", "competencies"],
-        "projects": ["projects", "personal"],
-        "certifications": ["certifications", "licenses", "certificates"],
-        "summary": ["summary", "profile", "objective"],
-    }
-    sections = {}
-    current_section = None
-    buffer = []
     
-    for line in text.splitlines():
-        preprocessed_line = preprocessing_text(line)
-        found = False
-        for key, keywords in section_titles.items():
-            if any(keyword in preprocessed_line for keyword in keywords):
-                if current_section and buffer:
-                    sections[current_section] = '\n'.join(buffer).strip()
-                current_section = key
-                buffer = []
-                found = True
-                break
-        if not found and current_section:
-            buffer.append(line)   
-    if current_section and buffer:
-        sections[current_section] = '\n'.join(buffer).strip()
-    return sections
+    return result_text
 
 def dump_to_json(data, filename="extracted_data.json"):
     try:
@@ -386,45 +480,54 @@ def extract_data(file_path):
         print(f"Unsupported file type: {ext}")
         return None
 
-file_paths = [
-    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf',
-    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/EPS-Computer-Science_sample.pdf',
-    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/ATS classic HR resume.docx'
-]
+# Main execution
+if __name__ == "__main__":
+    file_paths = [
+        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf',
+        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/EPS-Computer-Science_sample.pdf',
+        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/ATS classic HR resume.docx'
+    ]
 
-result_data = {"pdf": {}, "docx": {}}
+    result_data = {"pdf": {}, "docx": {}}
 
-for file_path in file_paths:
-    resume_text = extract_data(file_path)
-    
-    if not resume_text:
-        continue
+    for file_path in file_paths:
+        print(f"Processing: {file_path}")
+        resume_text = extract_data(file_path)
+        
+        if not resume_text:
+            print(f"Failed to extract text from {file_path}")
+            continue
 
-    file_extension = os.path.splitext(file_path)[1].lower()
-    result_section = result_data["pdf"] if file_extension == ".pdf" else result_data["docx"]
+        file_extension = os.path.splitext(file_path)[1].lower()
+        result_section = result_data["pdf"] if file_extension == ".pdf" else result_data["docx"]
 
-    name = extract_name(resume_text)
-    emails = extract_email(resume_text)
-    phone_numbers = extract_phone_number(resume_text)
-    urls = extract_urls_spacy(resume_text)
-    education = extract_education(resume_text)
-    skills = extract_skills(resume_text)
+        # Extract all information
+        name = extract_name(resume_text)
+        emails = extract_email(resume_text)
+        phone_numbers = extract_phone_number(resume_text)
+        urls = extract_urls_spacy(resume_text)
+        education = extract_education(resume_text)
+        skills = extract_skills(resume_text)
 
-    experience_section_text = extract_work_experience(resume_text)
-    work_experiences = calculate_work_duration(experience_section_text) if experience_section_text else []
-    total_exp_years = total_experience(work_experiences)
+        # Extract work experience
+        experience_section_text = extract_work_experience(resume_text)
+        work_experiences = calculate_work_duration(experience_section_text) if experience_section_text else []
+        total_exp_years = total_experience(work_experiences)
 
-    file_data = {
-        "name": name,
-        "emails": emails,
-        "phone_numbers": phone_numbers,
-        "urls": urls,
-        "education": education,
-        "skills": skills,
-        "work_experiences": work_experiences,
-        "total_experience_years": total_exp_years
-    }
+        file_data = {
+            "name": name,
+            "emails": emails,
+            "phone_numbers": phone_numbers,
+            "urls": urls,
+            "education": education,
+            "skills": skills,
+            "work_experiences": work_experiences,
+            "total_experience_years": total_exp_years
+        }
 
-    result_section[file_path] = file_data
+        result_section[file_path] = file_data
+        print(f"[OK] Processed {file_path}")
 
-dump_to_json(result_data)
+    # Save results
+    dump_to_json(result_data)
+print("[OK] All files processed successfully!")
