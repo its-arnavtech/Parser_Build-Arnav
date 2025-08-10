@@ -17,12 +17,12 @@
             "American Institute of Aeronautics and Astronautic at UTD"
          ],
          "skills": [
-            "C/C++",
-            "Tools:  Google BigQuery",
             "Python",
-            "BigQuerySQL",
             "Programming:  JavaScript",
-            "HTML/CSS"
+            "BigQuerySQL",
+            "HTML/CSS",
+            "C/C++",
+            "Tools:  Google BigQuery"
          ],
          "work_experiences": [
             {
@@ -31,7 +31,8 @@
                "duration_months": 2,
                "from": "Jan 2025",
                "to": "Mar 2025",
-               "is_current": false
+               "is_current": false,
+               "work_description": "Collaborated with a team of developers to create and maintain a database for University wide software Researched and maintained the Postgresql server for the software. Project Management Club"
             },
             {
                "job_title": "Project Management Club",
@@ -39,7 +40,8 @@
                "duration_months": 6.3,
                "from": "Feb 2025",
                "to": "Present",
-               "is_current": true
+               "is_current": true,
+               "work_description": "Utilized CSS to design better visual experience for users on the landing page, events page and contact page"
             }
          ],
          "total_experience_years": 0.69
@@ -62,24 +64,24 @@
             "Student Ambassador, University of California, Davis, CA"
          ],
          "skills": [
-            "Spanish",
-            "Oracle Cloud Infrastructure",
-            "MATLAB",
-            "HTML",
-            "Chart.js",
             "Python",
-            "Computer: Proficient in R",
-            "CSS",
-            "Advanced Proficiency in Java",
-            "Windows",
-            "Languages: Fluent in English",
-            "C++",
-            "NodeJS",
+            "Software: LINUX",
             "and Mandarin",
             "ReactJS",
-            "Software: LINUX",
+            "C++",
+            "MATLAB",
+            "Windows",
+            "Languages: Fluent in English",
+            "HTML",
             "Software Engineering Intern",
-            "MacOS"
+            "Spanish",
+            "Oracle Cloud Infrastructure",
+            "Computer: Proficient in R",
+            "Chart.js",
+            "CSS",
+            "NodeJS",
+            "MacOS",
+            "Advanced Proficiency in Java"
          ],
          "work_experiences": [
             {
@@ -88,7 +90,8 @@
                "duration_months": 3,
                "from": "Jun 2022",
                "to": "Sep 2022",
-               "is_current": false
+               "is_current": false,
+               "work_description": "Utilized Swagger Spec to build an API Client for Oracle’s Instance Agent Admin Service. Redesigned and rebuilt current Agent Admin tool with ReactJs in tandem with Oracle Forge to implement"
             },
             {
                "job_title": "Role Based Access Control.",
@@ -96,7 +99,8 @@
                "duration_months": 3,
                "from": "Jun 2021",
                "to": "Sep 2021",
-               "is_current": false
+               "is_current": false,
+               "work_description": "Developed foundation in Java to create test cases for and debug an Automation Testing Framework. Integrated Real-Time User Monitoring with test applications to conduct R&D for future use within the Designed and developed web application using ReactJS for Front-end and NodeJS for Back-end to automate Jenkins job creation process."
             }
          ],
          "total_experience_years": 0.5
@@ -118,12 +122,12 @@
             "3.8 GPA • Member of university’s Honor Society"
          ],
          "skills": [
-            "Conflict management",
+            "Data analytics",
             "Excellent time management skills",
             "Public speaking",
             "Type 96 words per minute",
-            "Proficient with project management software",
-            "Data analytics"
+            "Conflict management",
+            "Proficient with project management software"
          ],
          "work_experiences": [],
          "total_experience_years": 0

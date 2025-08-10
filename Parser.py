@@ -68,7 +68,6 @@ def extract_email(text):
     emails_regex = re.findall(email_pattern, text)
     return list(set(emails_regex))
 
-
 def extract_phone_number(text):
     doc = nlp(text)
     matcher = Matcher(nlp.vocab)
@@ -202,15 +201,57 @@ def extract_skills(text):
     
     return list(set(skills))
 
+def extract_work_description(text, job_title, company, start_line_idx, lines):
+    description_lines = []
+    
+    # Look for description in the lines following the job title/company
+    for i in range(start_line_idx + 1, min(len(lines), start_line_idx + 15)):
+        if i >= len(lines):
+            break
+            
+        line = lines[i].strip()
+        
+        # Stop if we hit another date pattern (next job)
+        if re.search(r'(?P<from>\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4})\s*(?:[-–—to]|to)\s*(?P<to>(?:Present|Current|Now|Ongoing|\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4}))', line, re.IGNORECASE):
+            break
+            
+        # Stop if we hit section headers
+        if re.search(r'(?i)^\s*(education|skills|projects|certifications|summary|objective|achievements|awards)\s*$', line):
+            break
+            
+        # Skip empty lines
+        if not line:
+            continue
+            
+        # Clean bullet points and formatting
+        clean_line = re.sub(r'^[•\*\-\u25cf➤→]\s*', '', line).strip()
+        clean_line = re.sub(r'^\d+\.\s*', '', clean_line).strip()  # Remove numbered lists
+        
+        # Add lines that look like job descriptions/responsibilities
+        if (clean_line and 
+            len(clean_line) > 15 and 
+            len(clean_line) < 500 and
+            not re.search(r'(?i)^(contact|phone|email|address)', clean_line) and
+            not re.search(r'^[A-Z][a-z]+\s+[A-Z][a-z]+$', clean_line) and  # Skip person names
+            not re.search(r'(?i)^(company|organization|location)', clean_line) and
+            # Look for action words or descriptive content
+            (re.search(r'(?i)\b(develop|manage|lead|create|implement|design|analyze|coordinate|collaborate|responsible|achieve|improve|optimize|maintain|support|assist|execute|plan|organize|oversee|supervise|train|mentor|research|write|present|communicate|build|test|deploy|troubleshoot|resolve|monitor|ensure|deliver|drive|facilitate|conduct|perform|contribute|participate|utilize|apply|demonstrate|establish|enhance|streamline|integrate|evaluate|assess|review|document|prepare|compile|generate|process|handle|administer|configure|install|upgrade|migrate|backup|secure|protect|audit)\b', clean_line) or
+             re.search(r'(?i)\b(project|team|client|customer|system|application|software|technology|business|process|solution|service|product|data|report|analysis|strategy|budget|quality|performance|compliance|training|meeting|presentation|coordination|collaboration|communication|documentation|testing|deployment|maintenance|support|troubleshooting|optimization|improvement|development|management|leadership|supervision|mentoring|research|innovation|problem solving)\b', clean_line) or
+             clean_line.startswith(('•', '-', '*', '➤', '→')) or
+             re.search(r'^\d+\.\s', clean_line))
+            ):
+                description_lines.append(clean_line)
+    
+    return ' '.join(description_lines) if description_lines else "No description available"
+
 def total_experience(jobs):
-    """Calculate total work experience in years"""
+    #work experience in years
     if not jobs:
         return 0
     total_months = sum(job["duration_months"] for job in jobs)
     return round(total_months / 12, 2)
 
 def calculate_work_duration(text):
-    """Extract work experiences and calculate their durations"""
     date_patterns = [
         r'(?P<from>\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4})\s*(?:[-–—to]|to)\s*(?P<to>(?:Present|Current|Now|Ongoing|\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4}))',
         r'(?P<from>\b\d{4})\s*(?:[-–—to]|to)\s*(?P<to>(?:Present|Current|Now|Ongoing|\b\d{4}))',
@@ -221,7 +262,6 @@ def calculate_work_duration(text):
     lines = text.split('\n')
 
     for i, line in enumerate(lines):
-        #-----------------------FIX TWO-------------------------
         original_line = line
         line = line.strip()
         if not line:
@@ -262,7 +302,6 @@ def calculate_work_duration(text):
                     context_lines = []
                     for j in range(max(0, i-3), min(len(lines), i+4)):
                         if lines[j].strip():
-                            #---------------FIX THREE--------------------
                             context_lines.append(lines[j])                   
                     context = ' '.join(context_lines)
                     doc = nlp(context)
@@ -293,13 +332,18 @@ def calculate_work_duration(text):
                         if (clean_prev and len(clean_prev) > 3 and len(clean_prev) < 80 and
                             not re.search(r'(?i)(texas|california|new york|florida|illinois|ohio)', clean_prev)):
                             job_title = clean_prev
+
+                    # Extract work description for this job
+                    work_description = extract_work_description(text, job_title, company, i, lines)
+
                     job_entry = {
                         "job_title": job_title,
                         "company": company,
                         "duration_months": round(months, 1),
                         "from": start.strftime('%b %Y'),
                         "to": end.strftime('%b %Y') if not any(keyword in to_str.lower() for keyword in present_keywords) else "Present",
-                        "is_current": any(keyword in to_str.lower() for keyword in present_keywords)
+                        "is_current": any(keyword in to_str.lower() for keyword in present_keywords),
+                        "work_description": work_description
                     }                   
                     jobs.append(job_entry)
                     break                    
@@ -423,7 +467,6 @@ for file_path in file_paths:
     urls = extract_urls_spacy(resume_text)
     education = extract_education(resume_text)
     skills = extract_skills(resume_text)
-
     experience_section_text = extract_work_experience(resume_text)
     work_experiences = calculate_work_duration(experience_section_text) if experience_section_text else []
     total_exp_years = total_experience(work_experiences)
