@@ -373,10 +373,9 @@ def extract_work_experience(text):
     lines = text.splitlines()
     experience_text = []
     recording = False
-    section_found = False    #---------------------FIX NUMBER ONE--------------------------
+    section_found = False
     for i, line in enumerate(lines):
         original_line = line
-        #Input corrent strip function
         line_stripped = line.strip()
         for header_pattern in section_headers:
             if re.match(header_pattern, line_stripped):
@@ -445,9 +444,7 @@ def extract_data(file_path):
         return None
 
 file_paths = [
-    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf',
-    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/EPS-Computer-Science_sample.pdf',
-    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/ATS classic HR resume.docx'
+    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/GIRISH GUPTA.docx'
 ]
 
 result_data = {"pdf": {}, "docx": {}}

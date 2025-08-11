@@ -1,133 +1,91 @@
 {
-   "pdf": {
-      "C:/Flexon_Resume_Parser/Parser_Build-Arnav/Resume_ArnavK.pdf": {
-         "name": "Arnav Kumar",
-         "emails": [
-            "its.arnavk.here@gmail.com"
-         ],
-         "phone_numbers": [
-            "(737)-600-6267"
-         ],
-         "urls": [
-            "www.linkedin.com/in/arnav-kumar0511"
-         ],
-         "education": [
-            "University of Texas at Dallas",
-            "●  Collaborated with a team of developers to create and maintain a database for University wide software",
-            "American Institute of Aeronautics and Astronautic at UTD"
-         ],
-         "skills": [
-            "Python",
-            "Programming:  JavaScript",
-            "BigQuerySQL",
-            "HTML/CSS",
-            "C/C++",
-            "Tools:  Google BigQuery"
-         ],
-         "work_experiences": [
-            {
-               "job_title": "Unknown Title",
-               "company": "Project Management Club",
-               "duration_months": 2,
-               "from": "Jan 2025",
-               "to": "Mar 2025",
-               "is_current": false,
-               "work_description": "Collaborated with a team of developers to create and maintain a database for University wide software Researched and maintained the Postgresql server for the software. Project Management Club"
-            },
-            {
-               "job_title": "Project Management Club",
-               "company": "Project Management Club  Front-End Web Developer  ",
-               "duration_months": 6.3,
-               "from": "Feb 2025",
-               "to": "Present",
-               "is_current": true,
-               "work_description": "Utilized CSS to design better visual experience for users on the landing page, events page and contact page"
-            }
-         ],
-         "total_experience_years": 0.69
-      },
-      "C:/Flexon_Resume_Parser/Parser_Build-Arnav/EPS-Computer-Science_sample.pdf": {
-         "name": "Jiaming Chen",
-         "emails": [
-            "jiachen@ucdavis.edu"
-         ],
-         "phone_numbers": [
-            "(345) 678-9101"
-         ],
-         "urls": [
-            "linkedin.com/jiamingchen",
-            "Chart.js"
-         ],
-         "education": [
-            "University of California, Davis",
-            "Bachelor of Science in Computer Science | GPA: 3.2/4.0",
-            "Student Ambassador, University of California, Davis, CA"
-         ],
-         "skills": [
-            "Python",
-            "Software: LINUX",
-            "and Mandarin",
-            "ReactJS",
-            "C++",
-            "MATLAB",
-            "Windows",
-            "Languages: Fluent in English",
-            "HTML",
-            "Software Engineering Intern",
-            "Spanish",
-            "Oracle Cloud Infrastructure",
-            "Computer: Proficient in R",
-            "Chart.js",
-            "CSS",
-            "NodeJS",
-            "MacOS",
-            "Advanced Proficiency in Java"
-         ],
-         "work_experiences": [
-            {
-               "job_title": "WORK EXPERIENCE",
-               "company": "Oracle Cloud Infrastructure",
-               "duration_months": 3,
-               "from": "Jun 2022",
-               "to": "Sep 2022",
-               "is_current": false,
-               "work_description": "Utilized Swagger Spec to build an API Client for Oracle’s Instance Agent Admin Service. Redesigned and rebuilt current Agent Admin tool with ReactJs in tandem with Oracle Forge to implement"
-            },
-            {
-               "job_title": "Role Based Access Control.",
-               "company": "API Client",
-               "duration_months": 3,
-               "from": "Jun 2021",
-               "to": "Sep 2021",
-               "is_current": false,
-               "work_description": "Developed foundation in Java to create test cases for and debug an Automation Testing Framework. Integrated Real-Time User Monitoring with test applications to conduct R&D for future use within the Designed and developed web application using ReactJS for Front-end and NodeJS for Back-end to automate Jenkins job creation process."
-            }
-         ],
-         "total_experience_years": 0.5
-      }
-   },
+   "pdf": {},
    "docx": {
-      "C:/Flexon_Resume_Parser/Parser_Build-Arnav/ATS classic HR resume.docx": {
-         "name": "Janna Gardner",
+      "C:/Flexon_Resume_Parser/Parser_Build-Arnav/GIRISH GUPTA.docx": {
+         "name": "GIRISH GUPTA",
          "emails": [
-            "janna@example.com"
+            "girishrg1249@gmail.com"
          ],
          "phone_numbers": [
-            "(716) 555-0100"
+            "4084716287"
          ],
-         "urls": [],
+         "urls": [
+            "RNN.with"
+         ],
          "education": [
-            "Bachelor of Arts Human Resources Management | Jasper University | Ft. Lauderdale, FL",
-            "3.8 GPA • Member of university’s Honor Society",
-            "3.8 GPA • Member of university’s Honor Society"
+            "Master’s of Engineering in Artificial Intelligence,University of Cincinnati."
          ],
          "skills": [
-            "Data analytics",
-            "Excellent time management skills",
-            "Public speaking",
-            "Type 96 words per minute",
-            "Conflict management",
-            "Proficient with project management software"
+            "integrating MySQL",
+            "One-Shot",
+            "translation",
+            "model training (SageMaker)",
+            "box plots",
+            "RetrievalQAChain",
+            "validation",
+            "LangGraph",
+            "Leveraged Pandas",
+            "normalization",
+            "including Scikit-learn",
+            "for building",
+            "learning rate",
+            "LDA",
+            "Lambda",
+            "batch size",
+            "Adapters on LLMs (GPT",
+            "Performed data cleansing",
+            "TensorFlow",
+            "deploying",
+            "scalable",
+            "debugging",
+            "Matplotlib",
+            "and managing secure",
+            "Pandas",
+            "EC2",
+            "NumPy",
+            "Bedrock",
+            "and Keras",
+            "tokenization",
+            "and lemmatization",
+            "XGBoost",
+            "Scikit-learn",
+            "aggregation",
+            "scaling",
+            "NewYork",
+            "including S3",
+            "refining",
+            "scatter plots",
+            "including tokenization",
+            "and storage techniques",
+            "transformation) with Python",
+            "SageMaker",
+            "Numpy",
+            "PyTorch",
+            "wrapper",
+            "and analytics",
+            "including Lambda",
+            "and vectorization",
+            "retrieval",
+            "Python",
+            "Zero-Shot",
+            "testing",
+            "TensorFlow)",
+            "Created histograms",
+            "transformation",
+            "experiment management",
+            "S3)",
+            "MICE)",
+            "specializing in designing",
+            "and evaluation with Pandas",
+            "Persona Prompting techniques",
+            "Random Forests",
+            "and API Gateway",
+            "Implemented Few-Shot",
+            "lemmatization",
+            "and type corrections",
+            "SQL",
+            "performance tuning",
+            "Fizer"
          ],
          "work_experiences": [],
          "total_experience_years": 0
