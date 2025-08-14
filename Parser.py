@@ -453,7 +453,7 @@ def extract_data(file_path):
         return None
 
 file_paths = [
-    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/GIRISH GUPTA.docx'
+    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/GIRISH GUPTA.docx'
 ]
 
 result_data = {"pdf": {}, "docx": {}}
