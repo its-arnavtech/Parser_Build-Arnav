@@ -29,7 +29,6 @@ def extract_text_from_pdf(pdf_path):
     try:
         return extract_text(pdf_path)
     except Exception as e:
-        print(f"Error extracting text from PDF: {e}")
         return None
 
 def extract_text_from_docx(docx_path):
@@ -37,7 +36,6 @@ def extract_text_from_docx(docx_path):
         doc = Document(docx_path)
         return "\n".join([p.text for p in doc.paragraphs])
     except Exception as e:
-        print(f"Error extracting text from DOCX: {e}")
         return None
 
 def preprocessing_text(text):
@@ -63,7 +61,6 @@ def extract_email(text):
     if emails_spacy:
         return list(set(emails_spacy))
     
-    #regex
     email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
     emails_regex = re.findall(email_pattern, text)
     return list(set(emails_regex))
@@ -72,12 +69,12 @@ def extract_phone_number(text):
     doc = nlp(text)
     matcher = Matcher(nlp.vocab)
     phone_pattern = [
-        {"TEXT": {"REGEX": r"[\(\[]?"}},                    # Optional open paren
-        {"TEXT": {"REGEX": r"\d{3}"}},                      # Area code
-        {"TEXT": {"REGEX": r"[\)\]]?"}},                    # Optional close paren
-        {"TEXT": {"REGEX": r"[-.\s]?"}},                    # Optional separator
-        {"TEXT": {"REGEX": r"\d{3}"}},                      # First 3 digits
-        {"TEXT": {"REGEX": r"[-.\s]?"}},                    # Optional separator
+        {"TEXT": {"REGEX": r"[\(\[]?"}},
+        {"TEXT": {"REGEX": r"\d{3}"}},
+        {"TEXT": {"REGEX": r"[\)\]]?"}},
+        {"TEXT": {"REGEX": r"[-.\s]?"}},
+        {"TEXT": {"REGEX": r"\d{3}"}},
+        {"TEXT": {"REGEX": r"[-.\s]?"}},
         {"TEXT": {"REGEX": r"\d{4}"}}
     ]
     matcher.add("PHONE_PATTERN", [phone_pattern])
@@ -92,7 +89,6 @@ def extract_phone_number(text):
         if ent.label_.lower() == "phone_number":
             phone_numbers.append(ent.text.strip())
 
-    #regex
     if not phone_numbers:
         regex_patterns = [
             r'\+\d{1,3}[\s\-\.]?\(?\d{3}\)?[\s\-\.]?\d{3}[\s\-\.]?\d{4}',
@@ -130,19 +126,15 @@ def extract_education(text):
         if not line:
             continue
             
-        # Universities/colleges
         if re.search(r'(?i)\buniversity\b|\bcollege\b|\binstitute\b', line) and 'of' in line.lower():
             education_info.append(line)
             
-        # Degrees with years
         if re.search(r'(?i)\b(bs|ba|ms|ma|bachelor|master|phd|mba)\b.*\(?\b(19|20)\d{2}\)?\b', line):
             education_info.append(line)
             
-        # GPA
         if re.search(r'(?i)\bgpa\b', line):
             education_info.append(line)
             
-        # Dean's list etc
         if re.search(r'(?i)\bdean.*list\b|\bchancellor.*list\b', line):
             education_info.append(line)
     
@@ -153,7 +145,6 @@ def extract_skills(text):
     lines = text.split('\n')
     in_skills_section = False
     
-    # Section headers to exclude from skills
     section_headers = [
         'work experience', 'professional experience', 'experience', 'education', 
         'projects', 'certifications', 'summary', 'objective', 'achievements',
@@ -178,13 +169,13 @@ def extract_skills(text):
                 skill_items = re.split(r'[,;|•]', clean_line)
                 for skill in skill_items:
                     skill = skill.strip()
-                    # Filter out section headers and job titles
                     if (skill and len(skill) > 2 and len(skill) < 50 and
                         skill.lower() not in section_headers and
                         not re.search(r'(?i)^(intern|engineer|developer|analyst|manager|specialist)$', skill) and
                         not skill.endswith('.') and
                         not re.search(r'(?i)(team|job|process|based access control)', skill)):
                         skills.append(skill)
+                        
     if not skills:
         for line in lines:
             if line.count(',') >= 2 and len(line) < 200:
@@ -204,58 +195,48 @@ def extract_skills(text):
 def extract_work_description(text, job_title, company, start_line_idx, lines):
     description_lines = []
     
-    # Look for description in the lines following the job title/company
-    for i in range(start_line_idx + 1, min(len(lines), start_line_idx + 15)):
+    for i in range(start_line_idx + 1, min(len(lines), start_line_idx + 20)):
         if i >= len(lines):
             break
             
         line = lines[i].strip()
         
-        # Stop if we hit another date pattern (next job)
-        if re.search(r'(?P<from>\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4})\s*(?:[-–—to]|to)\s*(?P<to>(?:Present|Current|Now|Ongoing|\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4}))', line, re.IGNORECASE):
+        if re.search(r'(?P<from>\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Sept|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4})\s*(?:--|[-–—to]|to)\s*(?P<to>(?:Present|Current|Now|Ongoing|\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Sept|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4}))', line, re.IGNORECASE):
             break
             
-        # Stop if we hit section headers
-        if re.search(r'(?i)^\s*(education|skills|projects|certifications|summary|objective|achievements|awards)\s*$', line):
+        if re.search(r'(?i)^\s*(##|education|skills|projects|certifications|summary|objective|achievements|awards)\s*$', line):
             break
             
-        # Skip empty lines
         if not line:
             continue
             
-        # Clean bullet points and formatting
         clean_line = re.sub(r'^[•\*\-\u25cf➤→]\s*', '', line).strip()
-        clean_line = re.sub(r'^\d+\.\s*', '', clean_line).strip()  # Remove numbered lists
+        clean_line = re.sub(r'^\d+\.\s*', '', clean_line).strip()
         
-        # Add lines that look like job descriptions/responsibilities
         if (clean_line and 
             len(clean_line) > 15 and 
             len(clean_line) < 500 and
             not re.search(r'(?i)^(contact|phone|email|address)', clean_line) and
-            not re.search(r'^[A-Z][a-z]+\s+[A-Z][a-z]+$', clean_line) and  # Skip person names
-            not re.search(r'(?i)^(company|organization|location)', clean_line) and
-            # Look for action words or descriptive content
-            (re.search(r'(?i)\b(develop|manage|lead|create|implement|design|analyze|coordinate|collaborate|responsible|achieve|improve|optimize|maintain|support|assist|execute|plan|organize|oversee|supervise|train|mentor|research|write|present|communicate|build|test|deploy|troubleshoot|resolve|monitor|ensure|deliver|drive|facilitate|conduct|perform|contribute|participate|utilize|apply|demonstrate|establish|enhance|streamline|integrate|evaluate|assess|review|document|prepare|compile|generate|process|handle|administer|configure|install|upgrade|migrate|backup|secure|protect|audit)\b', clean_line) or
-             re.search(r'(?i)\b(project|team|client|customer|system|application|software|technology|business|process|solution|service|product|data|report|analysis|strategy|budget|quality|performance|compliance|training|meeting|presentation|coordination|collaboration|communication|documentation|testing|deployment|maintenance|support|troubleshooting|optimization|improvement|development|management|leadership|supervision|mentoring|research|innovation|problem solving)\b', clean_line) or
-             clean_line.startswith(('•', '-', '*', '➤', '→')) or
-             re.search(r'^\d+\.\s', clean_line))
-            ):
+            not re.search(r'^[A-Z][a-z]+\s+[A-Z][a-z]+$', clean_line) and
+            not re.search(r'(?i)^(company|organization|location)', clean_line)):
                 description_lines.append(clean_line)
     
     return ' '.join(description_lines) if description_lines else "No description available"
 
 def total_experience(jobs):
-    #work experience in years
     if not jobs:
         return 0
     total_months = sum(job["duration_months"] for job in jobs)
     return round(total_months / 12, 2)
 
 def calculate_work_duration(text):
+    if not text:
+        return []
+    
     date_patterns = [
-        r'(?P<from>\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4})\s*(?:[-–—to]|to)\s*(?P<to>(?:Present|Current|Now|Ongoing|\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4}))',
-        r'(?P<from>\b\d{4})\s*(?:[-–—to]|to)\s*(?P<to>(?:Present|Current|Now|Ongoing|\b\d{4}))',
-        r'(?P<from>\b\d{1,2}/\d{4})\s*(?:[-–—to]|to)\s*(?P<to>(?:Present|Current|Now|Ongoing|\b\d{1,2}/\d{4}))',
+        r'(?P<from>\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Sept|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4})\s*(?:--|[-–—]|to)\s*(?P<to>(?:Present|Current|Now|Ongoing|\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Sept|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4}))',
+        r'(?P<from>\b\d{4})\s*(?:--|[-–—]|to)\s*(?P<to>(?:Present|Current|Now|Ongoing|\b\d{4}))',
+        r'(?P<from>\b\d{1,2}/\d{4})\s*(?:--|[-–—]|to)\s*(?P<to>(?:Present|Current|Now|Ongoing|\b\d{1,2}/\d{4}))',
     ]
 
     jobs = []
@@ -274,7 +255,9 @@ def calculate_work_duration(text):
                 to_str = match.group('to')
 
                 try:
-                    start = dateparser.parse(from_str)
+                    from_str_normalized = from_str.replace('Sept', 'Sep')
+                    start = dateparser.parse(from_str_normalized)
+                    
                     present_keywords = ['present', 'current', 'now', 'ongoing']
                     if any(keyword in to_str.lower() for keyword in present_keywords):
                         today = datetime.now()
@@ -283,10 +266,12 @@ def calculate_work_duration(text):
                         else:
                             end = datetime(today.year, today.month + 1, 1) - relativedelta(days=1)
                     else:
-                        end = dateparser.parse(to_str)
+                        to_str_normalized = to_str.replace('Sept', 'Sep')
+                        end = dateparser.parse(to_str_normalized)
                     
                     if not start or not end:
                         continue
+                        
                     duration = relativedelta(end, start)
                     months = duration.years * 12 + duration.months
                     
@@ -296,44 +281,57 @@ def calculate_work_duration(text):
                             current_day = datetime.now().day
                             month_fraction = current_day / days_in_current_month
                             months += month_fraction
+                    
                     if months <= 0:
                         continue
 
+                    job_title = "Unknown Title"
+                    company = "Unknown Company"
+                    
+                    # Look for job title in previous lines (markdown headers or job titles)
+                    for j in range(max(0, i-5), i):
+                        if j < len(lines):
+                            candidate_line = lines[j].strip()
+                            
+                            # Check for markdown headers (##)
+                            if candidate_line.startswith('##'):
+                                title_candidate = candidate_line.replace('##', '').strip()
+                                if title_candidate and len(title_candidate) < 80:
+                                    job_title = title_candidate
+                                    break
+                            
+                            # Check for lines with job keywords
+                            job_keywords = ['engineer', 'scientist', 'analyst', 'manager', 'developer', 'specialist']
+                            if any(keyword.lower() in candidate_line.lower() for keyword in job_keywords):
+                                if len(candidate_line) < 80 and not re.search(r'\d{4}', candidate_line):
+                                    job_title = candidate_line
+                                    break
+                    
+                    # Look for company using NER and context
                     context_lines = []
                     for j in range(max(0, i-3), min(len(lines), i+4)):
                         if lines[j].strip():
-                            context_lines.append(lines[j])                   
+                            context_lines.append(lines[j])
+                    
                     context = ' '.join(context_lines)
                     doc = nlp(context)
                     orgs = [ent.text for ent in doc.ents if ent.label_ == 'ORG']
-                    job_title = "Unknown Title"
-                    company = "Unknown Company"                   
+                    
                     if orgs:
                         company = orgs[0]
-                    for j in range(max(0, i-3), i):
-                        if j < len(lines):
-                            line_text = lines[j].strip()
-                            if (not line_text or 
-                                re.search(r'\d{4}', line_text) or 
-                                re.search(r'(?i)(texas|california|new york|florida|illinois|ohio)', line_text) or
-                                line_text in orgs):
-                                continue                            
-                            clean_line = re.sub(r'^[•\*\-\u25cf]\s*', '', line_text).strip()                            
-                            if (len(clean_line) > 3 and len(clean_line) < 80 and 
-                                re.search(r'[A-Z]', clean_line) and
-                                not re.search(r'(?i)^(expected|graduation|university|college)', clean_line)):
-                                job_title = clean_line
-                                break
-                    
-                    #fallback
-                    if job_title == "Unknown Title" and i > 0:
-                        prev_line = lines[i-1].strip()
-                        clean_prev = re.sub(r'^[•\*\-\u25cf]\s*', '', prev_line).strip()
-                        if (clean_prev and len(clean_prev) > 3 and len(clean_prev) < 80 and
-                            not re.search(r'(?i)(texas|california|new york|florida|illinois|ohio)', clean_prev)):
-                            job_title = clean_prev
+                    else:
+                        # Look for company in lines after job title
+                        for j in range(i+1, min(len(lines), i+4)):
+                            if j < len(lines):
+                                candidate_line = lines[j].strip()
+                                if (candidate_line and 
+                                    not re.search(r'[-•]', candidate_line) and
+                                    not candidate_line.lower().startswith(('integrated', 'developed', 'implemented', 'built')) and
+                                    len(candidate_line.split()) <= 4 and
+                                    len(candidate_line) > 3):
+                                    company = candidate_line.replace(',', '').replace('.', '').strip()
+                                    break
 
-                    # Extract work description for this job
                     work_description = extract_work_description(text, job_title, company, i, lines)
 
                     job_entry = {
@@ -344,50 +342,65 @@ def calculate_work_duration(text):
                         "to": end.strftime('%b %Y') if not any(keyword in to_str.lower() for keyword in present_keywords) else "Present",
                         "is_current": any(keyword in to_str.lower() for keyword in present_keywords),
                         "work_description": work_description
-                    }                   
+                    }
+                    
                     jobs.append(job_entry)
-                    break                    
+                    break
+                    
                 except Exception:
                     continue
+                    
     return jobs
 
 def extract_work_experience(text):
     section_headers = [
-        r"(?i)^\s*(work\s+)?experience\s*$",
-        r"(?i)^\s*professional\s+experience\s*$", 
-        r"(?i)^\s*employment\s+history\s*$",
-        r"(?i)^\s*career\s+history\s*$",
-        r"(?i)^\s*work\s+history\s*$",
-        r"(?i)^\s*professional\s+background\s*$"
+        r"(?i)work[\s\*\[\]]*experience",
+        r"(?i)professional[\s\*\[\]]*experience", 
+        r"(?i)employment[\s\*\[\]]*history",
+        r"(?i)career[\s\*\[\]]*history",
+        r"(?i)experience[\s\*\[\]]*:",
+        r"(?i)\*\*.*work.*experience.*\*\*",
+        r"(?i)\[work.*experience.*\]"
     ]
+    
     next_section_keywords = [
-        r"(?i)^\s*education\s*$",
-        r"(?i)^\s*(technical\s+)?skills\s*$",
-        r"(?i)^\s*projects\s*$",
-        r"(?i)^\s*certifications?\s*$",
-        r"(?i)^\s*(professional\s+)?summary\s*$",
-        r"(?i)^\s*objective\s*$",
-        r"(?i)^\s*achievements?\s*$",
-        r"(?i)^\s*awards?\s*$"
+        r"(?i)education",
+        r"(?i)technical[\s\*\[\]]*skills",
+        r"(?i)skills[\s\*\[\]]*:",
+        r"(?i)projects",
+        r"(?i)certifications?",
+        r"(?i)summary",
+        r"(?i)objective",
+        r"(?i)achievements?",
+        r"(?i)awards?",
+        r"(?i)\*\*.*education.*\*\*"
     ]
+    
     lines = text.splitlines()
     experience_text = []
     recording = False
     section_found = False
+    
     for i, line in enumerate(lines):
         original_line = line
         line_stripped = line.strip()
-        for header_pattern in section_headers:
-            if re.match(header_pattern, line_stripped):
-                recording = True
-                section_found = True
-                continue
-        if recording:
-            for next_pattern in next_section_keywords:
-                if re.match(next_pattern, line_stripped):
-                    recording = False
+        
+        if not recording:
+            for header_pattern in section_headers:
+                if re.search(header_pattern, line_stripped):
+                    recording = True
+                    section_found = True
                     break
-            if recording:
+        
+        if recording:
+            section_ended = False
+            for next_pattern in next_section_keywords:
+                if re.search(next_pattern, line_stripped):
+                    recording = False
+                    section_ended = True
+                    break
+            
+            if recording and not section_ended:
                 if original_line.strip():
                     experience_text.append(original_line)
     
@@ -430,7 +443,6 @@ def dump_to_json(data, filename="extracted_data.json"):
         print(f"Data extracted to {filename}")
         return True
     except Exception as e:
-        print(f"Error saving to JSON: {e}")
         return False
 
 def extract_data(file_path):
@@ -440,7 +452,6 @@ def extract_data(file_path):
     elif ext == '.docx':
         return extract_text_from_docx(file_path)
     else:
-        print(f"Unsupported file type: {ext}")
         return None
 
 file_paths = [
