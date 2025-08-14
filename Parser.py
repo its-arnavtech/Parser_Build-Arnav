@@ -1,15 +1,14 @@
 import os
-import spacy
+import spacy # type: ignore
 import re
-import nltk
-from nltk.tokenize import word_tokenize
-from nltk.corpus import stopwords
-from pdfminer.high_level import extract_text
-from docx import Document
-from spacy.matcher import Matcher
+from nltk.tokenize import word_tokenize # pyright: ignore[reportMissingImports]
+from nltk.corpus import stopwords # type: ignore
+from pdfminer.high_level import extract_text # type: ignore
+from docx import Document # type: ignore
+from spacy.matcher import Matcher # type: ignore
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-import dateparser
+import dateparser # pyright: ignore[reportMissingModuleSource]
 import json
 
 nlp = spacy.load("en_core_web_md")
@@ -40,8 +39,7 @@ def extract_text_from_docx(docx_path):
 
 def preprocessing_text(text):
     tokens = word_tokenize(text.lower())
-    stop_words = set(stopwords.words("english"))
-    return [word for word in tokens if word.isalpha() and word not in stop_words]
+    return [word for word in tokens if word.isalpha()]
 
 def extract_name(text):
     lines = text.strip().split('\n')
