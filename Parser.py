@@ -453,7 +453,12 @@ def extract_data(file_path):
         return None
 
 file_paths = [
-    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/GIRISH GUPTA.docx'
+    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI Engineer.docx',
+    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI ML Engineer.docx',
+    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Cloud Engineer.docx',
+    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data Engineer.docx',
+    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data Scientist AI_ML Engineer.docx',
+    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data Scientist_1.docx'
 ]
 
 result_data = {"pdf": {}, "docx": {}}
