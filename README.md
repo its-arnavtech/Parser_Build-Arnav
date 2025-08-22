@@ -7,3 +7,7 @@ Section Handler Added for education and work experience, work experience doesn't
 Program currently extracts Name, URLs, Education, Phone Number and Emails. 
 
 Work experience and Education functions are in progress, they currently work with regex methods, working on implementing spacy/nltk as primary methods
+
+## Work Experience Demo 
+
+<img width="50%" height="396" alt="image" src="https://github.com/user-attachments/assets/467ceb8c-9761-4d2b-b368-296c8fb9d0f4" />
