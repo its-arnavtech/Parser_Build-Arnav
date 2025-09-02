@@ -1,14 +1,14 @@
 import os
-import spacy # type: ignore
+import spacy
 import re
-from nltk.tokenize import word_tokenize # pyright: ignore[reportMissingImports]
-from nltk.corpus import stopwords # type: ignore
-from pdfminer.high_level import extract_text # type: ignore
-from docx import Document # type: ignore
-from spacy.matcher import Matcher # type: ignore
+from nltk.tokenize import word_tokenize 
+from nltk.corpus import stopwords 
+from pdfminer.high_level import extract_text 
+from docx import Document 
+from spacy.matcher import Matcher 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-import dateparser # pyright: ignore[reportMissingModuleSource]
+import dateparser
 import json
 
 nlp = spacy.load("en_core_web_md")
@@ -40,6 +40,7 @@ def extract_text_from_docx(docx_path):
 def preprocessing_text(text):
     tokens = word_tokenize(text.lower())
     return [word for word in tokens if word.isalpha()]
+    #removed stopwords as advised since it was unnecessary
 
 def extract_name(text):
     lines = text.strip().split('\n')
@@ -286,49 +287,112 @@ def calculate_work_duration(text):
                     job_title = "Unknown Title"
                     company = "Unknown Company"
                     
-                    # Look for job title in previous lines (markdown headers or job titles)
-                    for j in range(max(0, i-5), i):
-                        if j < len(lines):
-                            candidate_line = lines[j].strip()
+                    # Look for job title in the same line or previous lines
+                    # First, check if the date line itself contains the job title
+                    line_before_date = line.split(match.group())[0].strip()
+                    
+                    # Check if this looks like a company name instead of job title
+                    # (e.g., "Verizon, New York" should be company, not job title)
+                    if line_before_date and ',' in line_before_date:
+                        # This looks like "Company, Location" format
+                        potential_company = line_before_date.split(',')[0].strip()
+                        if (len(potential_company.split()) <= 3 and 
+                            not any(keyword.lower() in potential_company.lower() for keyword in ['engineer', 'scientist', 'analyst', 'manager', 'developer', 'specialist', 'consultant', 'architect', 'lead', 'director'])):
+                            # This is likely a company, look for job title in previous lines
+                            company = potential_company
                             
-                            # Check for markdown headers (##)
-                            if candidate_line.startswith('##'):
-                                title_candidate = candidate_line.replace('##', '').strip()
-                                if title_candidate and len(title_candidate) < 80:
-                                    job_title = title_candidate
-                                    break
-                            
-                            # Check for lines with job keywords
-                            job_keywords = ['engineer', 'scientist', 'analyst', 'manager', 'developer', 'specialist']
-                            if any(keyword.lower() in candidate_line.lower() for keyword in job_keywords):
-                                if len(candidate_line) < 80 and not re.search(r'\d{4}', candidate_line):
-                                    job_title = candidate_line
-                                    break
-                    
-                    # Look for company using NER and context
-                    context_lines = []
-                    for j in range(max(0, i-3), min(len(lines), i+4)):
-                        if lines[j].strip():
-                            context_lines.append(lines[j])
-                    
-                    context = ' '.join(context_lines)
-                    doc = nlp(context)
-                    orgs = [ent.text for ent in doc.ents if ent.label_ == 'ORG']
-                    
-                    if orgs:
-                        company = orgs[0]
+                            # Look for job title in previous lines
+                            for j in range(max(0, i-3), i):
+                                if j < len(lines):
+                                    candidate_line = lines[j].strip()
+                                    if (candidate_line and 
+                                        len(candidate_line.split()) <= 4 and
+                                        not re.search(r'\d{4}', candidate_line) and
+                                        any(keyword.lower() in candidate_line.lower() for keyword in ['engineer', 'scientist', 'analyst', 'manager', 'developer', 'specialist', 'consultant', 'architect', 'lead', 'director'])):
+                                        job_title = candidate_line.strip()
+                                        break
                     else:
-                        # Look for company in lines after job title
-                        for j in range(i+1, min(len(lines), i+4)):
+                        # Standard format - job title before date
+                        if line_before_date and len(line_before_date.split()) <= 6:
+                            # Remove common formatting characters and clean the title
+                            clean_title = re.sub(r'^[\t\s]*', '', line_before_date)
+                            clean_title = re.sub(r'[\t]+', ' ', clean_title).strip()
+                            # Remove trailing tabs and extra spaces
+                            clean_title = re.sub(r'[\t\s]+$', '', clean_title)
+                            if clean_title and not re.search(r'\d{4}', clean_title) and len(clean_title) > 2:
+                                job_title = clean_title
+                    
+                    # If not found, look in previous lines for job title
+                    if job_title == "Unknown Title":
+                        for j in range(max(0, i-3), i):
                             if j < len(lines):
                                 candidate_line = lines[j].strip()
-                                if (candidate_line and 
-                                    not re.search(r'[-•]', candidate_line) and
-                                    not candidate_line.lower().startswith(('integrated', 'developed', 'implemented', 'built')) and
-                                    len(candidate_line.split()) <= 4 and
-                                    len(candidate_line) > 3):
-                                    company = candidate_line.replace(',', '').replace('.', '').strip()
+                                
+                                # Skip empty lines or lines with dates
+                                if not candidate_line or re.search(r'\d{4}', candidate_line):
+                                    continue
+                                    
+                                # Check for markdown headers (##)
+                                if candidate_line.startswith('##'):
+                                    title_candidate = candidate_line.replace('##', '').strip()
+                                    if title_candidate and len(title_candidate) < 80:
+                                        job_title = title_candidate
+                                        break
+                                
+                                # Check for lines with job keywords or typical job titles
+                                job_keywords = ['engineer', 'scientist', 'analyst', 'manager', 'developer', 'specialist', 'consultant', 'architect', 'lead', 'senior', 'junior', 'associate', 'director', 'coordinator']
+                                if (any(keyword.lower() in candidate_line.lower() for keyword in job_keywords) and
+                                    len(candidate_line) < 80 and len(candidate_line.split()) <= 6):
+                                    job_title = candidate_line.strip()
                                     break
+                    
+                    # Look for company in the line immediately after the date line
+                    # Company is typically in the next line after the job title/date line
+                    for j in range(i+1, min(len(lines), i+3)):
+                        if j < len(lines):
+                            candidate_line = lines[j].strip()
+                            if not candidate_line:
+                                continue
+                                
+                            # Skip lines that start with bullet points or look like job descriptions
+                            if (re.search(r'^[•\*\-\u25cf➤→]', candidate_line) or
+                                candidate_line.lower().startswith(('designed', 'developed', 'implemented', 'built', 'created', 'managed', 'led', 'architected', 'integrated', 'collaborated', 'enhanced', 'optimized'))):
+                                continue
+                            
+                            # Company line typically has format: "Company Name, Location" or just "Company Name"
+                            # Split by comma and take the first part as company
+                            if ',' in candidate_line:
+                                company_candidate = candidate_line.split(',')[0].strip()
+                            else:
+                                company_candidate = candidate_line.strip()
+                            
+                            # Validate that this looks like a company name
+                            if (company_candidate and 
+                                len(company_candidate.split()) <= 5 and
+                                len(company_candidate) > 2 and
+                                not re.search(r'\d{4}', company_candidate) and
+                                not company_candidate.lower() in ['remote', 'onsite', 'hybrid']):
+                                company = company_candidate
+                                break
+                    
+                    # Fallback: Try NER for company extraction if not found
+                    if company == "Unknown Company":
+                        context_lines = []
+                        for j in range(max(0, i-2), min(len(lines), i+3)):
+                            if lines[j].strip():
+                                context_lines.append(lines[j])
+                        
+                        context = ' '.join(context_lines)
+                        doc = nlp(context)
+                        orgs = [ent.text for ent in doc.ents if ent.label_ == 'ORG']
+                        
+                        if orgs:
+                            # Filter out common false positives
+                            filtered_orgs = [org for org in orgs if not re.search(r'\d{4}', org) and 
+                                           len(org.split()) <= 4 and
+                                           org.lower() not in ['remote', 'present', 'current', 'environment']]
+                            if filtered_orgs:
+                                company = filtered_orgs[0]
 
                     work_description = extract_work_description(text, job_title, company, i, lines)
 
@@ -401,6 +465,17 @@ def extract_work_experience(text):
             if recording and not section_ended:
                 if original_line.strip():
                     experience_text.append(original_line)
+    
+    # If no formal work experience section found, check if the entire resume 
+    # contains date patterns suggesting work experience scattered throughout
+    if not section_found:
+        # Check if there are multiple date patterns in the resume
+        date_pattern = r'\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Sept|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4}\s*(?:--|[-–—]|to)\s*(?:Present|Current|Now|Ongoing|\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Sept|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4})'
+        date_matches = re.findall(date_pattern, text, re.IGNORECASE)
+        
+        # If we find multiple date ranges, assume work experience is embedded throughout
+        if len(date_matches) >= 2:
+            return text  # Return the full text for processing
     
     return '\n'.join(experience_text) if experience_text else None
 
