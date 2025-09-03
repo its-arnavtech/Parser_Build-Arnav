@@ -99,57 +99,108 @@ def extract_education(text):
     
     return education_info
 
+import re
+
 def extract_skills(text):
-    skills = []
+    """Compact skills extractor with section detection, fallbacks, and validation."""
     lines = text.split('\n')
-    in_skills_section = False
-    
-    section_headers = [
-        'work experience', 'professional experience', 'experience', 'education', 
-        'projects', 'certifications', 'summary', 'objective', 'achievements',
-        'awards', 'contact', 'personal information', 'references'
+    skills, in_section = [], False
+
+    # --- Config ---
+    section_headers = {
+        'work experience','professional experience','experience','education',
+        'projects','certifications','summary','objective','achievements','awards',
+        'contact','personal information','references','activities','interests','hobbies','languages'
+    }
+    skill_section_patterns = [
+        r'(?i)^\s*(skills?|technical skills?|core competencies|technical competencies|key skills?|technology stack|technologies|technical expertise|proficiencies|skill set|areas of expertise)\s*$'
     ]
-    
+    section_end_patterns = [
+        r'(?i)^\s*(work\s+)?experience\s*$', r'(?i)^\s*education\s*$', r'(?i)^\s*projects?\s*$', 
+        r'(?i)^\s*certifications?\s*$', r'(?i)^\s*(summary|objective|achievements?|awards?|activities|interests?|languages?)\s*$'
+    ]
+    category_patterns = [
+        r'programming\s+languages?', r'languages?', r'frameworks?', r'libraries', r'databases?', r'tools?', r'platforms?', r'technologies',
+        r'software', r'operating\s+systems?', r'web\s+technologies', r'cloud\s+platforms?', r'methodologies', r'markup\s+languages?', r'scripting\s+languages?'
+    ]
+    normalize_map = {
+        'c++':'C++','c#':'C#','javascript':'JavaScript','typescript':'TypeScript',
+        'nodejs':'Node.js','reactjs':'React','angularjs':'Angular','vuejs':'Vue.js',
+        'postgresql':'PostgreSQL','mongodb':'MongoDB','mysql':'MySQL'
+    }
+
+    # --- Validators ---
+    def is_valid(skill):
+        if not skill or len(skill)<2 or len(skill)>100: return False
+        s = skill.lower().strip()
+        if s in section_headers: return False
+        if re.search(r'^\d{4}$|@|^\+?\d{10,}$', s): return False
+        if s.count(' ')>3 or len(s.split())>4 or s.endswith(('.', '!')): return False
+        job_titles = r'(intern|engineer|developer|analyst|manager|consultant|architect|director|lead|senior|junior)'
+        companies  = r'(microsoft|google|amazon|apple|meta|netflix|tesla|salesforce|oracle|nvidia|intel|adobe)'
+        places     = r'(california|new york|texas|chicago|boston|usa|india|canada|germany|france|japan)'
+        if re.search(job_titles,s) or re.search(companies,s) or re.search(places,s): return False
+        bad_terms = {'team','experience','skills','knowledge','business','project','management','strategy'}
+        if s in bad_terms: return False
+        tech_patterns = [
+            r'python|java(script)?|typescript|c\+\+|c#|html|css|sql|mysql|postgresql|mongodb|oracle',
+            r'aws|azure|gcp|docker|kubernetes|jenkins|terraform|ansible|git|github|linux|ubuntu|windows',
+            r'react|angular|vue|node(\.js)?|express|django|flask|spring|rails|fastapi',
+            r'tensorflow|pytorch|pandas|numpy|scikit|keras|opencv|spark|hadoop|kafka|tableau|power bi'
+        ]
+        if any(re.search(p,s) for p in tech_patterns): return True
+        indicators = [r'^[a-z]+\.[a-z]+$',r'\w+js$',r'[a-z]+-[a-z]+$',r'\w*ml\w*$',r'\w*ai\w*$',r'\w+\d+$',r'^[a-z]+\+\+?$']
+        return any(re.search(p,s) for p in indicators) or (re.match(r'^[a-zA-Z0-9\+\-\#\.\(\)]+$', skill) and len(skill.split())<=2)
+
+    def parse_line(line):
+        seps = r'[,;|•◦‣▸▪▫/\n\r]|\s+and\s+|\s+&\s+'
+        items = re.split(seps,line)
+        out=[]
+        for it in items:
+            it=re.sub(r'^[•\*\-\u25cf➤→◦‣▸▪▫]\s*','',it)
+            it=re.sub(r'\(.*\)','',it).strip()
+            if is_valid(it): out.append(normalize_map.get(it.lower(),it))
+        return out
+
+    # --- Main scan ---
     for line in lines:
-        line = line.strip()
-        if not line:
-            continue
-            
-        if re.search(r'(?i)^skills?$|^technical skills?$|^core competencies$', line):
-            in_skills_section = True
-            continue
-            
-        if in_skills_section and re.search(r'(?i)^(experience|education|projects|certifications|summary|objective)', line):
-            break
-            
-        if in_skills_section:
-            clean_line = re.sub(r'^[•\*\-\u25cf]\s*', '', line).strip()
-            if clean_line and len(clean_line) > 2:
-                skill_items = re.split(r'[,;|•]', clean_line)
-                for skill in skill_items:
-                    skill = skill.strip()
-                    if (skill and len(skill) > 2 and len(skill) < 50 and
-                        skill.lower() not in section_headers and
-                        not re.search(r'(?i)^(intern|engineer|developer|analyst|manager|specialist)$', skill) and
-                        not skill.endswith('.') and
-                        not re.search(r'(?i)(team|job|process|based access control)', skill)):
-                        skills.append(skill)
-                        
+        l=line.strip()
+        if not l: continue
+        # Enter/exit skills section
+        if not in_section and any(re.match(p,l) for p in skill_section_patterns): in_section=True; continue
+        if in_section and any(re.match(p,l) for p in section_end_patterns): in_section=False; break
+        if not in_section: continue
+        # Categorized skills
+        if ':' in l and not l.endswith(':'):
+            cat,part=l.split(':',1)
+            if any(re.search(p,cat,re.I) for p in category_patterns): skills.extend(parse_line(part)); continue
+        # General skills line
+        clean=re.sub(r'^[•\*\-\u25cf➤→◦‣▸▪▫]|\d+\.\s*','',l).strip()
+        if clean: skills.extend(parse_line(clean))
+
+    # --- Fallbacks ---
     if not skills:
-        for line in lines:
-            if line.count(',') >= 2 and len(line) < 200:
-                skill_items = line.split(',')
-                if len(skill_items) >= 3:
-                    for skill in skill_items:
-                        skill = re.sub(r'^[•\*\-\u25cf]\s*', '', skill).strip()
-                        if (skill and len(skill) > 2 and len(skill) < 30 and
-                            skill.lower() not in section_headers and
-                            not re.search(r'(?i)^(intern|engineer|developer|analyst|manager|specialist)$', skill) and
-                            not skill.endswith('.') and
-                            not re.search(r'(?i)(team|job|process|based access control)', skill)):
-                            skills.append(skill)
-    
-    return list(set(skills))
+        for l in lines:
+            l=l.strip()
+            if not l or re.search(r'\d{4}|@',l) or len(l)>300: continue
+            if l.count(',')>=1:
+                parts=[s.strip() for s in l.split(',')]
+                val=[s for s in parts if is_valid(s)]
+                if len(val)>=len(parts)*0.6: skills.extend(val)
+            elif any(sep in l for sep in ['|','•','◦','‣','▸','▪','▫']):
+                parts=[s.strip() for s in re.split(r'[|•◦‣▸▪▫]',l)]
+                val=[s for s in parts if is_valid(s)]
+                if len(val)>=2: skills.extend(val)
+            elif is_valid(l): skills.append(l)
+
+    # --- Cleanup ---
+    final=[]
+    for s in set(skills):
+        s=re.sub(r'^(proficient\s+in\s+|experience\s+(with|in)\s+|knowledge\s+of\s+)', '', s, flags=re.I).strip()
+        s=re.sub(r'\s+(experience|knowledge|skills?)$', '', s, flags=re.I).strip()
+        if 2<=len(s)<=50 and not s.isdigit(): final.append(normalize_map.get(s.lower(),s))
+    return sorted(final)
+
 
 def extract_work_description(text, job_title, company, start_line_idx, lines):
     description_lines = []
