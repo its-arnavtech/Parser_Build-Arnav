@@ -10,4 +10,5 @@ Work experience and Education functions are in progress, they currently work wit
 
 ## Work Experience Demo 
 
-<img width="50%" height="396" alt="image" src="https://github.com/user-attachments/assets/467ceb8c-9761-4d2b-b368-296c8fb9d0f4" />
+<img width="1379" height="618" alt="image" src="https://github.com/user-attachments/assets/adc2e7fe-7cee-4f4b-87aa-ed56a7c05ef8" />
+
