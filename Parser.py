@@ -32,6 +32,7 @@ def preprocessing_text(text):
     tokens = word_tokenize(text.lower())
     return [word for word in tokens if word.isalpha()]
     #removed stopwords as advised since it was unnecessary
+    #remove emojis, graphs, special symbols, add code for those
 
 def extract_name(text):
     lines = text.strip().split('\n')
@@ -58,47 +59,13 @@ def extract_email(text):
     return list(set(emails_regex))
 
 def extract_phone_number(text):
-    doc = nlp(text)
-    matcher = Matcher(nlp.vocab)
-    phone_pattern = [
-        {"TEXT": {"REGEX": r"[\(\[]?"}},
-        {"TEXT": {"REGEX": r"\d{3}"}},
-        {"TEXT": {"REGEX": r"[\)\]]?"}},
-        {"TEXT": {"REGEX": r"[-.\s]?"}},
-        {"TEXT": {"REGEX": r"\d{3}"}},
-        {"TEXT": {"REGEX": r"[-.\s]?"}},
-        {"TEXT": {"REGEX": r"\d{4}"}}
-    ]
-    matcher.add("PHONE_PATTERN", [phone_pattern])
-    matches = matcher(doc)
-    matched_spans = [doc[start:end] for _, start, end in matches]
-    with doc.retokenize() as retokenizer:
-        for span in matched_spans:
-            retokenizer.merge(span)
-    chunked_doc = nlp(doc.text)
-    phone_numbers = []
-    for ent in chunked_doc.ents:
-        if ent.label_.lower() == "phone_number":
-            phone_numbers.append(ent.text.strip())
+    pattern = r'\+?\d[\d\s\-\(\)\.]{7,}\d'
+    matches = re.findall(pattern, text)
 
-    if not phone_numbers:
-        regex_patterns = [
-            r'\+\d{1,3}[\s\-\.]?\(?\d{3}\)?[\s\-\.]?\d{3}[\s\-\.]?\d{4}',
-            r'\(\d{3}\)[\s\-\.]?\d{3}[\s\-\.]?\d{4}',
-            r'\b\d{3}[\s\-\.]\d{3}[\s\-\.]\d{4}\b',
-            r'\b\d{10}\b'
-        ]
-        for pattern in regex_patterns:
-            matches = re.findall(pattern, text)
-            for match in matches:
-                cleaned = re.sub(r'[^\d+]', '', match)
-                digits_only = cleaned.lstrip('+1').lstrip('+')
-                if (len(digits_only) == 10 and 
-                    not digits_only.startswith(('19', '20')) and
-                    not re.search(r'\b(19|20)\d{2}[\s\-](19|20)\d{2}\b', match) and
-                    len(set(digits_only)) > 1 and
-                    digits_only[0] not in ['0', '1']):
-                    phone_numbers.append(match.strip())
+    phone_numbers = []
+    for match in matches:
+        cleaned = match.strip()
+        phone_numbers.append(cleaned)
 
     return list(set(phone_numbers))
 
@@ -118,7 +85,7 @@ def extract_education(text):
         if not line:
             continue
             
-        if re.search(r'(?i)\buniversity\b|\bcollege\b|\binstitute\b', line) and 'of' in line.lower():
+        if re.search(r'(?i)\buniversity\b|\bcollege\b|\binstitute\b', line) and 'of' in line.lower():  #add some more regex patterns for degrees
             education_info.append(line)
             
         if re.search(r'(?i)\b(bs|ba|ms|ma|bachelor|master|phd|mba)\b.*\(?\b(19|20)\d{2}\)?\b', line):
@@ -221,7 +188,7 @@ def total_experience(jobs):
     total_months = sum(job["duration_months"] for job in jobs)
     return round(total_months / 12, 2)
 
-def calculate_work_duration(text):
+def calculate_work_duration(text): #name something else as it also extracts job title and company name
     if not text:
         return []
     
@@ -564,3 +531,4 @@ for file_path in file_paths:
     result_section[file_path] = file_data
 
 dump_to_json(result_data)
+
