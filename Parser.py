@@ -2,7 +2,6 @@ import os
 import spacy
 import re
 from nltk.tokenize import word_tokenize 
-from nltk.corpus import stopwords 
 from pdfminer.high_level import extract_text 
 from docx import Document 
 from spacy.matcher import Matcher 
@@ -12,14 +11,6 @@ import dateparser
 import json
 
 nlp = spacy.load("en_core_web_md")
-
-ruler = nlp.add_pipe("entity_ruler", before="ner")
-patterns = [
-    {"label": "PHONE_NUMBER", "pattern": [{"ORTH": "("}, {"SHAPE": "ddd"}, {"ORTH": ")"}, {"SHAPE": "ddd"},
-                                         {"ORTH": "-", "OP": "?"}, {"SHAPE": "dddd"}]},
-    {"label": "PHONE_NUMBER", "pattern": [{"SHAPE": "ddd"}, {"SHAPE": "ddd"}, {"SHAPE": "dddd"}]},
-]
-ruler.add_patterns(patterns)
 
 # nltk.download('punkt')
 # nltk.download('stopwords')
@@ -44,22 +35,24 @@ def preprocessing_text(text):
 
 def extract_name(text):
     lines = text.strip().split('\n')
-    top_lines = ' '.join(lines[:30])
-    
+    top_lines = ' '.join(lines[:30]) #going over first 30 lines to find name
+    #spacy extraction
     doc = nlp(top_lines)
     for ent in doc.ents:
         if ent.label_ == "PERSON" and len(ent.text.split()) <= 3:
             return ent.text
+    #regex extraction
     pattern = r'\b[A-Z][a-z]+(?:\s[A-Z][a-z]+)+\b'
     matches = re.findall(pattern, top_lines)
     return matches[0] if matches else None
 
 def extract_email(text):
+    #spacy extraction
     doc = nlp(text)
     emails_spacy = [ent.text for ent in doc.ents if ent.label_ == "EMAIL"]
     if emails_spacy:
         return list(set(emails_spacy))
-    
+    #regex fallback
     email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
     emails_regex = re.findall(email_pattern, text)
     return list(set(emails_regex))
