@@ -1,205 +1,227 @@
 import os
 import spacy
 import re
-from nltk.tokenize import word_tokenize 
-from pdfminer.high_level import extract_text 
-from docx import Document 
-from spacy.matcher import Matcher 
+import json
+from pdfminer.high_level import extract_text
+from docx import Document
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import dateparser
-import json
 
+# Load spaCy model
 nlp = spacy.load("en_core_web_md")
-
-# nltk.download('punkt')
-# nltk.download('stopwords')
 
 def extract_text_from_pdf(pdf_path):
     try:
         return extract_text(pdf_path)
-    except Exception as e:
+    except Exception:
         return None
 
 def extract_text_from_docx(docx_path):
     try:
         doc = Document(docx_path)
         return "\n".join([p.text for p in doc.paragraphs])
-    except Exception as e:
+    except Exception:
         return None
 
-def preprocessing_text(text):
-    tokens = word_tokenize(text.lower())
-    return [word for word in tokens if word.isalpha()]
-    #removed stopwords as advised since it was unnecessary
-    #remove emojis, graphs, special symbols, add code for those
-
 def extract_name(text):
-    lines = text.strip().split('\n')
-    top_lines = ' '.join(lines[:30]) #going over first 30 lines to find name
-    #spacy extraction
-    doc = nlp(top_lines)
+    lines = text.strip().split('\n')[:5]  # Check first 5 lines
+    
+    # Try spaCy NER first
+    doc = nlp(' '.join(lines))
     for ent in doc.ents:
         if ent.label_ == "PERSON" and len(ent.text.split()) <= 3:
-            return ent.text
-    #regex extraction
-    pattern = r'\b[A-Z][a-z]+(?:\s[A-Z][a-z]+)+\b'
-    matches = re.findall(pattern, top_lines)
-    return matches[0] if matches else None
+            return ent.text.strip()
+    
+    # Fallback to regex for capitalized names
+    for line in lines:
+        line = line.strip()
+        # Match 2-3 capitalized words at start of line
+        match = re.match(r'^([A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,2})(?:\s|$)', line)
+        if match and not re.search(r'\d|@|\.com', match.group(1)):
+            return match.group(1)
+    
+    return None
 
 def extract_email(text):
-    #spacy extraction
-    doc = nlp(text)
-    emails_spacy = [ent.text for ent in doc.ents if ent.label_ == "EMAIL"]
-    if emails_spacy:
-        return list(set(emails_spacy))
-    #regex fallback
-    email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
-    emails_regex = re.findall(email_pattern, text)
-    return list(set(emails_regex))
+    pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+    emails = re.findall(pattern, text)
+    return list(set(emails))
 
 def extract_phone_number(text):
-    pattern = r'\+?\d[\d\s\-\(\)\.]{7,}\d'
-    matches = re.findall(pattern, text)
-
-    phone_numbers = []
-    for match in matches:
-        cleaned = match.strip()
-        phone_numbers.append(cleaned)
-
-    return list(set(phone_numbers))
-
-def extract_urls_spacy(text):
-    matcher = Matcher(nlp.vocab)
-    matcher.add("URLS", [[{"LIKE_URL": True}]])
-    doc = nlp(text)
-    matches = matcher(doc)
-    return [doc[start:end].text for _, start, end in matches]
+    patterns = [
+        r'\+?1?[-\.\s]?\(?[0-9]{3}\)?[-\.\s]?[0-9]{3}[-\.\s]?[0-9]{4}',  # US format
+        r'\+?[0-9]{1,3}[-\.\s]?[0-9]{3,4}[-\.\s]?[0-9]{3,4}[-\.\s]?[0-9]{3,4}',  # International
+        r'\([0-9]{3}\)\s?[0-9]{3}-[0-9]{4}'  # (123) 456-7890
+    ]
+    
+    phones = []
+    for pattern in patterns:
+        matches = re.findall(pattern, text)
+        phones.extend(matches)
+    
+    # Clean and validate
+    cleaned = []
+    for phone in phones:
+        digits = re.sub(r'\D', '', phone)
+        if 10 <= len(digits) <= 15:
+            cleaned.append(phone.strip())
+    
+    return list(set(cleaned))
 
 def extract_education(text):
-    education_info = []
+    education = []
     lines = text.split('\n')
+    
+    # Look for education section
+    education_section = []
+    in_education = False
     
     for line in lines:
         line = line.strip()
-        if not line:
+        if re.search(r'(?i)^(education|academic|qualifications).*$', line):
+            in_education = True
             continue
-            
-        if re.search(r'(?i)\buniversity\b|\bcollege\b|\binstitute\b', line) and 'of' in line.lower():  #add some more regex patterns for degrees
-            education_info.append(line)
-            
-        if re.search(r'(?i)\b(bs|ba|ms|ma|bachelor|master|phd|mba)\b.*\(?\b(19|20)\d{2}\)?\b', line):
-            education_info.append(line)
-            
-        if re.search(r'(?i)\bgpa\b', line):
-            education_info.append(line)
-            
-        if re.search(r'(?i)\bdean.*list\b|\bchancellor.*list\b', line):
-            education_info.append(line)
+        elif in_education and re.search(r'(?i)^(experience|work|skills|projects|certifications).*$', line):
+            break
+        elif in_education:
+            education_section.append(line)
     
-    return education_info
-
-import re
+    # Extract from education section or full text if no section found
+    search_text = '\n'.join(education_section) if education_section else text
+    
+    # Patterns for degrees and institutions
+    degree_patterns = [
+        r'(?i)(bachelor|master|phd|doctorate|mba|bs|ba|ms|ma|btech|mtech).*?(?:in|of)?\s+([a-z\s]+?)(?:\d{4}|\n|$)',
+        r'(?i)(university|college|institute|school)\s+of\s+([a-z\s]+)',
+        r'(?i)([a-z\s]+?)\s+(university|college|institute)',
+        r'(?i)(gpa|cgpa)\s*:?\s*([0-9.]+)'
+    ]
+    
+    for pattern in degree_patterns:
+        matches = re.findall(pattern, search_text)
+        for match in matches:
+            edu_text = ' '.join(match).strip()
+            if len(edu_text) > 5 and edu_text not in education:
+                education.append(edu_text)
+    
+    return education[:5]  # Limit to 5 entries
 
 def extract_skills(text):
-    """Compact skills extractor with section detection, fallbacks, and validation."""
+    skills = set()
+    
+    # Find skills section
     lines = text.split('\n')
-    skills, in_section = [], False
-
-    # --- Config ---
-    section_headers = {
-        'work experience','professional experience','experience','education',
-        'projects','certifications','summary','objective','achievements','awards',
-        'contact','personal information','references','activities','interests','hobbies','languages'
-    }
-    skill_section_patterns = [
-        r'(?i)^\s*(skills?|technical skills?|core competencies|technical competencies|key skills?|technology stack|technologies|technical expertise|proficiencies|skill set|areas of expertise)\s*$'
-    ]
-    section_end_patterns = [
-        r'(?i)^\s*(work\s+)?experience\s*$', r'(?i)^\s*education\s*$', r'(?i)^\s*projects?\s*$', 
-        r'(?i)^\s*certifications?\s*$', r'(?i)^\s*(summary|objective|achievements?|awards?|activities|interests?|languages?)\s*$'
-    ]
-    category_patterns = [
-        r'programming\s+languages?', r'languages?', r'frameworks?', r'libraries', r'databases?', r'tools?', r'platforms?', r'technologies',
-        r'software', r'operating\s+systems?', r'web\s+technologies', r'cloud\s+platforms?', r'methodologies', r'markup\s+languages?', r'scripting\s+languages?'
-    ]
-    normalize_map = {
-        'c++':'C++','c#':'C#','javascript':'JavaScript','typescript':'TypeScript',
-        'nodejs':'Node.js','reactjs':'React','angularjs':'Angular','vuejs':'Vue.js',
-        'postgresql':'PostgreSQL','mongodb':'MongoDB','mysql':'MySQL'
-    }
-
-    # --- Validators ---
-    def is_valid(skill):
-        if not skill or len(skill)<2 or len(skill)>100: return False
-        s = skill.lower().strip()
-        if s in section_headers: return False
-        if re.search(r'^\d{4}$|@|^\+?\d{10,}$', s): return False
-        if s.count(' ')>3 or len(s.split())>4 or s.endswith(('.', '!')): return False
-        job_titles = r'(intern|engineer|developer|analyst|manager|consultant|architect|director|lead|senior|junior)'
-        companies  = r'(microsoft|google|amazon|apple|meta|netflix|tesla|salesforce|oracle|nvidia|intel|adobe)'
-        places     = r'(california|new york|texas|chicago|boston|usa|india|canada|germany|france|japan)'
-        if re.search(job_titles,s) or re.search(companies,s) or re.search(places,s): return False
-        bad_terms = {'team','experience','skills','knowledge','business','project','management','strategy'}
-        if s in bad_terms: return False
-        tech_patterns = [
-            r'python|java(script)?|typescript|c\+\+|c#|html|css|sql|mysql|postgresql|mongodb|oracle',
-            r'aws|azure|gcp|docker|kubernetes|jenkins|terraform|ansible|git|github|linux|ubuntu|windows',
-            r'react|angular|vue|node(\.js)?|express|django|flask|spring|rails|fastapi',
-            r'tensorflow|pytorch|pandas|numpy|scikit|keras|opencv|spark|hadoop|kafka|tableau|power bi'
-        ]
-        if any(re.search(p,s) for p in tech_patterns): return True
-        indicators = [r'^[a-z]+\.[a-z]+$',r'\w+js$',r'[a-z]+-[a-z]+$',r'\w*ml\w*$',r'\w*ai\w*$',r'\w+\d+$',r'^[a-z]+\+\+?$']
-        return any(re.search(p,s) for p in indicators) or (re.match(r'^[a-zA-Z0-9\+\-\#\.\(\)]+$', skill) and len(skill.split())<=2)
-
-    def parse_line(line):
-        seps = r'[,;|•◦‣▸▪▫/\n\r]|\s+and\s+|\s+&\s+'
-        items = re.split(seps,line)
-        out=[]
-        for it in items:
-            it=re.sub(r'^[•\*\-\u25cf➤→◦‣▸▪▫]\s*','',it)
-            it=re.sub(r'\(.*\)','',it).strip()
-            if is_valid(it): out.append(normalize_map.get(it.lower(),it))
-        return out
-
-    # --- Main scan ---
+    skills_section = []
+    in_skills = False
+    
     for line in lines:
-        l=line.strip()
-        if not l: continue
-        # Enter/exit skills section
-        if not in_section and any(re.match(p,l) for p in skill_section_patterns): in_section=True; continue
-        if in_section and any(re.match(p,l) for p in section_end_patterns): in_section=False; break
-        if not in_section: continue
-        # Categorized skills
-        if ':' in l and not l.endswith(':'):
-            cat,part=l.split(':',1)
-            if any(re.search(p,cat,re.I) for p in category_patterns): skills.extend(parse_line(part)); continue
-        # General skills line
-        clean=re.sub(r'^[•\*\-\u25cf➤→◦‣▸▪▫]|\d+\.\s*','',l).strip()
-        if clean: skills.extend(parse_line(clean))
-
-    # --- Fallbacks ---
+        line = line.strip()
+        if re.search(r'(?i)^(skills?|technical skills?|competencies).*$', line):
+            in_skills = True
+            continue
+        elif in_skills and re.search(r'(?i)^(experience|work|education|projects|certifications).*$', line):
+            break
+        elif in_skills and line:
+            skills_section.append(line)
+    
+    # Process skills section
+    for line in skills_section:
+        # Remove bullets and split by common separators
+        clean_line = re.sub(r'^[•▪▫◦‣▸-]\s*', '', line)
+        items = re.split(r'[,;|/•]|\s+and\s+|\s+&\s+', clean_line)
+        
+        for item in items:
+            item = item.strip()
+            if 2 <= len(item) <= 30 and not re.search(r'\d{4}|@|\.|www', item):
+                skills.add(item)
+    
+    # If no skills section, look for technical terms
     if not skills:
-        for l in lines:
-            l=l.strip()
-            if not l or re.search(r'\d{4}|@',l) or len(l)>300: continue
-            if l.count(',')>=1:
-                parts=[s.strip() for s in l.split(',')]
-                val=[s for s in parts if is_valid(s)]
-                if len(val)>=len(parts)*0.6: skills.extend(val)
-            elif any(sep in l for sep in ['|','•','◦','‣','▸','▪','▫']):
-                parts=[s.strip() for s in re.split(r'[|•◦‣▸▪▫]',l)]
-                val=[s for s in parts if is_valid(s)]
-                if len(val)>=2: skills.extend(val)
-            elif is_valid(l): skills.append(l)
+        tech_patterns = [
+            r'(?i)\b(python|java|javascript|c\+\+|c#|html|css|sql|mysql|postgresql|mongodb)\b',
+            r'(?i)\b(aws|azure|docker|kubernetes|git|linux|windows|react|angular|vue)\b',
+            r'(?i)\b(tensorflow|pytorch|pandas|numpy|scikit-learn|excel|tableau|powerbi)\b'
+        ]
+        
+        for pattern in tech_patterns:
+            matches = re.findall(pattern, text)
+            skills.update(match.lower() for match in matches)
+    
+    return sorted(list(skills))
 
-    # --- Cleanup ---
-    final=[]
-    for s in set(skills):
-        s=re.sub(r'^(proficient\s+in\s+|experience\s+(with|in)\s+|knowledge\s+of\s+)', '', s, flags=re.I).strip()
-        s=re.sub(r'\s+(experience|knowledge|skills?)$', '', s, flags=re.I).strip()
-        if 2<=len(s)<=50 and not s.isdigit(): final.append(normalize_map.get(s.lower(),s))
-    return sorted(final)
+def extract_projects(text):
+    projects = []
+    
+    # Find projects section
+    lines = text.split('\n')
+    project_lines = []
+    in_projects = False
+    
+    for line in lines:
+        line = line.strip()
+        if re.search(r'(?i)^(projects?|personal projects?|academic projects?).*$', line):
+            in_projects = True
+            continue
+        elif in_projects and re.search(r'(?i)^(experience|work|education|skills|certifications).*$', line):
+            break
+        elif in_projects and line:
+            project_lines.append(line)
+    
+    # Extract project entries
+    current_project = {}
+    for line in project_lines:
+        # Project titles are usually standalone lines or start with bullets
+        if not line.startswith(('•', '-', '*')) and len(line.split()) <= 6:
+            if current_project:
+                projects.append(current_project)
+            current_project = {"title": line, "description": ""}
+        elif line.startswith(('•', '-', '*')) and current_project:
+            desc = line[1:].strip()
+            if current_project["description"]:
+                current_project["description"] += " " + desc
+            else:
+                current_project["description"] = desc
+    
+    if current_project:
+        projects.append(current_project)
+    
+    return projects[:5]  # Limit to 5 projects
+
+def extract_certifications(text):
+    certifications = []
+    
+    # Find certifications section
+    lines = text.split('\n')
+    cert_lines = []
+    in_certs = False
+    
+    for line in lines:
+        line = line.strip()
+        if re.search(r'(?i)^(certifications?|certificates?|licenses?).*$', line):
+            in_certs = True
+            continue
+        elif in_certs and re.search(r'(?i)^(experience|work|education|skills|projects).*$', line):
+            break
+        elif in_certs and line:
+            cert_lines.append(line)
+    
+    # Extract certification entries
+    for line in cert_lines:
+        line = re.sub(r'^[•▪▫◦‣▸-]\s*', '', line).strip()
+        if line and len(line) > 5:
+            # Try to separate cert name and issuer/date
+            if '-' in line:
+                parts = line.split('-', 1)
+                cert = {
+                    "name": parts[0].strip(),
+                    "issuer": parts[1].strip() if len(parts) > 1 else ""
+                }
+            else:
+                cert = {"name": line, "issuer": ""}
+            certifications.append(cert)
+    
+    return certifications[:5]  # Limit to 5 certifications
 
 
 def extract_work_description(text, job_title, company, start_line_idx, lines):
@@ -490,96 +512,70 @@ def extract_work_experience(text):
     
     return '\n'.join(experience_text) if experience_text else None
 
-def split_into_sections(text):
-    section_titles = {
-        "education": ["education", "academic", "background", "qualifications"],
-        "experience": ["experience", "work", "professional", "employment", "career"],
-        "skills": ["skills", "technical", "core", "competencies"],
-        "projects": ["projects", "personal"],
-        "certifications": ["certifications", "licenses", "certificates"],
-        "summary": ["summary", "profile", "objective"],
-    }
-    sections = {}
-    current_section = None
-    buffer = []
-    
-    for line in text.splitlines():
-        preprocessed_line = preprocessing_text(line)
-        found = False
-        for key, keywords in section_titles.items():
-            if any(keyword in preprocessed_line for keyword in keywords):
-                if current_section and buffer:
-                    sections[current_section] = '\n'.join(buffer).strip()
-                current_section = key
-                buffer = []
-                found = True
-                break
-        if not found and current_section:
-            buffer.append(line)   
-    if current_section and buffer:
-        sections[current_section] = '\n'.join(buffer).strip()
-    return sections
-
-def dump_to_json(data, filename="extracted_data.json"):
+def save_to_json(data, filename="extracted_data.json"):
     try:
-        with open(filename, "w", encoding="utf-8") as json_file:
-            json.dump(data, json_file, indent=3, ensure_ascii=False)
-        print(f"Data extracted to {filename}")
+        with open(filename, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        print(f"Data saved to {filename}")
         return True
     except Exception as e:
+        print(f"Error saving to JSON: {e}")
         return False
 
-def extract_data(file_path):
+def parse_resume(file_path):
+    # Extract text based on file type
     ext = os.path.splitext(file_path)[1].lower()
     if ext == '.pdf':
-        return extract_text_from_pdf(file_path)
+        text = extract_text_from_pdf(file_path)
     elif ext == '.docx':
-        return extract_text_from_docx(file_path)
+        text = extract_text_from_docx(file_path)
     else:
         return None
-
-file_paths = [
-    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI Engineer.docx',
-    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI ML Engineer.docx',
-    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Cloud Engineer.docx',
-    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data Engineer.docx',
-    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data Scientist AI_ML Engineer.docx',
-    'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data Scientist_1.docx'
-]
-
-result_data = {"pdf": {}, "docx": {}}
-
-for file_path in file_paths:
-    resume_text = extract_data(file_path)
     
-    if not resume_text:
-        continue
-
-    file_extension = os.path.splitext(file_path)[1].lower()
-    result_section = result_data["pdf"] if file_extension == ".pdf" else result_data["docx"]
-
-    name = extract_name(resume_text)
-    emails = extract_email(resume_text)
-    phone_numbers = extract_phone_number(resume_text)
-    urls = extract_urls_spacy(resume_text)
-    education = extract_education(resume_text)
-    skills = extract_skills(resume_text)
-    experience_section_text = extract_work_experience(resume_text)
-    work_experiences = calculate_work_duration(experience_section_text) if experience_section_text else []
-    total_exp_years = total_experience(work_experiences)
-
-    file_data = {
-        "name": name,
-        "emails": emails,
-        "phone_numbers": phone_numbers,
-        "urls": urls,
-        "education": education,
-        "skills": skills,
-        "work_experiences": work_experiences,
-        "total_experience_years": total_exp_years
+    if not text:
+        return None
+    
+    # Extract all information
+    return {
+        "name": extract_name(text),
+        "emails": extract_email(text),
+        "phone_numbers": extract_phone_number(text),
+        "education": extract_education(text),
+        "skills": extract_skills(text),
+        "work_experiences": calculate_work_duration(extract_work_experience(text) or ""),
+        "projects": extract_projects(text),
+        "certifications": extract_certifications(text)
     }
 
-    result_section[file_path] = file_data
-
-dump_to_json(result_data)
-
+# Test the parser with sample files
+if __name__ == "__main__":
+    sample_files = [
+        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI Engineer.docx',
+        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data Scientist_1.docx',
+        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI ML Engineer.docx',
+        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI_ML_Engineer_1 External.docx',
+        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI_ML_Engineer_2 External.docx',
+        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI_ML_Engineer_5 External.docx',
+        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Cloud Engineer.docx',
+        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data Engineer.docx',
+        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data Scientist 2.docx',
+        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data_Scientist_3 External.doc',
+        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data_Scientist_4 External.docx'
+    ]
+    
+    results = {}
+    
+    for file_path in sample_files:
+        if os.path.exists(file_path):
+            #print(f"Processing: {os.path.basename(file_path)}")
+            result = parse_resume(file_path)
+            if result:
+                results[os.path.basename(file_path)] = result
+            else:
+                #print(f"Failed to process: {file_path}")
+                continue
+    
+    if results:
+        save_to_json(results)
+    else:
+        print("No files processed successfully")
