@@ -1,119 +1,182 @@
 {
-  "Resume_ArnavK.pdf": {
-    "name": "Arnav Kumar",
-    "emails": [
-      "its.arnavk.here@gmail.com"
-    ],
-    "phone_numbers": [
-      "(737)-600-6267"
-    ],
+  "Data_Scientist_4 External.docx": {
+    "name": "Deep Learning-ANN",
+    "emails": [],
+    "phone_numbers": [],
     "education": [
-      "Ma Front End Web Development",
-      "University Texas at Dallas\nB"
+      "M.S (Electrical and Computer Engineering)",
+      "M.E (Embedded System Technologies)",
+      "B.E (Electronics and Communication Engineering)"
     ],
     "skills": [
-      "BigQuerySQL",
-      "C#",
+      "Amazon Redshift (AWS-S3)",
+      "Apache Spark",
+      "Azure data factory",
+      "Bigdata\tHadoop",
       "C++",
-      "CSS",
-      "Git",
+      "Data Libraries",
+      "Data Science",
+      "Data bricks",
+      "Data frame",
+      "Data verse",
+      "Database",
+      "Docker",
+      "ERP",
+      "ETL tools\tSQL",
+      "Erwin",
+      "Excel",
+      "Fetch XML Builder",
+      "Frameworks\tNumpy",
+      "GitHub",
       "HTML",
-      "Programming:  JavaScript",
-      "Python",
-      "Tools:  Google BigQuery"
+      "Hive",
+      "Informatica",
+      "JSON",
+      "Jupiter Note",
+      "Keras",
+      "Kubernetes",
+      "Level up for Dynamics 365 CRM",
+      "Linux",
+      "Logistic Regression",
+      "Lucid Chart",
+      "MATLAB",
+      "MLlib",
+      "MS Access",
+      "Microsoft Azure ML",
+      "Microsoft Word",
+      "Microsoft office\tDynamics 365 CRM",
+      "MongoDB",
+      "Naïve Bayes",
+      "Nearest neighbour",
+      "Networking tools\tWireshark",
+      "OData",
+      "Operating Systems\tWindows",
+      "Pandas",
+      "Power Apps",
+      "Power BI",
+      "Power Point",
+      "Power platform",
+      "Programming Languages \t Python",
+      "Random Forest",
+      "Rest API",
+      "SAS",
+      "SQL",
+      "SSIS",
+      "SSRS",
+      "SVM",
+      "Scikit-Learn",
+      "Seaborn",
+      "SharePoint",
+      "Shell Scripting",
+      "Snowflake",
+      "Tableau",
+      "Tensor Flow",
+      "Terra data",
+      "VMware",
+      "Visual Studio",
+      "XML",
+      "XRM tool kit"
     ],
     "work_experiences": [
       {
-        "job_title": "Unknown Title",
-        "company": "Unknown Company",
-        "duration_months": 2,
-        "from": "Jan 2025",
-        "to": "Mar 2025",
+        "job_title": "Data Scientist",
+        "company": "Elevance Health Inc",
+        "duration_months": 20,
+        "from": "Jan 2023",
+        "to": "Sep 2024",
         "is_current": false,
-        "work_description": "Collaborated with a team of developers to create and maintain a database for University wide software Researched and maintained the Postgresql server for the software. Project Management Club Front-End Web Developer Richardson, Texas"
+        "work_description": "No description available"
       },
       {
-        "job_title": "Front-End Web Developer",
-        "company": "HTML",
-        "duration_months": 7.3,
-        "from": "Feb 2025",
-        "to": "Present",
-        "is_current": true,
-        "work_description": "Created scripts embedded within the webpage using DOMS in Javascript to connect to HTML files Utilized CSS to design better visual experience for users on the landing page, events page and contact page"
+        "job_title": "Data Scientist",
+        "company": "Elevance Health Inc",
+        "duration_months": 20,
+        "from": "Jan 2023",
+        "to": "Sep 2024",
+        "is_current": false,
+        "work_description": "No description available"
       },
       {
-        "job_title": "Unknown Title",
-        "company": "Unknown Company",
-        "duration_months": 1,
-        "from": "Jul 2024",
-        "to": "Aug 2024",
+        "job_title": "Client: Competitive Innovations LLC",
+        "company": "KAT Enterprise LLC",
+        "duration_months": 41,
+        "from": "Mar 2019",
+        "to": "Aug 2022",
         "is_current": false,
-        "work_description": "Streamlined course flowcharts for incoming freshmen in engineering at UT Dallas. Collaborated with peers in designing and coding the website using HTML/CSS div objects and classes Web Scraping Data from the official UTD webpage that indicates credit per hour equivalent for AP classes. Backend App Development"
+        "work_description": "No description available"
       },
       {
-        "job_title": "Unknown Title",
-        "company": "Unknown Company",
-        "duration_months": 2,
-        "from": "Mar 2025",
-        "to": "May 2025",
+        "job_title": "Client: Competitive Innovations LLC",
+        "company": "KAT Enterprise LLC",
+        "duration_months": 41,
+        "from": "Mar 2019",
+        "to": "Aug 2022",
         "is_current": false,
-        "work_description": "Utilized a pre-trained model to classify images of animals such as dogs and cats Added labels and tagged the images using the model such as breed and origins of the animal Created section to handle and report misclassified information Solubility Prediction Model Personal Project | Machine Learning Developed a Machine learning model to predict the solubility of chemical compounds using molecular descriptors Trained and evaluated two Regression models using Linear Regression and Random Forest from Sklearn library Utilized R² and MSE to analyze predicted data from both models to visualize and analyze prediction performance using scatterplot graphs and trendlines from pandas and numpy libraries"
+        "work_description": "No description available"
       }
     ],
-    "projects": [
-      {
-        "title": "Front-End Web Developer",
-        "description": ""
-      },
-      {
-        "title": "Richardson, Texas",
-        "description": ""
-      },
-      {
-        "title": "February 2025 – Current",
-        "description": ""
-      },
-      {
-        "title": "Comet Flowchart",
-        "description": ""
-      },
-      {
-        "title": "Front End Designer",
-        "description": ""
-      }
-    ],
+    "total_experience_years": 10.17,
+    "projects": [],
     "certifications": [
       {
-        "name": "Current Certifications are from the Google Data Analytics provided through Google at Coursera",
-        "issuer": ""
+        "name": "Learning Microsoft Dynamics 365: Basics –LinkedIn Learning",
+        "issuer": null,
+        "date": null
       },
       {
-        "name": "Foundations of Data |Project Questions | Preparing Data | Data Cleaning | Data Analysis |Sharing Data",
-        "issuer": ""
+        "name": "Introduction to spark SQL and Data frames–LinkedIn Learning",
+        "issuer": null,
+        "date": null
       },
       {
-        "name": "American Institute of Aeronautics and Astronautic at UTD",
-        "issuer": ""
+        "name": "Apache Spark Essential training – LinkedIn Learning",
+        "issuer": null,
+        "date": null
       },
       {
-        "name": "Comet L1 Rocketry",
-        "issuer": ""
+        "name": "Professional Experiences",
+        "issuer": null,
+        "date": null
       },
       {
-        "name": "Richardson, Texas",
-        "issuer": ""
+        "name": "Elevance Health Inc, USA. https://www.elevancehealth.com/ \t\t\tJan 2023",
+        "issuer": "Sep 2024",
+        "date": "Sep 2024"
       },
       {
-        "name": "September 2024 – November 2024",
-        "issuer": ""
+        "name": "Data Scientist",
+        "issuer": null,
+        "date": null
       },
       {
-        "name": "●  Responsible for designing and executing simulations to optimize the performance and safety of the L1 rocket",
-        "issuer": ""
+        "name": "Responsibilities:",
+        "issuer": null,
+        "date": null
       },
       {
-        "name": "development.",
-        "issuer": ""
+        "name": "Impacted Business Performance by reducing the SLA from 24 hours to 4 hours in production with 95% data accuracy.",
+        "issuer": null,
+        "date": null
+      },
+      {
+        "name": "Automated the RAM documents creation process using Data frame in production data.",
+        "issuer": null,
+        "date": null
+      },
+      {
+        "name": "Performed data integrity checks",
+        "issuer": "data cleansing and exploratory analysis using Python libraries like Pandas, Matplotlib etc.",
+        "date": null
+      },
+      {
+        "name": "Lead the Provider selection logic measures in UAT environment.",
+        "issuer": null,
+        "date": null
+      },
+      {
+        "name": "Reviewed the work intake logs in PDASQ- Provider Data Automation and System Quality using Facets production",
+        "issuer": "audit and Edinet databases.",
+        "date": null
       }
     ]
   }
