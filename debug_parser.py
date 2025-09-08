@@ -1,4 +1,78 @@
 import os
+import re
+from pdfminer.high_level import extract_text
+from docx import Document
+
+def extract_text_from_docx(docx_path):
+    try:
+        doc = Document(docx_path)
+        return "\n".join([p.text for p in doc.paragraphs])
+    except Exception:
+        return None
+
+def extract_section(text, section_name, end_sections):
+    """Extract a specific section from resume text"""
+    lines = text.split('\n')
+    section_lines = []
+    in_section = False
+    
+    print(f"\n=== DEBUG: Looking for section '{section_name}' ===")
+    
+    for i, line in enumerate(lines):
+        line_clean = line.strip()
+        
+        if not in_section:
+            if re.search(rf'(?i)^{section_name}', line_clean):
+                print(f"FOUND section start at line {i}: '{line_clean}'")
+                in_section = True
+                continue
+        else:
+            # Check if we've hit another section
+            if any(re.search(rf'(?i)^{end}', line_clean) for end in end_sections):
+                print(f"Section ended at line {i}: '{line_clean}'")
+                break
+            if line_clean:
+                section_lines.append(line_clean)
+    
+    print(f"Extracted {len(section_lines)} lines from section")
+    for i, line in enumerate(section_lines[:10]):  # Show first 10 lines
+        print(f"  {i+1}: {line}")
+    if len(section_lines) > 10:
+        print(f"  ... and {len(section_lines) - 10} more lines")
+    
+    return section_lines
+
+# Test with one resume
+file_path = 'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data Scientist_1.docx'
+text = extract_text_from_docx(file_path)
+
+if text:
+    print("=== FULL TEXT (first 20 lines) ===")
+    lines = text.split('\n')
+    for i, line in enumerate(lines[:20]):
+        print(f"{i+1:2d}: {line}")
+    
+    print(f"\n=== TOTAL LINES: {len(lines)} ===")
+    
+    # Test work experience extraction
+    work_lines = extract_section(text, 
+        r'professional\s*experience|work\s*experience|employment|experience',
+        ['education', 'skills', 'projects', 'certifications'])
+    
+    # Test projects extraction
+    project_lines = extract_section(text, 
+        r'projects?|personal\s*projects?|academic\s*projects?|key\s*projects?',
+        ['experience|work|employment', 'education', 'skills', 'certifications?'])
+    
+    # Test certifications extraction
+    cert_lines = extract_section(text, 
+        r'certifications?|certificates?|licenses?|professional\s*certifications?|trainings?',
+        ['experience|work|employment', 'education', 'skills', 'projects?'])
+
+else:
+    print("Could not extract text from file")
+
+import os
 import spacy
 import re
 from docx import Document 
