@@ -1,12 +1,12 @@
 import os
-import spacy
+import spacy # pyright: ignore[reportMissingImports]
 import re
 import json
-from pdfminer.high_level import extract_text
-from docx import Document
+from pdfminer.high_level import extract_text # pyright: ignore[reportMissingImports]
+from docx import Document # pyright: ignore[reportMissingImports]
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-import dateparser
+import dateparser # pyright: ignore[reportMissingModuleSource]
 
 # Load spaCy model
 nlp = spacy.load("en_core_web_md")
@@ -25,30 +25,28 @@ def extract_text_from_docx(docx_path):
         return None
 
 def extract_name(text):
-    lines = text.strip().split('\n')[:5]  # Check first 5 lines
+    lines = text.strip().split('\n')[:30]  #check first 30 lines
     
-    # Try spaCy NER first
     doc = nlp(' '.join(lines))
     for ent in doc.ents:
         if ent.label_ == "PERSON" and len(ent.text.split()) <= 3:
             return ent.text.strip()
     
-    # Fallback to regex for capitalized names
+    #Regex
     for line in lines:
         line = line.strip()
-        # Match 2-3 capitalized words at start of line
         match = re.match(r'^([A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,2})(?:\s|$)', line)
         if match and not re.search(r'\d|@|\.com', match.group(1)):
             return match.group(1)
     
     return None
 
-def extract_email(text):
+def extract_email(text): #regex only
     pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
     emails = re.findall(pattern, text)
     return list(set(emails))
 
-def extract_phone_number(text):
+def extract_phone_number(text): #regex only
     patterns = [
         r'\+?1?[-\.\s]?\(?[0-9]{3}\)?[-\.\s]?[0-9]{3}[-\.\s]?[0-9]{4}',  # US format
         r'\+?[0-9]{1,3}[-\.\s]?[0-9]{3,4}[-\.\s]?[0-9]{3,4}[-\.\s]?[0-9]{3,4}',  # International
@@ -60,7 +58,6 @@ def extract_phone_number(text):
         matches = re.findall(pattern, text)
         phones.extend(matches)
     
-    # Clean and validate
     cleaned = []
     for phone in phones:
         digits = re.sub(r'\D', '', phone)
@@ -73,7 +70,7 @@ def extract_education(text):
     education = []
     lines = text.split('\n')
     
-    # Look for education section
+    #find education section
     education_section = []
     in_education = False
     
@@ -87,10 +84,10 @@ def extract_education(text):
         elif in_education:
             education_section.append(line)
     
-    # Extract from education section or full text if no section found
+    #education data or full data from resume
     search_text = '\n'.join(education_section) if education_section else text
     
-    # Patterns for degrees and institutions
+    #degree patterns
     degree_patterns = [
         r'(?i)(bachelor|master|phd|doctorate|mba|bs|ba|ms|ma|btech|mtech).*?(?:in|of)?\s+([a-z\s]+?)(?:\d{4}|\n|$)',
         r'(?i)(university|college|institute|school)\s+of\s+([a-z\s]+)',
@@ -105,12 +102,12 @@ def extract_education(text):
             if len(edu_text) > 5 and edu_text not in education:
                 education.append(edu_text)
     
-    return education[:5]  # Limit to 5 entries
+    return education[:3]  #max 3 entries
 
 def extract_skills(text):
     skills = set()
     
-    # Find skills section
+    #skills section lookout
     lines = text.split('\n')
     skills_section = []
     in_skills = False
@@ -125,9 +122,9 @@ def extract_skills(text):
         elif in_skills and line:
             skills_section.append(line)
     
-    # Process skills section
+    #parse skills section
     for line in skills_section:
-        # Remove bullets and split by common separators
+        #data cleaning/preprocessing
         clean_line = re.sub(r'^[•▪▫◦‣▸-]\s*', '', line)
         items = re.split(r'[,;|/•]|\s+and\s+|\s+&\s+', clean_line)
         
@@ -136,7 +133,7 @@ def extract_skills(text):
             if 2 <= len(item) <= 30 and not re.search(r'\d{4}|@|\.|www', item):
                 skills.add(item)
     
-    # If no skills section, look for technical terms
+    #look for technical skills, add a lot more to this, a dataset will be best
     if not skills:
         tech_patterns = [
             r'(?i)\b(python|java|javascript|c\+\+|c#|html|css|sql|mysql|postgresql|mongodb)\b',
@@ -153,7 +150,7 @@ def extract_skills(text):
 def extract_projects(text):
     projects = []
     
-    # Find projects section
+    #project section lookout
     lines = text.split('\n')
     project_lines = []
     in_projects = False
@@ -168,10 +165,9 @@ def extract_projects(text):
         elif in_projects and line:
             project_lines.append(line)
     
-    # Extract project entries
+    #extract project entries
     current_project = {}
     for line in project_lines:
-        # Project titles are usually standalone lines or start with bullets
         if not line.startswith(('•', '-', '*')) and len(line.split()) <= 6:
             if current_project:
                 projects.append(current_project)
@@ -186,12 +182,12 @@ def extract_projects(text):
     if current_project:
         projects.append(current_project)
     
-    return projects[:5]  # Limit to 5 projects
+    return projects[:5]  #max 5 projects
 
 def extract_certifications(text):
     certifications = []
     
-    # Find certifications section
+    #certifications section lookout
     lines = text.split('\n')
     cert_lines = []
     in_certs = False
@@ -206,11 +202,11 @@ def extract_certifications(text):
         elif in_certs and line:
             cert_lines.append(line)
     
-    # Extract certification entries
+    #certification data
     for line in cert_lines:
         line = re.sub(r'^[•▪▫◦‣▸-]\s*', '', line).strip()
         if line and len(line) > 5:
-            # Try to separate cert name and issuer/date
+            #seperate cert name and issuer
             if '-' in line:
                 parts = line.split('-', 1)
                 cert = {
@@ -221,7 +217,7 @@ def extract_certifications(text):
                 cert = {"name": line, "issuer": ""}
             certifications.append(cert)
     
-    return certifications[:5]  # Limit to 5 certifications
+    return certifications[:15]  #max 15 certifications
 
 
 def extract_work_description(text, job_title, company, start_line_idx, lines):
@@ -261,7 +257,7 @@ def total_experience(jobs):
     total_months = sum(job["duration_months"] for job in jobs)
     return round(total_months / 12, 2)
 
-def calculate_work_duration(text): #name something else as it also extracts job title and company name
+def work_duration_and_experiences(text): #name something else as it also extracts job title and company name
     if not text:
         return []
     
@@ -325,7 +321,6 @@ def calculate_work_duration(text): #name something else as it also extracts job 
                     line_before_date = line.split(match.group())[0].strip()
                     
                     # Check if this looks like a company name instead of job title
-                    # (e.g., "Verizon, New York" should be company, not job title)
                     if line_before_date and ',' in line_before_date:
                         # This looks like "Company, Location" format
                         potential_company = line_before_date.split(',')[0].strip()
@@ -542,7 +537,7 @@ def parse_resume(file_path):
         "phone_numbers": extract_phone_number(text),
         "education": extract_education(text),
         "skills": extract_skills(text),
-        "work_experiences": calculate_work_duration(extract_work_experience(text) or ""),
+        "work_experiences": work_duration_and_experiences(extract_work_experience(text) or ""),
         "projects": extract_projects(text),
         "certifications": extract_certifications(text)
     }
@@ -550,17 +545,18 @@ def parse_resume(file_path):
 # Test the parser with sample files
 if __name__ == "__main__":
     sample_files = [
-        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI Engineer.docx',
-        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data Scientist_1.docx',
-        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI ML Engineer.docx',
-        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI_ML_Engineer_1 External.docx',
-        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI_ML_Engineer_2 External.docx',
-        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI_ML_Engineer_5 External.docx',
-        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Cloud Engineer.docx',
-        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data Engineer.docx',
-        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data Scientist 2.docx',
-        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data_Scientist_3 External.doc',
-        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data_Scientist_4 External.docx'
+        #'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI Engineer.docx',
+        #'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data Scientist_1.docx',
+        #'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI ML Engineer.docx',
+        #'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI_ML_Engineer_1 External.docx',
+        #'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI_ML_Engineer_2 External.docx',
+        #'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/AI_ML_Engineer_5 External.docx',
+        #'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Cloud Engineer.docx',
+        #'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data Engineer.docx',
+        #'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data Scientist 2.docx',
+        #'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data_Scientist_3 External.doc',
+        #'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Sample Resumes/Data_Scientist_4 External.docx'
+        'C:/Flexon_Resume_Parser/Parser_Build-Arnav/Test Resumes/Resume_ArnavK.pdf'
     ]
     
     results = {}
