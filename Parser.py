@@ -325,9 +325,8 @@ def calculate_work_duration(text): #name something else as it also extracts job 
                     line_before_date = line.split(match.group())[0].strip()
                     
                     # Check if this looks like a company name instead of job title
-                    # (e.g., "Verizon, New York" should be company, not job title)
                     if line_before_date and ',' in line_before_date:
-                        # This looks like "Company, Location" format
+                        # If so, then true
                         potential_company = line_before_date.split(',')[0].strip()
                         if (len(potential_company.split()) <= 3 and 
                             not any(keyword.lower() in potential_company.lower() for keyword in ['engineer', 'scientist', 'analyst', 'manager', 'developer', 'specialist', 'consultant', 'architect', 'lead', 'director'])):
@@ -380,7 +379,6 @@ def calculate_work_duration(text): #name something else as it also extracts job 
                                     break
                     
                     # Look for company in the line immediately after the date line
-                    # Company is typically in the next line after the job title/date line
                     for j in range(i+1, min(len(lines), i+3)):
                         if j < len(lines):
                             candidate_line = lines[j].strip()
@@ -579,3 +577,4 @@ if __name__ == "__main__":
         save_to_json(results)
     else:
         print("No files processed successfully")
+        
