@@ -1,0 +1,1131 @@
+2025-09-11 19:21:43,793 - INFO - loaded spaCy model
+2025-09-11 19:21:43,800 - INFO - Starting to process 484 resume files...
+2025-09-11 19:21:43,803 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\4d2c4fea-9b29-4216-b10b-0057f2fa25f8.pdf
+2025-09-11 19:21:43,805 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\AAN Resume.pdf.pdf
+2025-09-11 19:21:43,806 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Adrian._Waddell._Resume_Aug_2025.1 (1).pdf
+2025-09-11 19:21:43,808 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Adrian._Waddell._Resume_Aug_2025.1.pdf
+2025-09-11 19:21:44,708 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\4d2c4fea-9b29-4216-b10b-0057f2fa25f8.pdf
+2025-09-11 19:21:44,708 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Advait_Narvekar_Resume.pdf
+2025-09-11 19:21:44,711 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Adrian._Waddell._Resume_Aug_2025.1 (1).pdf
+2025-09-11 19:21:44,711 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Akhil State ID.pdf
+2025-09-11 19:21:44,715 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Adrian._Waddell._Resume_Aug_2025.1.pdf
+2025-09-11 19:21:44,715 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Amzad_Hossain.pdf
+2025-09-11 19:21:44,732 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Akhil State ID.pdf
+2025-09-11 19:21:44,732 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Akhil State ID.pdf
+2025-09-11 19:21:44,732 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Andrew_Davis.pdf
+2025-09-11 19:21:45,598 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Andrew_Davis.pdf
+2025-09-11 19:21:45,599 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ANNUS REHMAN 2025C.docx.pdf
+2025-09-11 19:21:45,606 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Amzad_Hossain.pdf
+2025-09-11 19:21:45,606 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ansari, Arshad Alam I-129 Approval Notice.pdf
+2025-09-11 19:21:45,651 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ansari, Arshad Alam I-129 Approval Notice.pdf
+2025-09-11 19:21:45,651 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ansari, Arshad Alam I-129 Approval Notice.pdf
+2025-09-11 19:21:45,651 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aravind_MES_LEAD.pdf
+2025-09-11 19:21:46,793 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Advait_Narvekar_Resume.pdf
+2025-09-11 19:21:46,793 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Arshad_Alam_Ansari_Resume (1).pdf
+2025-09-11 19:21:46,802 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aravind_MES_LEAD.pdf
+2025-09-11 19:21:46,803 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Athanasios Anastasiou Resume.docx.pdf
+2025-09-11 19:21:47,052 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\AAN Resume.pdf.pdf
+2025-09-11 19:21:47,064 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Augusta_Noah_Resume_-_ServiceNow_Technical_Consultant.pdf
+2025-09-11 19:21:47,440 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ANNUS REHMAN 2025C.docx.pdf
+2025-09-11 19:21:47,440 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\bangar h1b copy (1).pdf
+2025-09-11 19:21:47,481 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Athanasios Anastasiou Resume.docx.pdf
+2025-09-11 19:21:47,482 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\c85201a5-ea53-42ae-91bf-5f1389e767ac.pdf
+2025-09-11 19:21:47,652 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\bangar h1b copy (1).pdf
+2025-09-11 19:21:47,686 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\bangar h1b copy (1).pdf
+2025-09-11 19:21:47,693 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\CH CV - 12_24 (1) (2) (1).pdf
+2025-09-11 19:21:48,456 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\c85201a5-ea53-42ae-91bf-5f1389e767ac.pdf
+2025-09-11 19:21:48,457 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Charles_Yao_Resume_2024-08-12.pdf
+2025-09-11 19:21:48,467 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\CH CV - 12_24 (1) (2) (1).pdf
+2025-09-11 19:21:48,467 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Contractor Statement of Prior Employment Form (3).pdf
+2025-09-11 19:21:48,798 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Arshad_Alam_Ansari_Resume (1).pdf
+2025-09-11 19:21:48,798 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Curriculum_Alfredi.pdf
+2025-09-11 19:21:48,920 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Augusta_Noah_Resume_-_ServiceNow_Technical_Consultant.pdf
+2025-09-11 19:21:48,920 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\CVDungBanh.pdf
+2025-09-11 19:21:48,933 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Charles_Yao_Resume_2024-08-12.pdf
+2025-09-11 19:21:48,933 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\CVJaniceNovick.pdf
+2025-09-11 19:21:48,981 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Contractor Statement of Prior Employment Form (3).pdf
+2025-09-11 19:21:48,981 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\CVMandellBray.pdf
+2025-09-11 19:21:48,991 - WARNING - Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+2025-09-11 19:21:48,993 - WARNING - Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+2025-09-11 19:21:48,995 - WARNING - Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+2025-09-11 19:21:48,997 - WARNING - Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+2025-09-11 19:21:48,999 - WARNING - Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+2025-09-11 19:21:49,490 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\CVMandellBray.pdf
+2025-09-11 19:21:49,490 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\CVMichaelPike.pdf
+2025-09-11 19:21:49,711 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\CVDungBanh.pdf
+2025-09-11 19:21:49,712 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\CVRudrappaK.pdf
+2025-09-11 19:21:49,716 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\CVJaniceNovick.pdf
+2025-09-11 19:21:49,717 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\CVSaraswathiM.pdf
+2025-09-11 19:21:49,754 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\CVMichaelPike.pdf
+2025-09-11 19:21:49,755 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\CVVarmaKosuri.pdf
+2025-09-11 19:21:50,566 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\CVVarmaKosuri.pdf
+2025-09-11 19:21:50,566 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Daniel Pappas Resume TDL (Design Lead with Build Coordination) (1).pdf
+2025-09-11 19:21:50,575 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\CVSaraswathiM.pdf
+2025-09-11 19:21:50,576 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Daniel Pappas Resume TDL (Design Lead with Build Coordination).pdf
+2025-09-11 19:21:50,579 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Curriculum_Alfredi.pdf
+2025-09-11 19:21:50,580 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Diego Ortiz 2025.pdf
+2025-09-11 19:21:51,222 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Daniel Pappas Resume TDL (Design Lead with Build Coordination) (1).pdf
+2025-09-11 19:21:51,223 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DL .pdf
+2025-09-11 19:21:51,234 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Daniel Pappas Resume TDL (Design Lead with Build Coordination).pdf
+2025-09-11 19:21:51,238 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Diego Ortiz 2025.pdf
+2025-09-11 19:21:51,240 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DL-Virginia.pdf
+2025-09-11 19:21:51,241 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DL-Virginia_Janaiah.pdf
+2025-09-11 19:21:51,245 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DL .pdf
+2025-09-11 19:21:51,246 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DL .pdf
+2025-09-11 19:21:51,246 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Dl_copy (1).pdf
+2025-09-11 19:21:51,255 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\CVRudrappaK.pdf
+2025-09-11 19:21:51,256 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DL_Rajanala.pdf
+2025-09-11 19:21:51,309 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Dl_copy (1).pdf
+2025-09-11 19:21:51,310 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Dl_copy (1).pdf
+2025-09-11 19:21:51,310 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\EAD.pdf
+2025-09-11 19:21:51,313 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DL-Virginia.pdf
+2025-09-11 19:21:51,313 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DL-Virginia.pdf
+2025-09-11 19:21:51,313 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Edilson De Moraes Pena (1).pdf
+2025-09-11 19:21:51,322 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DL-Virginia_Janaiah.pdf
+2025-09-11 19:21:51,322 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DL-Virginia_Janaiah.pdf
+2025-09-11 19:21:51,322 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Eraina Ferguson.pdf
+2025-09-11 19:21:51,352 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\EAD.pdf
+2025-09-11 19:21:51,353 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\EAD.pdf
+2025-09-11 19:21:51,354 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\EUGENE TARASOV_Technical Program Manager_20250827.pdf
+2025-09-11 19:21:51,415 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DL_Rajanala.pdf
+2025-09-11 19:21:51,440 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DL_Rajanala.pdf
+2025-09-11 19:21:51,517 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ferdous Sadia H1B.pdf
+2025-09-11 19:21:51,667 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ferdous Sadia H1B.pdf
+2025-09-11 19:21:51,667 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ferdous Sadia H1B.pdf
+2025-09-11 19:21:51,668 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Francisco Hratoviak - Federal Reserve Employment (1).pdf
+2025-09-11 19:21:51,967 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\EUGENE TARASOV_Technical Program Manager_20250827.pdf
+2025-09-11 19:21:51,969 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Francisco Hratoviak - Federal Reserve Employment.pdf
+2025-09-11 19:21:52,186 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Edilson De Moraes Pena (1).pdf
+2025-09-11 19:21:52,187 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Gaurav RTR.pdf
+2025-09-11 19:21:52,862 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Gaurav RTR.pdf
+2025-09-11 19:21:52,863 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Gaurav RTR.pdf
+2025-09-11 19:21:52,863 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\H-1B APPROVAL Nunavath.pdf
+2025-09-11 19:21:52,875 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Francisco Hratoviak - Federal Reserve Employment (1).pdf
+2025-09-11 19:21:52,876 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\H1B_Rajanala.pdf
+2025-09-11 19:21:52,877 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Francisco Hratoviak - Federal Reserve Employment.pdf
+2025-09-11 19:21:52,878 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\I-129_Approval Notice.pdf
+2025-09-11 19:21:52,893 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\H-1B APPROVAL Nunavath.pdf
+2025-09-11 19:21:52,893 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\H-1B APPROVAL Nunavath.pdf
+2025-09-11 19:21:52,893 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\I-797 A.pdf
+2025-09-11 19:21:52,901 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\I-129_Approval Notice.pdf
+2025-09-11 19:21:52,901 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\I-129_Approval Notice.pdf
+2025-09-11 19:21:52,901 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JACKSON QUINN_CV_XXV.pdf
+2025-09-11 19:21:53,071 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\H1B_Rajanala.pdf
+2025-09-11 19:21:53,071 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\H1B_Rajanala.pdf
+2025-09-11 19:21:53,139 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JACKSON_QUINN_CV_2023_XXIII (2).pdf
+2025-09-11 19:21:53,175 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\I-797 A.pdf
+2025-09-11 19:21:53,176 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\I-797 A.pdf
+2025-09-11 19:21:53,176 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\James Allendoerfer (1).pdf
+2025-09-11 19:21:53,534 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JACKSON QUINN_CV_XXV.pdf
+2025-09-11 19:21:53,535 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jim Damm resume.pdf
+2025-09-11 19:21:53,560 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\James Allendoerfer (1).pdf
+2025-09-11 19:21:53,561 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jonna Onsite Confirmation.pdf
+2025-09-11 19:21:53,613 - WARNING - Cannot set gray non-stroke color because /'Pattern1' is an invalid float value
+2025-09-11 19:21:54,627 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jonna Onsite Confirmation.pdf
+2025-09-11 19:21:54,628 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jonna Onsite Confirmation.pdf
+2025-09-11 19:21:54,628 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jonna_McCarthy_Resume.pdf
+2025-09-11 19:21:54,660 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jim Damm resume.pdf
+2025-09-11 19:21:54,660 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jonna_McCarthy_Training_PM Resume.pdf
+2025-09-11 19:21:54,776 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JACKSON_QUINN_CV_2023_XXIII (2).pdf
+2025-09-11 19:21:54,776 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Joseph SOX GAAP writeup.pdf
+2025-09-11 19:21:54,899 - WARNING - Cannot set gray non-stroke color because /'Pattern1' is an invalid float value
+2025-09-11 19:21:54,900 - WARNING - Cannot set gray non-stroke color because /'Pattern2' is an invalid float value
+2025-09-11 19:21:55,251 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jonna_McCarthy_Resume.pdf
+2025-09-11 19:21:55,251 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Joseph_A_Omotayo1 (1).pdf
+2025-09-11 19:21:55,968 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jonna_McCarthy_Training_PM Resume.pdf
+2025-09-11 19:21:55,969 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Juandalynn email chain.pdf
+2025-09-11 19:21:56,007 - WARNING - Cannot set gray non-stroke color because /'Pattern1' is an invalid float value
+2025-09-11 19:21:56,794 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Joseph_A_Omotayo1 (1).pdf
+2025-09-11 19:21:56,800 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Krishna_Sr.Cloud_DevOps (1).pdf
+2025-09-11 19:21:56,941 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Joseph SOX GAAP writeup.pdf
+2025-09-11 19:21:56,943 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Joseph SOX GAAP writeup.pdf
+2025-09-11 19:21:56,944 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Krishna_Sr.Cloud_DevOps (2) (1).pdf
+2025-09-11 19:22:00,275 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Krishna_Sr.Cloud_DevOps (1).pdf
+2025-09-11 19:22:00,275 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Krishna_Sr.Cloud_DevOps (2).pdf
+2025-09-11 19:22:00,951 - WARNING - Cannot set gray non-stroke color because /'Pattern1' is an invalid float value
+2025-09-11 19:22:02,318 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Krishna_Sr.Cloud_DevOps (2).pdf
+2025-09-11 19:22:02,345 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Kyle_Walton_Resume (2) (3) (3) (2) (1) (1).docx (1).pdf
+2025-09-11 19:22:04,928 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Krishna_Sr.Cloud_DevOps (2) (1).pdf
+2025-09-11 19:22:04,955 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\LabReport (37).pdf
+2025-09-11 19:22:06,331 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Kyle_Walton_Resume (2) (3) (3) (2) (1) (1).docx (1).pdf
+2025-09-11 19:22:06,331 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Lanre_Akintade__.pdf
+2025-09-11 19:22:08,570 - WARNING - Cannot set gray non-stroke color because /'Pattern1' is an invalid float value
+2025-09-11 19:22:11,077 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Juandalynn email chain.pdf
+2025-09-11 19:22:11,078 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Juandalynn email chain.pdf
+2025-09-11 19:22:11,078 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ME Jasmine Cheong 082025 (2).pdf
+2025-09-11 19:22:11,086 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Lanre_Akintade__.pdf
+2025-09-11 19:22:11,086 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Michael DeAnda Apple_TCS Candidate.pdf
+2025-09-11 19:22:11,109 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Eraina Ferguson.pdf
+2025-09-11 19:22:11,109 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\miserak_david-cv.pdf
+2025-09-11 19:22:11,919 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Michael DeAnda Apple_TCS Candidate.pdf
+2025-09-11 19:22:11,919 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Monika Jain Resume (1).pdf
+2025-09-11 19:22:11,924 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ME Jasmine Cheong 082025 (2).pdf
+2025-09-11 19:22:11,924 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mukesh Khatri Resume.pdf
+2025-09-11 19:22:11,927 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\miserak_david-cv.pdf
+2025-09-11 19:22:11,927 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Naresh H1b approval.pdf
+2025-09-11 19:22:11,946 - WARNING - Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+2025-09-11 19:22:12,237 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Naresh H1b approval.pdf
+2025-09-11 19:22:12,237 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Naresh H1b approval.pdf
+2025-09-11 19:22:12,238 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Nile_Pamphile-Lab_Tech-2025.pdf
+2025-09-11 19:22:12,489 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Monika Jain Resume (1).pdf
+2025-09-11 19:22:12,489 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Nishu RTR.pdf
+2025-09-11 19:22:12,541 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mukesh Khatri Resume.pdf
+2025-09-11 19:22:12,542 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ONS_MUNINDRA-FD.pdf
+2025-09-11 19:22:13,668 - WARNING - Cannot set gray non-stroke color because /'Pattern1' is an invalid float value
+2025-09-11 19:22:16,089 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Nishu RTR.pdf
+2025-09-11 19:22:16,090 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Nishu RTR.pdf
+2025-09-11 19:22:16,090 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\passport copy.pdf
+2025-09-11 19:22:16,901 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Nile_Pamphile-Lab_Tech-2025.pdf
+2025-09-11 19:22:16,901 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Patient Name.pdf
+2025-09-11 19:22:17,006 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Patient Name.pdf
+2025-09-11 19:22:17,006 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Patient Name.pdf
+2025-09-11 19:22:17,007 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\PEMA SHERPA.pdf
+2025-09-11 19:22:17,012 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\passport copy.pdf
+2025-09-11 19:22:17,013 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Portfolio-2024.pdf
+2025-09-11 19:22:17,426 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Portfolio-2024.pdf
+2025-09-11 19:22:17,437 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Quan.pdf
+2025-09-11 19:22:19,095 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Quan.pdf
+2025-09-11 19:22:19,095 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rabbani_Mohammad_.pdf
+2025-09-11 19:22:22,182 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\PEMA SHERPA.pdf
+2025-09-11 19:22:22,182 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rajesh Menon Resume ML.pdf
+2025-09-11 19:22:22,199 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rabbani_Mohammad_.pdf
+2025-09-11 19:22:22,199 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rajesh-Approval.pdf
+2025-09-11 19:22:22,208 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\LabReport (37).pdf
+2025-09-11 19:22:22,208 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\RE-Eng-Sigin-01.pdf
+2025-09-11 19:22:22,232 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rajesh-Approval.pdf
+2025-09-11 19:22:22,232 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rajesh-Approval.pdf
+2025-09-11 19:22:22,232 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume Afonin Alexander 05m (1).pdf
+2025-09-11 19:22:22,288 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ONS_MUNINDRA-FD.pdf
+2025-09-11 19:22:22,288 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume Afonin Alexander 05m (2).pdf
+2025-09-11 19:22:23,311 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rajesh Menon Resume ML.pdf
+2025-09-11 19:22:23,311 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume Afonin Alexander 05m.pdf
+2025-09-11 19:22:23,773 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume Afonin Alexander 05m (1).pdf
+2025-09-11 19:22:23,774 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\resume-may_3_3 2.pdf
+2025-09-11 19:22:23,796 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume Afonin Alexander 05m (2).pdf
+2025-09-11 19:22:23,797 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeAdrianMartin (1).pdf
+2025-09-11 19:22:24,209 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\RE-Eng-Sigin-01.pdf
+2025-09-11 19:22:24,209 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeALANCASAS.pdf
+2025-09-11 19:22:24,217 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume Afonin Alexander 05m.pdf
+2025-09-11 19:22:24,218 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeALBERTHERNANDEZ.pdf
+2025-09-11 19:22:24,647 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeAdrianMartin (1).pdf
+2025-09-11 19:22:24,648 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeALEXSHUTE (1).pdf
+2025-09-11 19:22:24,670 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\resume-may_3_3 2.pdf
+2025-09-11 19:22:24,670 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeALEXSHUTE.pdf
+2025-09-11 19:22:24,685 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeALANCASAS.pdf
+2025-09-11 19:22:24,688 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeANDREWEDELEN.pdf
+2025-09-11 19:22:25,104 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeALBERTHERNANDEZ.pdf
+2025-09-11 19:22:25,114 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeDANTECORREIA.pdf
+2025-09-11 19:22:25,482 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeALEXSHUTE (1).pdf
+2025-09-11 19:22:25,483 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeFridaGu.pdf
+2025-09-11 19:22:25,489 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeALEXSHUTE.pdf
+2025-09-11 19:22:25,489 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeGabrielleBlair (1).pdf
+2025-09-11 19:22:25,502 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeANDREWEDELEN.pdf
+2025-09-11 19:22:25,502 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeGabrielleBlair.pdf
+2025-09-11 19:22:25,987 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeDANTECORREIA.pdf
+2025-09-11 19:22:25,988 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeGauravArora.pdf
+2025-09-11 19:22:26,335 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeFridaGu.pdf
+2025-09-11 19:22:26,335 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeGeorgeAbourjeili.pdf
+2025-09-11 19:22:26,338 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeGabrielleBlair.pdf
+2025-09-11 19:22:26,338 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeHEIDITIRRO.pdf
+2025-09-11 19:22:26,345 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeGabrielleBlair (1).pdf
+2025-09-11 19:22:26,346 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeHumpheryNwachukwu.pdf
+2025-09-11 19:22:26,678 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeGauravArora.pdf
+2025-09-11 19:22:26,680 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJamesStewart (1).pdf
+2025-09-11 19:22:26,725 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeGeorgeAbourjeili.pdf
+2025-09-11 19:22:26,739 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJamesStewart.pdf
+2025-09-11 19:22:27,268 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeHumpheryNwachukwu.pdf
+2025-09-11 19:22:27,328 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJaredNadrich.pdf
+2025-09-11 19:22:28,443 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeHEIDITIRRO.pdf
+2025-09-11 19:22:28,444 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJeffreyHudgens (1).pdf
+2025-09-11 19:22:28,476 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJaredNadrich.pdf
+2025-09-11 19:22:28,477 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJeffreyHudgens.pdf
+2025-09-11 19:22:28,707 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJamesStewart (1).pdf
+2025-09-11 19:22:28,746 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJonathanMelendez (1).pdf
+2025-09-11 19:22:29,284 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJamesStewart.pdf
+2025-09-11 19:22:29,303 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJonathanMelendez.pdf
+2025-09-11 19:22:29,907 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJeffreyHudgens (1).pdf
+2025-09-11 19:22:29,908 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJULIOLOPEZ (1).pdf
+2025-09-11 19:22:29,930 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJeffreyHudgens.pdf
+2025-09-11 19:22:29,930 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJULIOLOPEZ.pdf
+2025-09-11 19:22:31,077 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJonathanMelendez.pdf
+2025-09-11 19:22:31,078 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeKeithKim (1).pdf
+2025-09-11 19:22:31,087 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJonathanMelendez (1).pdf
+2025-09-11 19:22:31,087 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeKeithKim.pdf
+2025-09-11 19:22:31,109 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJULIOLOPEZ (1).pdf
+2025-09-11 19:22:31,109 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeKennethFloyd.pdf
+2025-09-11 19:22:31,128 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJULIOLOPEZ.pdf
+2025-09-11 19:22:31,128 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeKEVINCLIFFORD.pdf
+2025-09-11 19:22:33,428 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeKennethFloyd.pdf
+2025-09-11 19:22:33,432 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeLETICIAHERNANDEZ.pdf
+2025-09-11 19:22:33,491 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeKeithKim (1).pdf
+2025-09-11 19:22:33,492 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeNicholasMinor.pdf
+2025-09-11 19:22:33,504 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeKeithKim.pdf
+2025-09-11 19:22:33,504 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeOKOYECHUKWUDALU.pdf
+2025-09-11 19:22:33,515 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeKEVINCLIFFORD.pdf
+2025-09-11 19:22:33,516 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumePaulFard.pdf
+2025-09-11 19:22:34,927 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeLETICIAHERNANDEZ.pdf
+2025-09-11 19:22:34,927 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumePrideNyakudya (1).pdf
+2025-09-11 19:22:34,957 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeNicholasMinor.pdf
+2025-09-11 19:22:34,959 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumePrideNyakudya.pdf
+2025-09-11 19:22:35,366 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumePaulFard.pdf
+2025-09-11 19:22:35,367 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeShreyaP.pdf
+2025-09-11 19:22:35,503 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumePrideNyakudya (1).pdf
+2025-09-11 19:22:35,516 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumePrideNyakudya.pdf
+2025-09-11 19:22:35,517 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeStephenAguda.pdf
+2025-09-11 19:22:35,518 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeStephenDesmond.pdf
+2025-09-11 19:22:36,132 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeOKOYECHUKWUDALU.pdf
+2025-09-11 19:22:36,143 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeStephonStegall.pdf
+2025-09-11 19:22:36,434 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeStephenAguda.pdf
+2025-09-11 19:22:36,434 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeStevenButler.pdf
+2025-09-11 19:22:36,454 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeShreyaP.pdf
+2025-09-11 19:22:36,454 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeSULTANORINI.pdf
+2025-09-11 19:22:36,647 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeStephonStegall.pdf
+2025-09-11 19:22:36,648 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeTRANGNGUYEN.pdf
+2025-09-11 19:22:37,193 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeStephenDesmond.pdf
+2025-09-11 19:22:37,197 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeTurnerEmmanuel.pdf
+2025-09-11 19:22:37,230 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeStevenButler.pdf
+2025-09-11 19:22:37,230 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeWILERPIERRE.pdf
+2025-09-11 19:22:37,257 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeTRANGNGUYEN.pdf
+2025-09-11 19:22:37,299 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_2.pdf
+2025-09-11 19:22:37,383 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_2.pdf
+2025-09-11 19:22:37,413 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_2.pdf
+2025-09-11 19:22:37,434 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_Sharmila_Bolikoppa_Palakshappa_2025_MS.pdf
+2025-09-11 19:22:37,992 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeTurnerEmmanuel.pdf
+2025-09-11 19:22:37,992 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\R_Sudhakar_SAP BRIM Lead (1).pdf
+2025-09-11 19:22:37,998 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_Sharmila_Bolikoppa_Palakshappa_2025_MS.pdf
+2025-09-11 19:22:38,004 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeWILERPIERRE.pdf
+2025-09-11 19:22:38,004 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\R_Sudhakar_SAP BRIM Lead (2).pdf
+2025-09-11 19:22:38,004 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\R_Sudhakar_SAP BRIM Lead.pdf
+2025-09-11 19:22:39,608 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\R_Sudhakar_SAP BRIM Lead (2).pdf
+2025-09-11 19:22:39,608 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sai Pathuri_H4 EAD.pdf
+2025-09-11 19:22:39,616 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\R_Sudhakar_SAP BRIM Lead.pdf
+2025-09-11 19:22:39,616 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\SAI RAVALI DL.pdf
+2025-09-11 19:22:39,630 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\R_Sudhakar_SAP BRIM Lead (1).pdf
+2025-09-11 19:22:39,630 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sanjeev Thapar,  MBA, MS, PMP, CSM.pdf
+2025-09-11 19:22:39,639 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sai Pathuri_H4 EAD.pdf
+2025-09-11 19:22:39,641 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sai Pathuri_H4 EAD.pdf
+2025-09-11 19:22:39,642 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Scott Teel.pdf
+2025-09-11 19:22:39,668 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\SAI RAVALI DL.pdf
+2025-09-11 19:22:39,700 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\SAI RAVALI DL.pdf
+2025-09-11 19:22:39,746 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Senior_Data_Analyst.pdf
+2025-09-11 19:22:40,801 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Senior_Data_Analyst.pdf
+2025-09-11 19:22:40,803 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Seth_Martin_Technical_Writer_Resume_(2025).pdf
+2025-09-11 19:22:40,825 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Scott Teel.pdf
+2025-09-11 19:22:40,826 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\SGupta_resume.pdf
+2025-09-11 19:22:40,838 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sanjeev Thapar,  MBA, MS, PMP, CSM.pdf
+2025-09-11 19:22:40,844 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\SHELBY_CHRISTIE_Resume_Digital,_Growth_and_Product_Marketing.pdf
+2025-09-11 19:22:41,080 - WARNING - Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+2025-09-11 19:22:41,089 - WARNING - Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+2025-09-11 19:22:42,030 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Seth_Martin_Technical_Writer_Resume_(2025).pdf
+2025-09-11 19:22:42,031 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\State 1d scanned.pdf
+2025-09-11 19:22:42,035 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\SGupta_resume.pdf
+2025-09-11 19:22:42,036 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sujitha RTR.pdf
+2025-09-11 19:22:42,079 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\State 1d scanned.pdf
+2025-09-11 19:22:42,080 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\State 1d scanned.pdf
+2025-09-11 19:22:42,080 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Timothy_Dahlen_Resume.pdf
+2025-09-11 19:22:42,193 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Timothy_Dahlen_Resume.pdf
+2025-09-11 19:22:42,208 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Timothy_Dahlen_Resume.pdf
+2025-09-11 19:22:42,224 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Tusha_Pavuluri_QA_Lead_AI_Safety_Compliance.pdf
+2025-09-11 19:22:43,171 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\SHELBY_CHRISTIE_Resume_Digital,_Growth_and_Product_Marketing.pdf
+2025-09-11 19:22:43,212 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Tyreek Waters.pdf
+2025-09-11 19:22:45,362 - WARNING - PDF not found: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sujitha RTR.pdf
+2025-09-11 19:22:45,363 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sujitha RTR.pdf
+2025-09-11 19:22:45,363 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Waisanen Resume.pdf
+2025-09-11 19:22:45,397 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Tyreek Waters.pdf
+2025-09-11 19:22:45,410 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeSULTANORINI.pdf
+2025-09-11 19:22:45,411 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\XinyuTuT2025-Mon.pdf
+2025-09-11 19:22:45,411 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Yiosembom_Tangwa_Resume.pdf
+2025-09-11 19:22:46,228 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Tusha_Pavuluri_QA_Lead_AI_Safety_Compliance.pdf
+2025-09-11 19:22:46,229 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\2025_-_DELMA_NUCKLES-PROF_RESUME (1) (1).docx
+2025-09-11 19:22:46,294 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Yiosembom_Tangwa_Resume.pdf
+2025-09-11 19:22:46,295 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\2025_-_DELMA_NUCKLES-PROF_RESUME (1).docx
+2025-09-11 19:22:46,318 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\XinyuTuT2025-Mon.pdf
+2025-09-11 19:22:46,319 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Abbas Zaidi_SAP Convergent Mediation Developer.docx
+2025-09-11 19:22:46,337 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Waisanen Resume.pdf
+2025-09-11 19:22:46,338 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Abbas_Zaidi_SAP_BRIM_CM.docx
+2025-09-11 19:22:46,414 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\2025_-_DELMA_NUCKLES-PROF_RESUME (1) (1).docx
+2025-09-11 19:22:46,416 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Abraham Garcia Ramirez - Resume 2025.docx
+2025-09-11 19:22:46,580 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\2025_-_DELMA_NUCKLES-PROF_RESUME (1).docx
+2025-09-11 19:22:46,581 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Abul Satu_PM Resume.docx
+2025-09-11 19:22:46,654 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Abraham Garcia Ramirez - Resume 2025.docx
+2025-09-11 19:22:46,655 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Adnan Iqbal Faruq - ReactJS Lead Developer.docx
+2025-09-11 19:22:46,816 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Abbas Zaidi_SAP Convergent Mediation Developer.docx
+2025-09-11 19:22:46,818 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Adnan Iqbal Faruq Lead ReactJS Dev.docx
+2025-09-11 19:22:46,834 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Abbas_Zaidi_SAP_BRIM_CM.docx
+2025-09-11 19:22:46,845 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Adnan Iqbal Faruq_Resume_2025.docx
+2025-09-11 19:22:47,184 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Adnan Iqbal Faruq - ReactJS Lead Developer.docx
+2025-09-11 19:22:47,186 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Adrian._Waddell._Resume_Aug_2025.1 (1).docx
+2025-09-11 19:22:47,223 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Abul Satu_PM Resume.docx
+2025-09-11 19:22:47,224 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Advait Mahendra.docx
+2025-09-11 19:22:47,491 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Adnan Iqbal Faruq_Resume_2025.docx
+2025-09-11 19:22:47,505 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Adnan Iqbal Faruq Lead ReactJS Dev.docx
+2025-09-11 19:22:47,505 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Advait Narvekar_Lead Data Engineer.docx
+2025-09-11 19:22:47,505 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Advait_Narvekar_Resume.docx
+2025-09-11 19:22:47,603 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Adrian._Waddell._Resume_Aug_2025.1 (1).docx
+2025-09-11 19:22:47,605 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Akhil Babu Karanam SAP SD-MM.docx
+2025-09-11 19:22:47,889 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Advait Mahendra.docx
+2025-09-11 19:22:47,889 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Akhil Babu Karanam_SAP MM.docx
+2025-09-11 19:22:48,269 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Akhil Babu Karanam SAP SD-MM.docx
+2025-09-11 19:22:48,270 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Alex Fedin.docx
+2025-09-11 19:22:48,493 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Akhil Babu Karanam_SAP MM.docx
+2025-09-11 19:22:48,494 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Alexander Afonin - NX CAD Design Engineer.docx
+2025-09-11 19:22:48,615 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Alex Fedin.docx
+2025-09-11 19:22:48,615 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Alexander_Yakushev_Resume.docx
+2025-09-11 19:22:48,708 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Advait Narvekar_Lead Data Engineer.docx
+2025-09-11 19:22:48,709 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Alexis Tamayo Director, Tech Lead, Python, Risk.docx
+2025-09-11 19:22:48,752 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Advait_Narvekar_Resume.docx
+2025-09-11 19:22:48,753 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Alhan_Aayadi_-_update_Resume.docx
+2025-09-11 19:22:48,763 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Alexander Afonin - NX CAD Design Engineer.docx
+2025-09-11 19:22:48,765 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aluri Bangar - Senior Network Engineer (1).docx
+2025-09-11 19:22:48,902 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Alexander_Yakushev_Resume.docx
+2025-09-11 19:22:48,903 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aluri Bangar - Senior Network Engineer (2).docx
+2025-09-11 19:22:48,998 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Alexis Tamayo Director, Tech Lead, Python, Risk.docx
+2025-09-11 19:22:48,998 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aluri Bangar - Senior Network Engineer (3).docx
+2025-09-11 19:22:49,139 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aluri Bangar - Senior Network Engineer (1).docx
+2025-09-11 19:22:49,141 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aluri Bangar - Senior Network Engineer.docx
+2025-09-11 19:22:49,205 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Alhan_Aayadi_-_update_Resume.docx
+2025-09-11 19:22:49,207 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aluri Bangar Senior Network Engineer.docx
+2025-09-11 19:22:49,327 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aluri Bangar - Senior Network Engineer (2).docx
+2025-09-11 19:22:49,328 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Amruth_Reddy.docx
+2025-09-11 19:22:49,515 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aluri Bangar - Senior Network Engineer (3).docx
+2025-09-11 19:22:49,516 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Amzad Hossain Lead ReactJS Dev.docx
+2025-09-11 19:22:49,595 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aluri Bangar - Senior Network Engineer.docx
+2025-09-11 19:22:49,596 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Andrew B Orellana Network Engineer Arista SME.docx
+2025-09-11 19:22:49,753 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Amruth_Reddy.docx
+2025-09-11 19:22:49,754 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Andrew Orellana Network Engineer.docx
+2025-09-11 19:22:49,792 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aluri Bangar Senior Network Engineer.docx
+2025-09-11 19:22:49,794 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Andrew_Orellana_Resume-Oracle.docx
+2025-09-11 19:22:49,915 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Andrew B Orellana Network Engineer Arista SME.docx
+2025-09-11 19:22:49,916 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Anna Nova LLM QE Engineer.docx
+2025-09-11 19:22:50,036 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Andrew_Orellana_Resume-Oracle.docx
+2025-09-11 19:22:50,036 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\AnnaNova_resume_.docx
+2025-09-11 19:22:50,147 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Amzad Hossain Lead ReactJS Dev.docx
+2025-09-11 19:22:50,148 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ANNUS REHMAN 2025C.docx.docx
+2025-09-11 19:22:50,154 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Andrew Orellana Network Engineer.docx
+2025-09-11 19:22:50,156 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Anton Podovalov.docx
+2025-09-11 19:22:50,167 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Anna Nova LLM QE Engineer.docx
+2025-09-11 19:22:50,167 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Antwone Walters - ReactJS Developer (1).docx
+2025-09-11 19:22:50,389 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\AnnaNova_resume_.docx
+2025-09-11 19:22:50,390 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Antwone Walters - ReactJS Developer.docx
+2025-09-11 19:22:50,594 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Antwone Walters - ReactJS Developer (1).docx
+2025-09-11 19:22:50,594 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Antwone Walters -ReactJS Developer.docx
+2025-09-11 19:22:50,634 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Anton Podovalov.docx
+2025-09-11 19:22:50,635 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aqueena Render.docx
+2025-09-11 19:22:50,672 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Antwone Walters - ReactJS Developer.docx
+2025-09-11 19:22:50,674 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aqueena Render_LMS Project Manager.docx
+2025-09-11 19:22:50,808 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ANNUS REHMAN 2025C.docx.docx
+2025-09-11 19:22:50,809 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aqueena_Render_Program Training OCM Manager.docx
+2025-09-11 19:22:50,952 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Antwone Walters -ReactJS Developer.docx
+2025-09-11 19:22:50,953 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Armaan Ramzanali  AV Technician.docx
+2025-09-11 19:22:50,993 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aqueena Render_LMS Project Manager.docx
+2025-09-11 19:22:50,995 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Armaan Ramzanali_AV Technician.docx
+2025-09-11 19:22:51,171 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aqueena Render.docx
+2025-09-11 19:22:51,171 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Arshad Alam Ansari Senior Software Engineer.docx
+2025-09-11 19:22:51,355 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Aqueena_Render_Program Training OCM Manager.docx
+2025-09-11 19:22:51,356 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Arshad_Alam_Ansari_Resume (1).docx
+2025-09-11 19:22:51,380 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Armaan Ramzanali_AV Technician.docx
+2025-09-11 19:22:51,382 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Askar Aman_Network Engineer.docx
+2025-09-11 19:22:51,392 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Armaan Ramzanali  AV Technician.docx
+2025-09-11 19:22:51,394 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Askar Aman_Senior Network Engineer.docx
+2025-09-11 19:22:51,799 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Askar Aman_Senior Network Engineer.docx
+2025-09-11 19:22:51,800 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ASKAR_AMAN_Network_Architect.docx
+2025-09-11 19:22:51,811 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Askar Aman_Network Engineer.docx
+2025-09-11 19:22:51,819 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Athanasios Anastasio- Maintenance Technician - Resume.docx
+2025-09-11 19:22:51,843 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Arshad Alam Ansari Senior Software Engineer.docx
+2025-09-11 19:22:51,843 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Athanasios Anastasio- Maintenance Technician.docx
+2025-09-11 19:22:51,972 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Arshad_Alam_Ansari_Resume (1).docx
+2025-09-11 19:22:51,973 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Athanasios Anastasiou.docx
+2025-09-11 19:22:52,064 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Athanasios Anastasio- Maintenance Technician.docx
+2025-09-11 19:22:52,064 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Athanasios Stavropoulos_Python Engineer (VP).docx
+2025-09-11 19:22:52,103 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Athanasios Anastasio- Maintenance Technician - Resume.docx
+2025-09-11 19:22:52,104 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Athanasios Stavropoulos_VP, Python Engineer.docx
+2025-09-11 19:22:52,139 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ASKAR_AMAN_Network_Architect.docx
+2025-09-11 19:22:52,140 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\BAnderson_Copywriter.docx
+2025-09-11 19:22:52,383 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Athanasios Anastasiou.docx
+2025-09-11 19:22:52,384 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Bangaru Network Engineer Resume (1).docx
+2025-09-11 19:22:52,393 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\BAnderson_Copywriter.docx
+2025-09-11 19:22:52,393 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\BAYO_ADEDEJI_New_Professional_Resume (1).docx
+2025-09-11 19:22:52,657 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Athanasios Stavropoulos_Python Engineer (VP).docx
+2025-09-11 19:22:52,658 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\BAYO_ADEDEJI_New_Professional_Resume (2).docx
+2025-09-11 19:22:52,739 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\BAYO_ADEDEJI_New_Professional_Resume (1).docx
+2025-09-11 19:22:52,741 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\BAYO_ADEDEJI_New_Professional_Resume.docx
+2025-09-11 19:22:52,774 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Athanasios Stavropoulos_VP, Python Engineer.docx
+2025-09-11 19:22:52,776 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Bill_Wu_Resume_Hardware_Manufacturing_Program_Manager.docx
+2025-09-11 19:22:52,908 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Bangaru Network Engineer Resume (1).docx
+2025-09-11 19:22:52,909 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Bindu Pradha_Resume.docx
+2025-09-11 19:22:52,947 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\BAYO_ADEDEJI_New_Professional_Resume (2).docx
+2025-09-11 19:22:52,948 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Bindu_Pradha.docx
+2025-09-11 19:22:53,142 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\BAYO_ADEDEJI_New_Professional_Resume.docx
+2025-09-11 19:22:53,144 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\BONNIE ANDERSON.docx
+2025-09-11 19:22:53,311 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Bill_Wu_Resume_Hardware_Manufacturing_Program_Manager.docx
+2025-09-11 19:22:53,312 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Boris Rayskiy Android Developer.docx
+2025-09-11 19:22:53,381 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\BONNIE ANDERSON.docx
+2025-09-11 19:22:53,382 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Boris Rayskiy Lead Android Developer.docx
+2025-09-11 19:22:53,463 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Bindu Pradha_Resume.docx
+2025-09-11 19:22:53,464 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Boris-Rayskiy-Resume-2025-1.docx
+2025-09-11 19:22:53,548 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Boris Rayskiy Android Developer.docx
+2025-09-11 19:22:53,550 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Bourehima Nakanebo Resume 5.docx
+2025-09-11 19:22:53,558 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Boris Rayskiy Lead Android Developer.docx
+2025-09-11 19:22:53,560 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Brandon Guess (1).docx
+2025-09-11 19:22:53,603 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Bindu_Pradha.docx
+2025-09-11 19:22:53,605 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Brandon Guess.docx
+2025-09-11 19:22:53,701 - WARNING - Document Error: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Brandon Guess (1).docx
+2025-09-11 19:22:53,701 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Brandon Guess (1).docx
+2025-09-11 19:22:53,701 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Carol Locus - Technical Writer 5 (1).docx
+2025-09-11 19:22:53,716 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Boris-Rayskiy-Resume-2025-1.docx
+2025-09-11 19:22:53,716 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Carol Locus - Technical Writer 5.docx
+2025-09-11 19:22:53,773 - WARNING - Document Error: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Brandon Guess.docx
+2025-09-11 19:22:53,773 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Brandon Guess.docx
+2025-09-11 19:22:53,773 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Carol Locus Technical Writer T5.docx
+2025-09-11 19:22:53,938 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Bourehima Nakanebo Resume 5.docx
+2025-09-11 19:22:53,943 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Chen_Raymond Resume Analyst.docx
+2025-09-11 19:22:53,980 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Carol Locus - Technical Writer 5 (1).docx
+2025-09-11 19:22:53,982 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ChinyelugoU2020-AZRF.docx
+2025-09-11 19:22:53,989 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Carol Locus - Technical Writer 5.docx
+2025-09-11 19:22:53,989 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\cjpenn_resume_0825.docx
+2025-09-11 19:22:54,029 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Carol Locus Technical Writer T5.docx
+2025-09-11 19:22:54,030 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Contractor Statement of Prior Employment Form (3) (1).docx
+2025-09-11 19:22:54,144 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\cjpenn_resume_0825.docx
+2025-09-11 19:22:54,150 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Contractor Statement of Prior Employment Form (3) copy copy copy.docx
+2025-09-11 19:22:54,257 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Chen_Raymond Resume Analyst.docx
+2025-09-11 19:22:54,258 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Contractor Statement of Prior Employment Form (3).docx
+2025-09-11 19:22:54,385 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Contractor Statement of Prior Employment Form (3) (1).docx
+2025-09-11 19:22:54,386 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DANIEL COSTELLOE (1).docx
+2025-09-11 19:22:54,408 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ChinyelugoU2020-AZRF.docx
+2025-09-11 19:22:54,409 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Daniel Costelloe - Lead Data Scientist.docx
+2025-09-11 19:22:54,583 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Contractor Statement of Prior Employment Form (3) copy copy copy.docx
+2025-09-11 19:22:54,583 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Daniel Covault - Lead Android Engineer.docx
+2025-09-11 19:22:54,738 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DANIEL COSTELLOE (1).docx
+2025-09-11 19:22:54,739 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Daniel Covault Android developer.docx
+2025-09-11 19:22:54,752 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Daniel Costelloe - Lead Data Scientist.docx
+2025-09-11 19:22:54,753 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Daniel Pappas Resume TDL (Design Lead with Build Coordination) (1).docx
+2025-09-11 19:22:54,753 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Contractor Statement of Prior Employment Form (3).docx
+2025-09-11 19:22:54,754 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Daniel_Bliss_Senior_iOS_Developer_2025.docx
+2025-09-11 19:22:54,990 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Daniel Covault - Lead Android Engineer.docx
+2025-09-11 19:22:54,991 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\darrell_hubbard Chief Data Architect NC (1).docx
+2025-09-11 19:22:55,104 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Daniel Covault Android developer.docx
+2025-09-11 19:22:55,105 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\darrell_hubbard Chief Data Architect NC (2).docx
+2025-09-11 19:22:55,128 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Daniel_Bliss_Senior_iOS_Developer_2025.docx
+2025-09-11 19:22:55,128 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\darrell_hubbard Chief Data Architect NC.docx
+2025-09-11 19:22:55,452 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Daniel Pappas Resume TDL (Design Lead with Build Coordination) (1).docx
+2025-09-11 19:22:55,457 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Demeke Ademe.docx
+2025-09-11 19:22:55,571 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\darrell_hubbard Chief Data Architect NC (1).docx
+2025-09-11 19:22:55,571 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Demeke_Res_R.docx
+2025-09-11 19:22:55,636 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\darrell_hubbard Chief Data Architect NC (2).docx
+2025-09-11 19:22:55,637 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DEVLIN BANH.docx
+2025-09-11 19:22:55,647 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\darrell_hubbard Chief Data Architect NC.docx
+2025-09-11 19:22:55,649 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Dice_Resume_Cv_Yonas_Desta.docx
+2025-09-11 19:22:55,757 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DEVLIN BANH.docx
+2025-09-11 19:22:55,757 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Don Wettasinghe (2).docx
+2025-09-11 19:22:55,842 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Dice_Resume_Cv_Yonas_Desta.docx
+2025-09-11 19:22:55,842 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Don_Wettasinghe (1).docx
+2025-09-11 19:22:55,870 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Demeke Ademe.docx
+2025-09-11 19:22:55,871 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Dr_James_Carrothers_Full_Resume_7.15.2025.docx
+2025-09-11 19:22:55,911 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Demeke_Res_R.docx
+2025-09-11 19:22:55,911 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Dwayne Webb Senior Middleware Application Server Engineer .docx
+2025-09-11 19:22:55,992 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Don Wettasinghe (2).docx
+2025-09-11 19:22:55,992 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Edward_A_Gibs_(1).docx
+2025-09-11 19:22:56,079 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Dr_James_Carrothers_Full_Resume_7.15.2025.docx
+2025-09-11 19:22:56,079 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\EGB 4.8.docx
+2025-09-11 19:22:56,111 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Don_Wettasinghe (1).docx
+2025-09-11 19:22:56,111 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Emmanuel Asamoah.docx
+2025-09-11 19:22:56,134 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Dwayne Webb Senior Middleware Application Server Engineer .docx
+2025-09-11 19:22:56,136 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Eraina Fergus-Growth Marketing Specialist.docx
+2025-09-11 19:22:56,258 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Edward_A_Gibs_(1).docx
+2025-09-11 19:22:56,258 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Eraina Ferguson.docx
+2025-09-11 19:22:56,371 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Eraina Fergus-Growth Marketing Specialist.docx
+2025-09-11 19:22:56,371 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ernest_Ita_Resume.docx
+2025-09-11 19:22:56,451 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Emmanuel Asamoah.docx
+2025-09-11 19:22:56,452 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\EUGENE TARASOV - Technical Project Manager.docx
+2025-09-11 19:22:56,590 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ernest_Ita_Resume.docx
+2025-09-11 19:22:56,590 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\EUGENE TARASOV_Technical Program Manager_20250827.docx
+2025-09-11 19:22:56,608 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Eraina Ferguson.docx
+2025-09-11 19:22:56,608 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Feroz Shaik_SAP PIPO BTP Integration Senior Lead_Resume.docx
+2025-09-11 19:22:56,623 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\EUGENE TARASOV - Technical Project Manager.docx
+2025-09-11 19:22:56,623 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Feroz_Shaik_-_Resume.docx
+2025-09-11 19:22:56,671 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\EGB 4.8.docx
+2025-09-11 19:22:56,673 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Firdawek Ayele.docx
+2025-09-11 19:22:56,955 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Firdawek Ayele.docx
+2025-09-11 19:22:56,955 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Frank Moreno.docx
+2025-09-11 19:22:57,039 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Feroz_Shaik_-_Resume.docx
+2025-09-11 19:22:57,040 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Gabrielle Blair.docx
+2025-09-11 19:22:57,052 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\EUGENE TARASOV_Technical Program Manager_20250827.docx
+2025-09-11 19:22:57,052 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Gaurav Pradhan_ SAP Convergent Mediation Developer.docx
+2025-09-11 19:22:57,068 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Feroz Shaik_SAP PIPO BTP Integration Senior Lead_Resume.docx
+2025-09-11 19:22:57,069 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Gaurav Pradhan_ SAP Convergent Mediation Developer_CV.docx
+2025-09-11 19:22:57,085 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Frank Moreno.docx
+2025-09-11 19:22:57,087 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Gaurav_Pradhan_SAP_CM_RESUME_Updated (1).docx
+2025-09-11 19:22:57,483 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Gaurav Pradhan_ SAP Convergent Mediation Developer_CV.docx
+2025-09-11 19:22:57,484 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Gaurav_Pradhan_SAP_CM_RESUME_Updated.docx
+2025-09-11 19:22:57,502 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Gabrielle Blair.docx
+2025-09-11 19:22:57,502 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\George Abourjeili.docx
+2025-09-11 19:22:57,564 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Gaurav_Pradhan_SAP_CM_RESUME_Updated (1).docx
+2025-09-11 19:22:57,564 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Gino Orlando Zamorano.docx
+2025-09-11 19:22:57,580 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Gaurav Pradhan_ SAP Convergent Mediation Developer.docx
+2025-09-11 19:22:57,581 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Hector_Uscanga_NX_CAD_Modeler (1).docx
+2025-09-11 19:22:57,719 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\George Abourjeili.docx
+2025-09-11 19:22:57,720 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Humphery Nwachukwu.docx
+2025-09-11 19:22:57,936 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Hector_Uscanga_NX_CAD_Modeler (1).docx
+2025-09-11 19:22:57,937 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\IAN AUVIL - NX CAD Designer.docx
+2025-09-11 19:22:58,028 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Gaurav_Pradhan_SAP_CM_RESUME_Updated.docx
+2025-09-11 19:22:58,028 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ian Auvil Resume 5-16-2025 (1).docx
+2025-09-11 19:22:58,033 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Humphery Nwachukwu.docx
+2025-09-11 19:22:58,033 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ian Auvil Resume 5-16-2025.docx
+2025-09-11 19:22:58,038 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Gino Orlando Zamorano.docx
+2025-09-11 19:22:58,039 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JACKSON QUINN - Copy Editor.docx
+2025-09-11 19:22:58,273 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\IAN AUVIL - NX CAD Designer.docx
+2025-09-11 19:22:58,275 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JACKSON QUINN.docx
+2025-09-11 19:22:58,291 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JACKSON QUINN - Copy Editor.docx
+2025-09-11 19:22:58,291 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\James Cipolloni  - Technical Writer T5 (1).docx
+2025-09-11 19:22:58,454 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ian Auvil Resume 5-16-2025.docx
+2025-09-11 19:22:58,455 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\James Cipolloni  - Technical Writer T5.docx
+2025-09-11 19:22:58,466 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ian Auvil Resume 5-16-2025 (1).docx
+2025-09-11 19:22:58,466 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\James Song - Director, Tech Lead, Python.docx
+2025-09-11 19:22:58,607 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JACKSON QUINN.docx
+2025-09-11 19:22:58,607 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JARResume.2025-jar_(3)_(2).docx
+2025-09-11 19:22:58,643 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\James Cipolloni  - Technical Writer T5 (1).docx
+2025-09-11 19:22:58,643 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jeffrey_Mu 1.docx
+2025-09-11 19:22:58,743 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\James Song - Director, Tech Lead, Python.docx
+2025-09-11 19:22:58,744 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jeffrey_Mu.docx
+2025-09-11 19:22:58,845 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\James Cipolloni  - Technical Writer T5.docx
+2025-09-11 19:22:58,845 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jenny_Chu_5_8 3 (1).docx
+2025-09-11 19:22:58,881 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jeffrey_Mu 1.docx
+2025-09-11 19:22:58,882 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jenny_Chu_5_8 3.docx
+2025-09-11 19:22:59,037 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jeffrey_Mu.docx
+2025-09-11 19:22:59,037 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jesse Martinez_Program Coordinator (1).docx
+2025-09-11 19:22:59,048 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JARResume.2025-jar_(3)_(2).docx
+2025-09-11 19:22:59,048 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jesse Martinez_Program Coordinator.docx
+2025-09-11 19:22:59,162 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jenny_Chu_5_8 3.docx
+2025-09-11 19:22:59,162 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jian Ma_ Senior iOS Developer.docx
+2025-09-11 19:22:59,168 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jenny_Chu_5_8 3 (1).docx
+2025-09-11 19:22:59,169 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JILL SILBERT.docx
+2025-09-11 19:22:59,236 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jesse Martinez_Program Coordinator.docx
+2025-09-11 19:22:59,237 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jim Damm resume.docx
+2025-09-11 19:22:59,244 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jesse Martinez_Program Coordinator (1).docx
+2025-09-11 19:22:59,244 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Joaquin Lewis RF Optimization Network Engineer.docx
+2025-09-11 19:22:59,409 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JILL SILBERT.docx
+2025-09-11 19:22:59,409 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\John Li - DevOps Engineer.docx
+2025-09-11 19:22:59,488 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jian Ma_ Senior iOS Developer.docx
+2025-09-11 19:22:59,488 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\John.docx
+2025-09-11 19:22:59,493 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jim Damm resume.docx
+2025-09-11 19:22:59,493 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JohnathanFlowers_Resume.docx
+2025-09-11 19:22:59,510 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Joaquin Lewis RF Optimization Network Engineer.docx
+2025-09-11 19:22:59,510 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jonna_McCarthy_Resume.docx
+2025-09-11 19:22:59,750 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\John Li - DevOps Engineer.docx
+2025-09-11 19:22:59,753 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jonna_McCarthy_Training_PM Resume.docx
+2025-09-11 19:22:59,846 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\John.docx
+2025-09-11 19:22:59,847 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JoshuaWilliam_ApplicationSecurity.docx
+2025-09-11 19:22:59,864 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jonna_McCarthy_Resume.docx
+2025-09-11 19:22:59,865 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\KamalHossain_SDET_Profile (1).docx
+2025-09-11 19:22:59,888 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JohnathanFlowers_Resume.docx
+2025-09-11 19:22:59,890 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Kamlesh Lead NodeJS developer.docx
+2025-09-11 19:23:00,144 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jonna_McCarthy_Training_PM Resume.docx
+2025-09-11 19:23:00,145 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Karan Mittal _MS Dynamics 365 Customer Engagement Architect.docx
+2025-09-11 19:23:00,310 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Kamlesh Lead NodeJS developer.docx
+2025-09-11 19:23:00,311 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\KeithKim Network Architect.docx
+2025-09-11 19:23:00,318 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\KamalHossain_SDET_Profile (1).docx
+2025-09-11 19:23:00,318 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Kenneth Obinna Ugwuozor - Systems Administrator.docx
+2025-09-11 19:23:00,340 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JoshuaWilliam_ApplicationSecurity.docx
+2025-09-11 19:23:00,340 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Krishna Amilineni Resume.docx
+2025-09-11 19:23:00,698 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Kenneth Obinna Ugwuozor - Systems Administrator.docx
+2025-09-11 19:23:00,698 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Krishna_Sr.Cloud_DevOps (2) (1).docx
+2025-09-11 19:23:00,708 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Karan Mittal _MS Dynamics 365 Customer Engagement Architect.docx
+2025-09-11 19:23:00,708 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Laura Starkand.docx
+2025-09-11 19:23:00,715 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\KeithKim Network Architect.docx
+2025-09-11 19:23:00,715 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\LOLIVAS-RES2025_5.docx
+2025-09-11 19:23:00,774 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Krishna Amilineni Resume.docx
+2025-09-11 19:23:00,774 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Madhu_Remata_BI Developer Resume (1).docx
+2025-09-11 19:23:01,218 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Laura Starkand.docx
+2025-09-11 19:23:01,218 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Marcell Fulop_Senior iOS Developer.docx
+2025-09-11 19:23:01,376 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Madhu_Remata_BI Developer Resume (1).docx
+2025-09-11 19:23:01,378 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mark resume 2025 - masters - talentbridge (1).docx
+2025-09-11 19:23:01,397 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\LOLIVAS-RES2025_5.docx
+2025-09-11 19:23:01,398 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mark resume 2025 - masters - talentbridge.docx
+2025-09-11 19:23:01,425 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Krishna_Sr.Cloud_DevOps (2) (1).docx
+2025-09-11 19:23:01,426 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Marketing Manager - Chris Keswani (1).docx
+2025-09-11 19:23:01,646 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Marcell Fulop_Senior iOS Developer.docx
+2025-09-11 19:23:01,647 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Marketing Manager - Chris Keswani (2).docx
+2025-09-11 19:23:01,673 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mark resume 2025 - masters - talentbridge (1).docx
+2025-09-11 19:23:01,673 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Marketing Manager - Chris Keswani.docx
+2025-09-11 19:23:01,716 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Marketing Manager - Chris Keswani (1).docx
+2025-09-11 19:23:01,717 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Michael DeAnda Apple_TCS Candidate.docx
+2025-09-11 19:23:01,752 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mark resume 2025 - masters - talentbridge.docx
+2025-09-11 19:23:01,753 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Michael Wieher VP, Python Engineer.docx
+2025-09-11 19:23:01,943 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Marketing Manager - Chris Keswani (2).docx
+2025-09-11 19:23:01,944 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Michael Wieher.docx
+2025-09-11 19:23:01,966 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Marketing Manager - Chris Keswani.docx
+2025-09-11 19:23:01,966 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mike Ezem_Resume.docx
+2025-09-11 19:23:02,135 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Michael Wieher VP, Python Engineer.docx
+2025-09-11 19:23:02,135 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mike Gilardi Automation Resume.docx
+2025-09-11 19:23:02,205 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Michael DeAnda Apple_TCS Candidate.docx
+2025-09-11 19:23:02,206 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mike Gilardi Resume Aug 2025.docx
+2025-09-11 19:23:02,315 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mike Ezem_Resume.docx
+2025-09-11 19:23:02,315 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mike_Gilardi_Automation_Resume_Updated.docx
+2025-09-11 19:23:02,385 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mike Gilardi Automation Resume.docx
+2025-09-11 19:23:02,385 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mohammed Zubair Ahmed.docx
+2025-09-11 19:23:02,498 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mike Gilardi Resume Aug 2025.docx
+2025-09-11 19:23:02,499 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Monika Jain - Technical Project Manager.docx
+2025-09-11 19:23:02,560 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mike_Gilardi_Automation_Resume_Updated.docx
+2025-09-11 19:23:02,561 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Monika Jain Resume (1).docx
+2025-09-11 19:23:02,660 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Michael Wieher.docx
+2025-09-11 19:23:02,661 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mukesh Khatri Director, Tech Lead, Python, Risk.docx
+2025-09-11 19:23:02,681 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mohammed Zubair Ahmed.docx
+2025-09-11 19:23:02,681 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Nasreen Akhtar IT Project Manager.docx
+2025-09-11 19:23:02,840 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Monika Jain - Technical Project Manager.docx
+2025-09-11 19:23:02,841 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Nishu Teotia Backend Engineer .docx
+2025-09-11 19:23:02,856 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Monika Jain Resume (1).docx
+2025-09-11 19:23:02,856 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Nishu Teotia.docx
+2025-09-11 19:23:02,970 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mukesh Khatri Director, Tech Lead, Python, Risk.docx
+2025-09-11 19:23:02,970 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\NOHA_RAMMAL-TC.docx
+2025-09-11 19:23:03,065 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Nishu Teotia.docx
+2025-09-11 19:23:03,066 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Paul Constantino  Director, Tech Lead, Python, Risk.docx
+2025-09-11 19:23:03,071 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Nasreen Akhtar IT Project Manager.docx
+2025-09-11 19:23:03,071 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Paul Constantino Director, Tech Lead, Python, Risk.docx
+2025-09-11 19:23:03,083 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Nishu Teotia Backend Engineer .docx
+2025-09-11 19:23:03,083 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pavel Levin - Lead Data Scientist (1).docx
+2025-09-11 19:23:03,239 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\NOHA_RAMMAL-TC.docx
+2025-09-11 19:23:03,240 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pavel Levin - Lead Data Scientist - Updated Resume.docx
+2025-09-11 19:23:03,339 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Paul Constantino  Director, Tech Lead, Python, Risk.docx
+2025-09-11 19:23:03,340 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pavel Levin - Lead Data Scientist.docx
+2025-09-11 19:23:03,346 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pavel Levin - Lead Data Scientist (1).docx
+2025-09-11 19:23:03,348 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pavel_Levin_PhD-resume (1).docx
+2025-09-11 19:23:03,437 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Paul Constantino Director, Tech Lead, Python, Risk.docx
+2025-09-11 19:23:03,437 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pavel_Levin_PhD-resume.docx
+2025-09-11 19:23:03,464 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pavel Levin - Lead Data Scientist - Updated Resume.docx
+2025-09-11 19:23:03,465 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pavel_Stroh_Resume.docx
+2025-09-11 19:23:03,656 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pavel Levin - Lead Data Scientist.docx
+2025-09-11 19:23:03,656 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\pc-sme-2025.docx
+2025-09-11 19:23:03,735 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pavel_Stroh_Resume.docx
+2025-09-11 19:23:03,735 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Piyush Patel-Lead NodeJS Developer (1).docx
+2025-09-11 19:23:03,985 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Piyush Patel-Lead NodeJS Developer (1).docx
+2025-09-11 19:23:03,986 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Piyush Patel-Lead NodeJS Developer.docx
+2025-09-11 19:23:03,993 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\pc-sme-2025.docx
+2025-09-11 19:23:03,994 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pranitha Bollepalli (1).docx
+2025-09-11 19:23:04,017 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pavel_Levin_PhD-resume.docx
+2025-09-11 19:23:04,019 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pranitha Bollepalli Data Engineer.docx
+2025-09-11 19:23:04,111 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pavel_Levin_PhD-resume (1).docx
+2025-09-11 19:23:04,113 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pranitha Bollepalli.docx
+2025-09-11 19:23:04,207 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pranitha Bollepalli.docx
+2025-09-11 19:23:04,208 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Praveen Reddy V - Resume (1).docx
+2025-09-11 19:23:04,227 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pranitha Bollepalli (1).docx
+2025-09-11 19:23:04,228 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Praveen Reddy V - Resume.docx
+2025-09-11 19:23:04,237 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Piyush Patel-Lead NodeJS Developer.docx
+2025-09-11 19:23:04,237 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rabbani Mohammad - Lead Data Engineer.docx
+2025-09-11 19:23:04,262 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Pranitha Bollepalli Data Engineer.docx
+2025-09-11 19:23:04,264 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rabbani_Mohammad_.docx
+2025-09-11 19:23:04,526 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Praveen Reddy V - Resume (1).docx
+2025-09-11 19:23:04,527 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rajesh Menon TPM with ML.docx
+2025-09-11 19:23:04,659 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Praveen Reddy V - Resume.docx
+2025-09-11 19:23:04,660 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rajesh Premchandran Menon - Technical Project Manager.docx
+2025-09-11 19:23:04,787 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rabbani Mohammad - Lead Data Engineer.docx
+2025-09-11 19:23:04,787 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ramana Reddy Pandilla Lead ReactJS Developer.docx
+2025-09-11 19:23:05,024 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rajesh Premchandran Menon - Technical Project Manager.docx
+2025-09-11 19:23:05,025 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ramana Reddy Pandilla.docx
+2025-09-11 19:23:05,034 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rajesh Menon TPM with ML.docx
+2025-09-11 19:23:05,035 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Raymond Chen Financial Analyst.docx
+2025-09-11 19:23:05,062 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ramana Reddy Pandilla Lead ReactJS Developer.docx
+2025-09-11 19:23:05,063 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\RE-Eng-VMS1.docx
+2025-09-11 19:23:05,379 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rabbani_Mohammad_.docx
+2025-09-11 19:23:05,379 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Reebon Enna C++ Go Developer (1).docx
+2025-09-11 19:23:05,394 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Raymond Chen Financial Analyst.docx
+2025-09-11 19:23:05,394 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume Afonin Alexander 05m (2).docx
+2025-09-11 19:23:05,539 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ramana Reddy Pandilla.docx
+2025-09-11 19:23:05,541 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume-Current (1).docx
+2025-09-11 19:23:05,627 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume Afonin Alexander 05m (2).docx
+2025-09-11 19:23:05,627 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume-Current.docx
+2025-09-11 19:23:05,647 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\RE-Eng-VMS1.docx
+2025-09-11 19:23:05,648 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume-Victor Perez_RF_Optimization_Engineer.docx
+2025-09-11 19:23:05,724 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume-Current (1).docx
+2025-09-11 19:23:05,726 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeAkhilaVenigalla.docx
+2025-09-11 19:23:05,735 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Reebon Enna C++ Go Developer (1).docx
+2025-09-11 19:23:05,735 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeAKHILSHEELAM.docx
+2025-09-11 19:23:05,855 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume-Current.docx
+2025-09-11 19:23:05,856 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeBhavyaSree.docx
+2025-09-11 19:23:06,037 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume-Victor Perez_RF_Optimization_Engineer.docx
+2025-09-11 19:23:06,038 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeChristineLamothe.docx
+2025-09-11 19:23:06,063 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeAKHILSHEELAM.docx
+2025-09-11 19:23:06,064 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeDANIELKIM.docx
+2025-09-11 19:23:06,090 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeBhavyaSree.docx
+2025-09-11 19:23:06,091 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeDeeWaybright.docx
+2025-09-11 19:23:06,216 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeAkhilaVenigalla.docx
+2025-09-11 19:23:06,217 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeGauravArora.docx
+2025-09-11 19:23:06,347 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeDANIELKIM.docx
+2025-09-11 19:23:06,347 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeGauravArora_Cost Accountant.docx
+2025-09-11 19:23:06,361 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeChristineLamothe.docx
+2025-09-11 19:23:06,361 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeIbraheemSule.docx
+2025-09-11 19:23:06,402 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeDeeWaybright.docx
+2025-09-11 19:23:06,403 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJacobMirelez.docx
+2025-09-11 19:23:06,577 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeGauravArora.docx
+2025-09-11 19:23:06,577 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJaredSain.docx
+2025-09-11 19:23:06,631 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeGauravArora_Cost Accountant.docx
+2025-09-11 19:23:06,632 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJoshuaDev.docx
+2025-09-11 19:23:06,696 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeIbraheemSule.docx
+2025-09-11 19:23:06,697 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJustinDiBiase.docx
+2025-09-11 19:23:06,723 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJacobMirelez.docx
+2025-09-11 19:23:06,723 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeKeithKim.docx
+2025-09-11 19:23:06,861 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJaredSain.docx
+2025-09-11 19:23:06,862 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeMacariosMensah.docx
+2025-09-11 19:23:06,994 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJustinDiBiase.docx
+2025-09-11 19:23:06,995 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeMohammadAlaee.docx
+2025-09-11 19:23:07,025 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeJoshuaDev.docx
+2025-09-11 19:23:07,026 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeMYLESBRYANT.docx
+2025-09-11 19:23:07,202 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeMacariosMensah.docx
+2025-09-11 19:23:07,203 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeNIKITHAYELDI.docx
+2025-09-11 19:23:07,420 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeMohammadAlaee.docx
+2025-09-11 19:23:07,420 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeRamKarthick.docx
+2025-09-11 19:23:07,430 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeMYLESBRYANT.docx
+2025-09-11 19:23:07,430 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeRamuGanta.docx
+2025-09-11 19:23:07,463 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeNIKITHAYELDI.docx
+2025-09-11 19:23:07,464 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeSheetalSonawane.docx
+2025-09-11 19:23:07,492 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeKeithKim.docx
+2025-09-11 19:23:07,493 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeSilpaKumari.docx
+2025-09-11 19:23:08,051 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeSilpaKumari.docx
+2025-09-11 19:23:08,053 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeSrikanthNampally.docx
+2025-09-11 19:23:08,083 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeRamKarthick.docx
+2025-09-11 19:23:08,083 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeSujithRasamalla.docx
+2025-09-11 19:23:08,125 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeSheetalSonawane.docx
+2025-09-11 19:23:08,126 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeSunilKyatham.docx
+2025-09-11 19:23:08,296 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeRamuGanta.docx
+2025-09-11 19:23:08,296 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeTearodRobertson.docx
+2025-09-11 19:23:08,428 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeSrikanthNampally.docx
+2025-09-11 19:23:08,428 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeZoeHart.docx
+2025-09-11 19:23:08,507 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeTearodRobertson.docx
+2025-09-11 19:23:08,508 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_(3).docx
+2025-09-11 19:23:08,538 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeSunilKyatham.docx
+2025-09-11 19:23:08,540 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_-_Senior_IT_Business_Analyst_(Jonathan_Gomez))).docx
+2025-09-11 19:23:08,564 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeSujithRasamalla.docx
+2025-09-11 19:23:08,564 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\RESUME_3d_EVOLUTION_5_TWON_VERSION.docx
+2025-09-11 19:23:08,623 - WARNING - Document Error: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_(3).docx
+2025-09-11 19:23:08,624 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_(3).docx
+2025-09-11 19:23:08,624 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_Architect_Alexis_.docx
+2025-09-11 19:23:08,889 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeZoeHart.docx
+2025-09-11 19:23:08,889 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_Cipolloni_James_080125_Sr_Tech_Writer_for_use.docx
+2025-09-11 19:23:08,909 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_-_Senior_IT_Business_Analyst_(Jonathan_Gomez))).docx
+2025-09-11 19:23:08,909 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_of_Winny_Raj_2025.doc.docx
+2025-09-11 19:23:09,125 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\RESUME_3d_EVOLUTION_5_TWON_VERSION.docx
+2025-09-11 19:23:09,126 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_Sharmila_Bolikoppa_Palakshappa_2025_MS.docx
+2025-09-11 19:23:09,131 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_Architect_Alexis_.docx
+2025-09-11 19:23:09,132 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Robert Belttari_ML (7).docx
+2025-09-11 19:23:09,273 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_of_Winny_Raj_2025.doc.docx
+2025-09-11 19:23:09,274 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Robert_Facha_Resume__2025.docx
+2025-09-11 19:23:09,303 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_Cipolloni_James_080125_Sr_Tech_Writer_for_use.docx
+2025-09-11 19:23:09,304 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Robriana_Johnson_Study_Executions_Operations.docx
+2025-09-11 19:23:09,518 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Robert Belttari_ML (7).docx
+2025-09-11 19:23:09,518 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rodeanson Pierre (1).docx
+2025-09-11 19:23:09,629 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_Sharmila_Bolikoppa_Palakshappa_2025_MS.docx
+2025-09-11 19:23:09,630 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rodeanson Pierre.docx
+2025-09-11 19:23:09,634 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Robriana_Johnson_Study_Executions_Operations.docx
+2025-09-11 19:23:09,634 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rohith_Davuluri_Backend_Engineer.docx
+2025-09-11 19:23:09,646 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Robert_Facha_Resume__2025.docx
+2025-09-11 19:23:09,648 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\sahithi_Resume.docx
+2025-09-11 19:23:09,858 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rodeanson Pierre (1).docx
+2025-09-11 19:23:09,858 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sai Koundnya Marka Backend Engineer.docx
+2025-09-11 19:23:09,963 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rodeanson Pierre.docx
+2025-09-11 19:23:09,969 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\sahithi_Resume.docx
+2025-09-11 19:23:09,970 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sai_Rahul_FullStack_Developer (1).docx
+2025-09-11 19:23:09,970 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sai_Rahul_FullStack_Developer.docx
+2025-09-11 19:23:10,009 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rohith_Davuluri_Backend_Engineer.docx
+2025-09-11 19:23:10,010 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sanjeev Thapar - Senior Data Analytics Manager.docx
+2025-09-11 19:23:10,312 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sanjeev Thapar - Senior Data Analytics Manager.docx
+2025-09-11 19:23:10,313 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sanjeev Thapar,  MBA, MS, PMP, CSM.docx
+2025-09-11 19:23:10,472 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sai Koundnya Marka Backend Engineer.docx
+2025-09-11 19:23:10,473 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\SAP_BTP_Meenakshi_JInka_SAP_9++_-_Copy.docx
+2025-09-11 19:23:10,487 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sai_Rahul_FullStack_Developer.docx
+2025-09-11 19:23:10,488 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sarah St Andre - Resume.docx
+2025-09-11 19:23:10,505 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sai_Rahul_FullStack_Developer (1).docx
+2025-09-11 19:23:10,505 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Senior_Backend_Developer-g (1).docx
+2025-09-11 19:23:10,535 - WARNING - Document Error: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sarah St Andre - Resume.docx
+2025-09-11 19:23:10,536 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sarah St Andre - Resume.docx
+2025-09-11 19:23:10,536 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Senior_Backend_Developer-g.docx
+2025-09-11 19:23:10,786 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sanjeev Thapar,  MBA, MS, PMP, CSM.docx
+2025-09-11 19:23:10,787 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Shantan_Jonnalagadda__DE_CV.docx
+2025-09-11 19:23:10,833 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\SAP_BTP_Meenakshi_JInka_SAP_9++_-_Copy.docx
+2025-09-11 19:23:10,835 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Shariq_Usmani_Azure_Cloud_Engineer_0811 (1).docx
+2025-09-11 19:23:10,967 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Senior_Backend_Developer-g (1).docx
+2025-09-11 19:23:10,975 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Senior_Backend_Developer-g.docx
+2025-09-11 19:23:10,975 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Shariq_Usmani_Azure_Cloud_Engineer_0811.docx
+2025-09-11 19:23:10,977 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sharmila Bolikoppa Palakshappa - Senior Backend Engineer.docx
+2025-09-11 19:23:11,171 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Shariq_Usmani_Azure_Cloud_Engineer_0811 (1).docx
+2025-09-11 19:23:11,171 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\SoyebAhmed_fullStack_2025_u2.docx
+2025-09-11 19:23:11,195 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Shantan_Jonnalagadda__DE_CV.docx
+2025-09-11 19:23:11,195 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Srikanth Chinnam resume (1).docx
+2025-09-11 19:23:11,214 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sharmila Bolikoppa Palakshappa - Senior Backend Engineer.docx
+2025-09-11 19:23:11,214 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Srikanth Chinnam resume.docx
+2025-09-11 19:23:11,255 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Shariq_Usmani_Azure_Cloud_Engineer_0811.docx
+2025-09-11 19:23:11,256 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\SRSYSEN_Troy_T_Thompson_Sr__2022_(1) (1).docx
+2025-09-11 19:23:11,577 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\SoyebAhmed_fullStack_2025_u2.docx
+2025-09-11 19:23:11,577 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\SterlingStoneResume_MAR25.docx
+2025-09-11 19:23:11,647 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\SRSYSEN_Troy_T_Thompson_Sr__2022_(1) (1).docx
+2025-09-11 19:23:11,647 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Steve.Stilson_Version_by_Coach.docx
+2025-09-11 19:23:11,719 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Steve.Stilson_Version_by_Coach.docx
+2025-09-11 19:23:11,719 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Steven Shalash.docx
+2025-09-11 19:23:11,748 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Srikanth Chinnam resume.docx
+2025-09-11 19:23:11,749 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\StructuredProfile-95ba6601-ff64-40e5-a116-c7d6034d01be-3fgek3nxfvraizxj.docx
+2025-09-11 19:23:11,761 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Srikanth Chinnam resume (1).docx
+2025-09-11 19:23:11,761 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Submission Guidelines - Photon.DOCX
+2025-09-11 19:23:11,767 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\SterlingStoneResume_MAR25.docx
+2025-09-11 19:23:11,769 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sujitha Sivanesan LLM QE Engineer.docx
+2025-09-11 19:23:11,780 - WARNING - Document Error: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\StructuredProfile-95ba6601-ff64-40e5-a116-c7d6034d01be-3fgek3nxfvraizxj.docx
+2025-09-11 19:23:11,781 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\StructuredProfile-95ba6601-ff64-40e5-a116-c7d6034d01be-3fgek3nxfvraizxj.docx
+2025-09-11 19:23:11,781 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sujitha_S QA_Resume_ (1).docx
+2025-09-11 19:23:12,028 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Submission Guidelines - Photon.DOCX
+2025-09-11 19:23:12,029 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sung Jin Kil - NX CAD Mechanical Engineer (1).docx
+2025-09-11 19:23:12,202 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sujitha Sivanesan LLM QE Engineer.docx
+2025-09-11 19:23:12,203 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sung Jin Kil - NX CAD Mechanical Engineer.docx
+2025-09-11 19:23:12,212 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sung Jin Kil - NX CAD Mechanical Engineer (1).docx
+2025-09-11 19:23:12,212 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sung Jin Kil - Siemens NX CAD Mechanical Engineer.docx
+2025-09-11 19:23:12,223 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sujitha_S QA_Resume_ (1).docx
+2025-09-11 19:23:12,224 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sung_Jin_Kil_Meta-VR_AR__Worldwide (1).docx
+2025-09-11 19:23:12,279 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Steven Shalash.docx
+2025-09-11 19:23:12,282 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sung_Jin_Kil_Meta-VR_AR__Worldwide.docx
+2025-09-11 19:23:12,619 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sung Jin Kil - NX CAD Mechanical Engineer.docx
+2025-09-11 19:23:12,619 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sunil Kidambi - C++ Developer.docx
+2025-09-11 19:23:12,623 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sung Jin Kil - Siemens NX CAD Mechanical Engineer.docx
+2025-09-11 19:23:12,623 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sunil Kidambi - Senior Backend Engineer.docx
+2025-09-11 19:23:12,734 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sung_Jin_Kil_Meta-VR_AR__Worldwide.docx
+2025-09-11 19:23:12,735 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sunil_Kidambi_full_20250822 (1).docx
+2025-09-11 19:23:12,744 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sung_Jin_Kil_Meta-VR_AR__Worldwide (1).docx
+2025-09-11 19:23:12,746 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sunil_Kidambi_full_20250822 (2).docx
+2025-09-11 19:23:12,869 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sunil Kidambi - Senior Backend Engineer.docx
+2025-09-11 19:23:12,870 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sunil_Kidambi_full_20250822.docx
+2025-09-11 19:23:12,878 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sunil Kidambi - C++ Developer.docx
+2025-09-11 19:23:12,878 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Takuntor Fred - VP, Python Engineer.docx
+2025-09-11 19:23:13,004 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sunil_Kidambi_full_20250822 (1).docx
+2025-09-11 19:23:13,004 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Takuntor_Freddy (1).docx
+2025-09-11 19:23:13,014 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sunil_Kidambi_full_20250822 (2).docx
+2025-09-11 19:23:13,014 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Tazin_CE_SAP_Resume_2025.docx
+2025-09-11 19:23:13,119 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Takuntor Fred - VP, Python Engineer.docx
+2025-09-11 19:23:13,119 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Thompson Resume 25 (1).docx
+2025-09-11 19:23:13,197 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Takuntor_Freddy (1).docx
+2025-09-11 19:23:13,197 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Thompson Resume 25.docx
+2025-09-11 19:23:13,206 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sunil_Kidambi_full_20250822.docx
+2025-09-11 19:23:13,207 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Thompson Resume AV Technician.docx
+2025-09-11 19:23:13,309 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Thompson Resume 25 (1).docx
+2025-09-11 19:23:13,311 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Tommy Ming Data Center Network Architect.docx
+2025-09-11 19:23:13,371 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Tazin_CE_SAP_Resume_2025.docx
+2025-09-11 19:23:13,371 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Triveni Kontham_Sr Cloud Engineer (AWS).docx
+2025-09-11 19:23:13,380 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Thompson Resume AV Technician.docx
+2025-09-11 19:23:13,380 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\TUWAN ROBERTS.docx
+2025-09-11 19:23:13,394 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Thompson Resume 25.docx
+2025-09-11 19:23:13,395 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Valerie Beasley (1) (1).docx
+2025-09-11 19:23:13,664 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\TUWAN ROBERTS.docx
+2025-09-11 19:23:13,664 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Valerie Beasley (1).docx
+2025-09-11 19:23:13,671 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Tommy Ming Data Center Network Architect.docx
+2025-09-11 19:23:13,671 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Valerie Beasley (2).docx
+2025-09-11 19:23:13,919 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Triveni Kontham_Sr Cloud Engineer (AWS).docx
+2025-09-11 19:23:13,929 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Valerie Beasley.docx
+2025-09-11 19:23:13,930 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Valerie Beasley (1) (1).docx
+2025-09-11 19:23:13,931 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Venkatesh.docx
+2025-09-11 19:23:14,107 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Valerie Beasley (2).docx
+2025-09-11 19:23:14,109 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Viharika_Bhimanapati_LLM_QE_Engineer.docx
+2025-09-11 19:23:14,134 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Valerie Beasley (1).docx
+2025-09-11 19:23:14,135 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\VladimirDanishevsky Resume.docx
+2025-09-11 19:23:14,311 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Venkatesh.docx
+2025-09-11 19:23:14,311 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\VladimirDanishevskyV2 (1).docx
+2025-09-11 19:23:14,324 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Valerie Beasley.docx
+2025-09-11 19:23:14,324 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\VladimirDanishevskyV2.docx
+2025-09-11 19:23:14,505 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\VladimirDanishevsky Resume.docx
+2025-09-11 19:23:14,506 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Winny Raj - Technical Project Manager.docx
+2025-09-11 19:23:14,520 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Viharika_Bhimanapati_LLM_QE_Engineer.docx
+2025-09-11 19:23:14,521 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Yaroslav Melnyk (1).docx
+2025-09-11 19:23:14,698 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Yaroslav Melnyk (1).docx
+2025-09-11 19:23:14,699 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Yaroslav Melnyk - Data Analytics Manager.docx
+2025-09-11 19:23:14,704 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Winny Raj - Technical Project Manager.docx
+2025-09-11 19:23:14,704 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Yaroslav Melnyk.docx
+2025-09-11 19:23:14,712 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\VladimirDanishevskyV2.docx
+2025-09-11 19:23:14,712 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Yuri Chernak SAP tricentis qtest admin (1).docx
+2025-09-11 19:23:14,724 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\VladimirDanishevskyV2 (1).docx
+2025-09-11 19:23:14,724 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Yuri Chernak SAP tricentis qtest admin.docx
+2025-09-11 19:23:14,944 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Yaroslav Melnyk.docx
+2025-09-11 19:23:14,944 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Zahra_Stavis_Resume_CRO.docx
+2025-09-11 19:23:14,951 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Yaroslav Melnyk - Data Analytics Manager.docx
+2025-09-11 19:23:14,952 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Adrian Waddell - Desktop Technician.doc
+2025-09-11 19:23:14,973 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Adrian Waddell - Desktop Technician.doc: File is not a zip file
+2025-09-11 19:23:14,975 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Adrian Waddell - Desktop Technician.doc
+2025-09-11 19:23:14,976 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\AL.doc
+2025-09-11 19:23:15,003 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\AL.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\AL.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,003 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\AL.doc
+2025-09-11 19:23:15,004 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Angela Morris - IT Project Coordinator.doc
+2025-09-11 19:23:15,023 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Yuri Chernak SAP tricentis qtest admin.docx
+2025-09-11 19:23:15,024 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Arnaud_CCIE_Network_Architect_resume.doc
+2025-09-11 19:23:15,027 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Angela Morris - IT Project Coordinator.doc: File is not a zip file
+2025-09-11 19:23:15,027 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Angela Morris - IT Project Coordinator.doc
+2025-09-11 19:23:15,027 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Bayo Adedeji - Network Engineer.doc
+2025-09-11 19:23:15,034 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Yuri Chernak SAP tricentis qtest admin (1).docx
+2025-09-11 19:23:15,034 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Betsey Katiti - IT Business Support Specialist.doc
+2025-09-11 19:23:15,049 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Bayo Adedeji - Network Engineer.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Bayo Adedeji - Network Engineer.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,049 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Bayo Adedeji - Network Engineer.doc
+2025-09-11 19:23:15,049 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Chinyelugo Augustine - Senior LTM GTM Engineer - F5 Load Balancer.doc
+2025-09-11 19:23:15,053 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Arnaud_CCIE_Network_Architect_resume.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Arnaud_CCIE_Network_Architect_resume.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,053 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Arnaud_CCIE_Network_Architect_resume.doc
+2025-09-11 19:23:15,053 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Delma Nuckles - Program Coordinator Analyst (1).doc
+2025-09-11 19:23:15,069 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Betsey Katiti - IT Business Support Specialist.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Betsey Katiti - IT Business Support Specialist.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,069 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Betsey Katiti - IT Business Support Specialist.doc
+2025-09-11 19:23:15,069 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Delma Nuckles - Program Coordinator Analyst.doc
+2025-09-11 19:23:15,069 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Chinyelugo Augustine - Senior LTM GTM Engineer - F5 Load Balancer.doc: File is not a zip file
+2025-09-11 19:23:15,070 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Chinyelugo Augustine - Senior LTM GTM Engineer - F5 Load Balancer.doc
+2025-09-11 19:23:15,070 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Delma Nuckles.doc
+2025-09-11 19:23:15,087 - INFO - processed: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Zahra_Stavis_Resume_CRO.docx
+2025-09-11 19:23:15,088 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Don Wettasinghe -Senior IOS Application Developer .doc
+2025-09-11 19:23:15,090 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Delma Nuckles - Program Coordinator Analyst.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Delma Nuckles - Program Coordinator Analyst.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,091 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Delma Nuckles - Program Coordinator Analyst.doc
+2025-09-11 19:23:15,091 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Delma Nuckles.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Delma Nuckles.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,091 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Edilson De Moraes Pena Lead React Developer.doc
+2025-09-11 19:23:15,092 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Delma Nuckles - Program Coordinator Analyst (1).doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Delma Nuckles - Program Coordinator Analyst (1).doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,092 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Delma Nuckles.doc
+2025-09-11 19:23:15,092 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Delma Nuckles - Program Coordinator Analyst (1).doc
+2025-09-11 19:23:15,092 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Francisco Hrastoviak - Program Coordinator.doc
+2025-09-11 19:23:15,093 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Francisco J. Hrastoviak_Program Coordinator (1).doc
+2025-09-11 19:23:15,105 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Francisco Hrastoviak - Program Coordinator.doc: File is not a zip file
+2025-09-11 19:23:15,106 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Francisco Hrastoviak - Program Coordinator.doc
+2025-09-11 19:23:15,106 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Francisco J. Hrastoviak_Program Coordinator.doc
+2025-09-11 19:23:15,108 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Francisco J. Hrastoviak_Program Coordinator (1).doc: File is not a zip file
+2025-09-11 19:23:15,108 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Francisco J. Hrastoviak_Program Coordinator (1).doc
+2025-09-11 19:23:15,109 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\FredCabello.doc
+2025-09-11 19:23:15,109 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Edilson De Moraes Pena Lead React Developer.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Edilson De Moraes Pena Lead React Developer.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,109 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Edilson De Moraes Pena Lead React Developer.doc
+2025-09-11 19:23:15,109 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jacqueline Ratcliff - Desktop & Endpoint Administrator.doc
+2025-09-11 19:23:15,111 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Don Wettasinghe -Senior IOS Application Developer .doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Don Wettasinghe -Senior IOS Application Developer .doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,111 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Don Wettasinghe -Senior IOS Application Developer .doc
+2025-09-11 19:23:15,111 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong (1) (1).doc
+2025-09-11 19:23:15,124 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jacqueline Ratcliff - Desktop & Endpoint Administrator.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jacqueline Ratcliff - Desktop & Endpoint Administrator.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,124 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jacqueline Ratcliff - Desktop & Endpoint Administrator.doc
+2025-09-11 19:23:15,124 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong (1) (2).doc
+2025-09-11 19:23:15,124 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\FredCabello.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\FredCabello.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,125 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\FredCabello.doc
+2025-09-11 19:23:15,125 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong (1).doc
+2025-09-11 19:23:15,125 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Francisco J. Hrastoviak_Program Coordinator.doc: File is not a zip file
+2025-09-11 19:23:15,126 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Francisco J. Hrastoviak_Program Coordinator.doc
+2025-09-11 19:23:15,126 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong.doc
+2025-09-11 19:23:15,126 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong (1) (1).doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong (1) (1).doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,126 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong (1) (1).doc
+2025-09-11 19:23:15,126 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jesse Martinez - Program Coordinator.doc
+2025-09-11 19:23:15,144 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong (1) (2).doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong (1) (2).doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,144 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong (1) (2).doc
+2025-09-11 19:23:15,144 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jian Ma - Senior iOS Developer.doc
+2025-09-11 19:23:15,145 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jesse Martinez - Program Coordinator.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jesse Martinez - Program Coordinator.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,146 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jesse Martinez - Program Coordinator.doc
+2025-09-11 19:23:15,146 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Marcell Fulop - Senior iOS Developer.doc
+2025-09-11 19:23:15,148 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong (1).doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong (1).doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,148 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong (1).doc
+2025-09-11 19:23:15,148 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mark Talent - Android Lead Engineer.doc
+2025-09-11 19:23:15,159 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Marcell Fulop - Senior iOS Developer.doc: File is not a zip file
+2025-09-11 19:23:15,159 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Marcell Fulop - Senior iOS Developer.doc
+2025-09-11 19:23:15,159 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Nikhilesh Raja_SAP Mediation Developer.doc
+2025-09-11 19:23:15,166 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,167 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong.doc
+2025-09-11 19:23:15,167 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Patrick_Munhall_Resume.doc
+2025-09-11 19:23:15,172 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Nikhilesh Raja_SAP Mediation Developer.doc: "no relationship of type 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument' in collection"
+2025-09-11 19:23:15,172 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Nikhilesh Raja_SAP Mediation Developer.doc
+2025-09-11 19:23:15,172 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Piyush Patel - Lead NodeJS Developer.doc
+2025-09-11 19:23:15,173 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jian Ma - Senior iOS Developer.doc: File is not a zip file
+2025-09-11 19:23:15,173 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jian Ma - Senior iOS Developer.doc
+2025-09-11 19:23:15,173 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Proj_Schedule_and_Coordinator.doc
+2025-09-11 19:23:15,174 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mark Talent - Android Lead Engineer.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mark Talent - Android Lead Engineer.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,174 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mark Talent - Android Lead Engineer.doc
+2025-09-11 19:23:15,174 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ramana Reddy Pandilla Lead ReactJS Developer.doc
+2025-09-11 19:23:15,190 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ramana Reddy Pandilla Lead ReactJS Developer.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ramana Reddy Pandilla Lead ReactJS Developer.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,190 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ramana Reddy Pandilla Lead ReactJS Developer.doc
+2025-09-11 19:23:15,190 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeArunKumar.doc
+2025-09-11 19:23:15,191 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Proj_Schedule_and_Coordinator.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Proj_Schedule_and_Coordinator.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,191 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Proj_Schedule_and_Coordinator.doc
+2025-09-11 19:23:15,191 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Tawfeeq Hussain _ MS Dynamics 365 Architect.doc
+2025-09-11 19:23:15,205 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Tawfeeq Hussain _ MS Dynamics 365 Architect.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Tawfeeq Hussain _ MS Dynamics 365 Architect.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,205 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Tawfeeq Hussain _ MS Dynamics 365 Architect.doc
+2025-09-11 19:23:15,206 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\TCS_JD_Design Lead NPI build coordniator_Onsite v3.doc
+2025-09-11 19:23:15,208 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeArunKumar.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeArunKumar.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,208 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Piyush Patel - Lead NodeJS Developer.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Piyush Patel - Lead NodeJS Developer.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,208 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeArunKumar.doc
+2025-09-11 19:23:15,209 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Piyush Patel - Lead NodeJS Developer.doc
+2025-09-11 19:23:15,209 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Theodora Jones.doc
+2025-09-11 19:23:15,209 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Valerie Beasley - Project Coordinator.doc
+2025-09-11 19:23:15,210 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Patrick_Munhall_Resume.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Patrick_Munhall_Resume.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,210 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Patrick_Munhall_Resume.doc
+2025-09-11 19:23:15,210 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\_Carol_Locus_082025-remote-TW-BA-PM-10plus_yrs-Instructional_Materials. (1).doc
+2025-09-11 19:23:15,220 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Valerie Beasley - Project Coordinator.doc: File is not a zip file
+2025-09-11 19:23:15,220 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Valerie Beasley - Project Coordinator.doc
+2025-09-11 19:23:15,220 - INFO - processing: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\_Carol_Locus_082025-remote-TW-BA-PM-10plus_yrs-Instructional_Materials..doc
+2025-09-11 19:23:15,222 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Theodora Jones.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Theodora Jones.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,222 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Theodora Jones.doc
+2025-09-11 19:23:15,224 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\TCS_JD_Design Lead NPI build coordniator_Onsite v3.doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\TCS_JD_Design Lead NPI build coordniator_Onsite v3.doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,224 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\TCS_JD_Design Lead NPI build coordniator_Onsite v3.doc
+2025-09-11 19:23:15,228 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\_Carol_Locus_082025-remote-TW-BA-PM-10plus_yrs-Instructional_Materials. (1).doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\_Carol_Locus_082025-remote-TW-BA-PM-10plus_yrs-Instructional_Materials. (1).doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,228 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\_Carol_Locus_082025-remote-TW-BA-PM-10plus_yrs-Instructional_Materials. (1).doc
+2025-09-11 19:23:15,242 - ERROR - Extraction error C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\_Carol_Locus_082025-remote-TW-BA-PM-10plus_yrs-Instructional_Materials..doc: file 'C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\_Carol_Locus_082025-remote-TW-BA-PM-10plus_yrs-Instructional_Materials..doc' is not a Word file, content type is 'application/vnd.openxmlformats-officedocument.themeManager+xml'
+2025-09-11 19:23:15,242 - WARNING - No data taken from: C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\_Carol_Locus_082025-remote-TW-BA-PM-10plus_yrs-Instructional_Materials..doc
+2025-09-11 19:23:15,245 - INFO - Processing completed in 0:01:31.444023
+2025-09-11 19:23:15,245 - INFO - Successfully processed: 414 files
+2025-09-11 19:23:15,245 - INFO - Failed to process: 70 files
+2025-09-11 19:23:15,245 - INFO - Failed files:
+2025-09-11 19:23:15,245 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Akhil State ID.pdf
+2025-09-11 19:23:15,245 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ansari, Arshad Alam I-129 Approval Notice.pdf
+2025-09-11 19:23:15,245 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\bangar h1b copy (1).pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DL .pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Dl_copy (1).pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DL-Virginia.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DL-Virginia_Janaiah.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\EAD.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\DL_Rajanala.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ferdous Sadia H1B.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Gaurav RTR.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\H-1B APPROVAL Nunavath.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\I-129_Approval Notice.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\H1B_Rajanala.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\I-797 A.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jonna Onsite Confirmation.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Joseph SOX GAAP writeup.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Juandalynn email chain.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Naresh H1b approval.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Nishu RTR.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Patient Name.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Rajesh-Approval.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_2.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sai Pathuri_H4 EAD.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\SAI RAVALI DL.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\State 1d scanned.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Timothy_Dahlen_Resume.pdf
+2025-09-11 19:23:15,246 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sujitha RTR.pdf
+2025-09-11 19:23:15,247 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Brandon Guess (1).docx
+2025-09-11 19:23:15,247 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Brandon Guess.docx
+2025-09-11 19:23:15,247 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Resume_(3).docx
+2025-09-11 19:23:15,247 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Sarah St Andre - Resume.docx
+2025-09-11 19:23:15,247 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\StructuredProfile-95ba6601-ff64-40e5-a116-c7d6034d01be-3fgek3nxfvraizxj.docx
+2025-09-11 19:23:15,247 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Adrian Waddell - Desktop Technician.doc
+2025-09-11 19:23:15,247 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\AL.doc
+2025-09-11 19:23:15,247 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Angela Morris - IT Project Coordinator.doc
+2025-09-11 19:23:15,247 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Bayo Adedeji - Network Engineer.doc
+2025-09-11 19:23:15,247 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Arnaud_CCIE_Network_Architect_resume.doc
+2025-09-11 19:23:15,247 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Betsey Katiti - IT Business Support Specialist.doc
+2025-09-11 19:23:15,247 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Chinyelugo Augustine - Senior LTM GTM Engineer - F5 Load Balancer.doc
+2025-09-11 19:23:15,247 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Delma Nuckles - Program Coordinator Analyst.doc
+2025-09-11 19:23:15,247 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Delma Nuckles.doc
+2025-09-11 19:23:15,247 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Delma Nuckles - Program Coordinator Analyst (1).doc
+2025-09-11 19:23:15,247 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Francisco Hrastoviak - Program Coordinator.doc
+2025-09-11 19:23:15,247 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Francisco J. Hrastoviak_Program Coordinator (1).doc
+2025-09-11 19:23:15,248 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Edilson De Moraes Pena Lead React Developer.doc
+2025-09-11 19:23:15,248 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Don Wettasinghe -Senior IOS Application Developer .doc
+2025-09-11 19:23:15,248 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jacqueline Ratcliff - Desktop & Endpoint Administrator.doc
+2025-09-11 19:23:15,248 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\FredCabello.doc
+2025-09-11 19:23:15,248 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Francisco J. Hrastoviak_Program Coordinator.doc
+2025-09-11 19:23:15,248 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong (1) (1).doc
+2025-09-11 19:23:15,248 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong (1) (2).doc
+2025-09-11 19:23:15,248 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jesse Martinez - Program Coordinator.doc
+2025-09-11 19:23:15,248 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong (1).doc
+2025-09-11 19:23:15,248 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Marcell Fulop - Senior iOS Developer.doc
+2025-09-11 19:23:15,248 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\JamesSong.doc
+2025-09-11 19:23:15,249 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Nikhilesh Raja_SAP Mediation Developer.doc
+2025-09-11 19:23:15,249 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Jian Ma - Senior iOS Developer.doc
+2025-09-11 19:23:15,249 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Mark Talent - Android Lead Engineer.doc
+2025-09-11 19:23:15,249 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Ramana Reddy Pandilla Lead ReactJS Developer.doc
+2025-09-11 19:23:15,249 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Proj_Schedule_and_Coordinator.doc
+2025-09-11 19:23:15,249 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Tawfeeq Hussain _ MS Dynamics 365 Architect.doc
+2025-09-11 19:23:15,249 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\ResumeArunKumar.doc
+2025-09-11 19:23:15,249 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Piyush Patel - Lead NodeJS Developer.doc
+2025-09-11 19:23:15,249 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Patrick_Munhall_Resume.doc
+2025-09-11 19:23:15,249 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Valerie Beasley - Project Coordinator.doc
+2025-09-11 19:23:15,249 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\Theodora Jones.doc
+2025-09-11 19:23:15,249 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\TCS_JD_Design Lead NPI build coordniator_Onsite v3.doc
+2025-09-11 19:23:15,249 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\_Carol_Locus_082025-remote-TW-BA-PM-10plus_yrs-Instructional_Materials. (1).doc
+2025-09-11 19:23:15,249 - INFO -   - C:\Flexon_Resume_Parser\Parser_Build-Arnav\Mani\_Carol_Locus_082025-remote-TW-BA-PM-10plus_yrs-Instructional_Materials..doc
+2025-09-11 19:23:15,274 - INFO - Data saved to extracted_resume_data.json
+2025-09-11 19:23:15,275 - INFO - All data successfully saved to extracted_resume_data.json
